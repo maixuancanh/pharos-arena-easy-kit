@@ -1,0 +1,821 @@
+[
+  {
+    "hash": "0x4196ad6ab953608dcae1dd20c5cfc2e50818fe20649e68eeb1fd93f7e8a7a9cc",
+    "status": "failed",
+    "network": "Pharos Pacific Mainnet",
+    "transaction": {
+      "blockHash": "0xa497017f422b285b46213d8662374e845cdda55538a5c4f8cd005bd194bddb32",
+      "blockNumber": "0x13389b2",
+      "blockTimestamp": "0x6ace631e",
+      "chainId": "0x688",
+      "from": "0x43ae9259bcdcd01097b2be35717f76dfee62db25",
+      "gas": "0x5208",
+      "gasPrice": "0x28fa6ae00",
+      "hash": "0x4196ad6ab953608dcae1dd20c5cfc2e50818fe20649e68eeb1fd93f7e8a7a9cc",
+      "input": "0x",
+      "nonce": "0x3",
+      "r": "0x40f8c0101078b31a0144cff40aafbe735fd01ac8cbbe794ceb27f6634b04e965",
+      "s": "0x1f43c677603ea7d354179121f8b42106c552549edc7cc48f177f2dc5a81ad3cd",
+      "to": "0x68b7f06d5e3b9a50b25430e4b8a01b5a83c2dc1a",
+      "transactionIndex": "0x0",
+      "type": "0x0",
+      "v": "0xd34",
+      "value": "0xc874f71af2e00"
+    },
+    "receipt": {
+      "blockHash": "0xa497017f422b285b46213d8662374e845cdda55538a5c4f8cd005bd194bddb32",
+      "blockNumber": "0x13389b2",
+      "contractAddress": null,
+      "cumulativeGasUsed": "0x5208",
+      "effectiveGasPrice": "0x28fa6ae00",
+      "from": "0x43ae9259bcdcd01097b2be35717f76dfee62db25",
+      "gasUsed": "0x5208",
+      "logs": [],
+      "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "status": "0x0",
+      "to": "0x68b7f06d5e3b9a50b25430e4b8a01b5a83c2dc1a",
+      "transactionHash": "0x4196ad6ab953608dcae1dd20c5cfc2e50818fe20649e68eeb1fd93f7e8a7a9cc",
+      "transactionIndex": "0x0",
+      "type": "0x0"
+    },
+    "replay": {
+      "block": 20154801,
+      "succeeded": false,
+      "message": "MCP tool failed: {\n  \"error\": {\n    \"message\": \"The caller does not have enough funds for value transfer.\",\n    \"code\": -32029\n  }\n}"
+    },
+    "traceEvidence": {
+      "source": "https://api.socialscan.io/pharos-mainnet/v1/explorer/transaction/0x4196ad6ab953608dcae1dd20c5cfc2e50818fe20649e68eeb1fd93f7e8a7a9cc/traces",
+      "trace": {
+        "data": {
+          "from_address": "0x43ae9259bcdcd01097b2be35717f76dfee62db25",
+          "to_address": "0x68b7f06d5e3b9a50b25430e4b8a01b5a83c2dc1a",
+          "value": "0.003526475",
+          "input": "0x",
+          "output": "0x",
+          "trace_type": "call",
+          "call_type": "call",
+          "gas": 21000,
+          "gas_used": 21000,
+          "gasUsed": 21000,
+          "trace_address": [],
+          "subtraces": 0,
+          "error": "insufficient_balance",
+          "status": 0,
+          "function_name": "fallback",
+          "function_input": [],
+          "function_output": [],
+          "calls": [],
+          "from_addr": null,
+          "to_addr": null,
+          "from_address_display_name": "0x43ae9259bcdcd01097b2be35717f76dfee62db25",
+          "to_address_display_name": "0x68b7f06d5e3b9a50b25430e4b8a01b5a83c2dc1a"
+        }
+      },
+      "capturedAt": "2026-10-13T17:04:11.439Z"
+    },
+    "diagnosis": {
+      "type": "insufficient-native-balance",
+      "explanation": "PharosScan reports that the sender did not have enough native coin for this transfer.",
+      "fix": "Check the PROS balance and reduce the transfer amount, leaving enough for fees."
+    },
+    "confidence": "Failure confirmed by Chain MCP receipt; original reason or category comes from third-party PharosScan trace. Contract-specific error code meanings require verified source.",
+    "explorer": "https://pharosscan.xyz/tx/0x4196ad6ab953608dcae1dd20c5cfc2e50818fe20649e68eeb1fd93f7e8a7a9cc",
+    "capturedAt": "2026-10-13T17:04:11.439Z"
+  },
+  {
+    "hash": "0x6044f77a5ca13bdad37f34f6224911e73a0fb4835a5a263105bfc2b3955de6a9",
+    "status": "failed",
+    "network": "Pharos Pacific Mainnet",
+    "transaction": {
+      "blockHash": "0xb9668e61f6c98fb72b708b1fc0c3c72ea7d47d9c2caef3342eb0d64a42991743",
+      "blockNumber": "0x1338ac4",
+      "blockTimestamp": "0x6ace6411",
+      "chainId": "0x688",
+      "from": "0x4ffd9c7e8641947662a43af298b734ca93530002",
+      "gas": "0x61a80",
+      "gasPrice": "0x174876e800",
+      "hash": "0x6044f77a5ca13bdad37f34f6224911e73a0fb4835a5a263105bfc2b3955de6a9",
+      "input": "0xa44c3887000000000000000000000000912c9ade24d44d8922f0866d8dcb079f1363f6470000000000000000000000000000000000000000000000000000000002f679fa0000000000000000000000000000000000000000000000045ec494dfd4cc0e3d0000000000000000000000000000000000000000000000000000000000000000",
+      "nonce": "0x7195",
+      "r": "0x4e8f70c0e171ec901eb93bde696e62ba66d9b422f57a17f90db9a433c730e496",
+      "s": "0x3624d6c2684f3035b72cf965ecd964c0a5b572ad4b6cc944175ff83e87acdebc",
+      "to": "0xe840cf53140f04f55d9e39e829a307bfca74297e",
+      "transactionIndex": "0x0",
+      "type": "0x0",
+      "v": "0xd34",
+      "value": "0x0"
+    },
+    "receipt": {
+      "blockHash": "0xb9668e61f6c98fb72b708b1fc0c3c72ea7d47d9c2caef3342eb0d64a42991743",
+      "blockNumber": "0x1338ac4",
+      "contractAddress": null,
+      "cumulativeGasUsed": "0x2f6ac",
+      "effectiveGasPrice": "0x174876e800",
+      "from": "0x4ffd9c7e8641947662a43af298b734ca93530002",
+      "gasUsed": "0x2f6ac",
+      "logs": [],
+      "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "status": "0x0",
+      "to": "0xe840cf53140f04f55d9e39e829a307bfca74297e",
+      "transactionHash": "0x6044f77a5ca13bdad37f34f6224911e73a0fb4835a5a263105bfc2b3955de6a9",
+      "transactionIndex": "0x0",
+      "type": "0x0"
+    },
+    "replay": {
+      "block": 20155075,
+      "succeeded": false,
+      "message": "MCP tool failed: {\n  \"error\": {\n    \"message\": \"execution reverted: slippage: output below minimum\",\n    \"code\": 3,\n    \"data\": \"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001e736c6970706167653a206f75747075742062656c6f77206d696e696d756d0000\"\n  }\n}"
+    },
+    "traceEvidence": {
+      "source": "https://api.socialscan.io/pharos-mainnet/v1/explorer/transaction/0x6044f77a5ca13bdad37f34f6224911e73a0fb4835a5a263105bfc2b3955de6a9/traces",
+      "trace": {
+        "data": {
+          "from_address": "0x4ffd9c7e8641947662a43af298b734ca93530002",
+          "to_address": "0xe840cf53140f04f55d9e39e829a307bfca74297e",
+          "value": null,
+          "input": "0xa44c3887000000000000000000000000912c9ade24d44d8922f0866d8dcb079f1363f6470000000000000000000000000000000000000000000000000000000002f679fa0000000000000000000000000000000000000000000000045ec494dfd4cc0e3d0000000000000000000000000000000000000000000000000000000000000000",
+          "output": "0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001e736c6970706167653a206f75747075742062656c6f77206d696e696d756d0000",
+          "trace_type": "call",
+          "call_type": "call",
+          "gas": 400000,
+          "gas_used": 194220,
+          "gasUsed": 194220,
+          "trace_address": [],
+          "subtraces": 2,
+          "error": "execute_revert",
+          "status": 0,
+          "function_name": "0xa44c3887",
+          "function_input": [
+            {
+              "name": "call_data",
+              "value": "000000000000000000000000912c9ade24d44d8922f0866d8dcb079f1363f6470000000000000000000000000000000000000000000000000000000002f679fa0000000000000000000000000000000000000000000000045ec494dfd4cc0e3d0000000000000000000000000000000000000000000000000000000000000000",
+              "type": "string"
+            }
+          ],
+          "function_output": [
+            {
+              "name": "return_data",
+              "value": "08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001e736c6970706167653a206f75747075742062656c6f77206d696e696d756d0000",
+              "type": "string"
+            }
+          ],
+          "calls": [
+            {
+              "from_address": "0xe840cf53140f04f55d9e39e829a307bfca74297e",
+              "to_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": null,
+              "input": "0x23b872dd0000000000000000000000004ffd9c7e8641947662a43af298b734ca93530002000000000000000000000000e840cf53140f04f55d9e39e829a307bfca74297e0000000000000000000000000000000000000000000000000000000002f679fa",
+              "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+              "trace_type": "call",
+              "call_type": "call",
+              "gas": 344829,
+              "gas_used": 46428,
+              "gasUsed": 46428,
+              "trace_address": [
+                0
+              ],
+              "subtraces": 1,
+              "error": null,
+              "status": 1,
+              "function_name": "transferFrom",
+              "function_input": [
+                {
+                  "name": "from",
+                  "value": "0x4FFD9c7E8641947662a43aF298B734ca93530002",
+                  "type": "string"
+                },
+                {
+                  "name": "to",
+                  "value": "0xe840CF53140f04F55d9E39E829A307BFca74297e",
+                  "type": "string"
+                },
+                {
+                  "name": "value",
+                  "value": 49707514,
+                  "type": "int"
+                }
+              ],
+              "function_output": [
+                {
+                  "name": "",
+                  "value": true,
+                  "type": "int"
+                }
+              ],
+              "calls": [
+                {
+                  "from_address": "0xe840cf53140f04f55d9e39e829a307bfca74297e",
+                  "to_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+                  "value": null,
+                  "input": "0x23b872dd0000000000000000000000004ffd9c7e8641947662a43af298b734ca93530002000000000000000000000000e840cf53140f04f55d9e39e829a307bfca74297e0000000000000000000000000000000000000000000000000000000002f679fa",
+                  "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                  "trace_type": "call",
+                  "call_type": "delegatecall",
+                  "gas": 332420,
+                  "gas_used": 39254,
+                  "gasUsed": 39254,
+                  "trace_address": [
+                    0,
+                    0
+                  ],
+                  "subtraces": 0,
+                  "error": null,
+                  "status": 1,
+                  "function_name": "transferFrom",
+                  "function_input": [
+                    {
+                      "name": "from",
+                      "value": "0x4FFD9c7E8641947662a43aF298B734ca93530002",
+                      "type": "string"
+                    },
+                    {
+                      "name": "to",
+                      "value": "0xe840CF53140f04F55d9E39E829A307BFca74297e",
+                      "type": "string"
+                    },
+                    {
+                      "name": "value",
+                      "value": 49707514,
+                      "type": "int"
+                    }
+                  ],
+                  "function_output": [
+                    {
+                      "name": "",
+                      "value": true,
+                      "type": "int"
+                    }
+                  ],
+                  "calls": [],
+                  "from_addr": null,
+                  "to_addr": null,
+                  "from_address_display_name": "0xe840cf53140f04f55d9e39e829a307bfca74297e",
+                  "to_address_display_name": "USDC: USDC Token"
+                }
+              ],
+              "from_addr": null,
+              "to_addr": null,
+              "from_address_display_name": "0xe840cf53140f04f55d9e39e829a307bfca74297e",
+              "to_address_display_name": "USDC: USDC Token"
+            },
+            {
+              "from_address": "0xe840cf53140f04f55d9e39e829a307bfca74297e",
+              "to_address": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+              "value": null,
+              "input": "0x128acb08000000000000000000000000e840cf53140f04f55d9e39e829a307bfca74297e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002f679fa000000000000000000000000fffd8963efd1fc6a506488495d951d5263988d2500000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac1815",
+              "output": "0xfffffffffffffffffffffffffffffffffffffffffffffffba3e55b90d9f88a890000000000000000000000000000000000000000000000000000000002f679fa",
+              "trace_type": "call",
+              "call_type": "call",
+              "gas": 293500,
+              "gas_used": 91956,
+              "gasUsed": 91956,
+              "trace_address": [
+                1
+              ],
+              "subtraces": 4,
+              "error": null,
+              "status": 1,
+              "function_name": "swap",
+              "function_input": [
+                {
+                  "name": "recipient",
+                  "value": "0xe840CF53140f04F55d9E39E829A307BFca74297e",
+                  "type": "string"
+                },
+                {
+                  "name": "zeroForOne",
+                  "value": false,
+                  "type": "int"
+                },
+                {
+                  "name": "amountSpecified",
+                  "value": 49707514,
+                  "type": "int"
+                },
+                {
+                  "name": "sqrtPriceLimitX96",
+                  "value": 1.4614467034852102e+48,
+                  "type": "int"
+                },
+                {
+                  "name": "data",
+                  "value": "0x000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac1815",
+                  "type": "string"
+                }
+              ],
+              "function_output": [
+                {
+                  "name": "amount0",
+                  "value": -80423774093008400000,
+                  "type": "int"
+                },
+                {
+                  "name": "amount1",
+                  "value": 49707514,
+                  "type": "int"
+                }
+              ],
+              "calls": [
+                {
+                  "from_address": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+                  "to_address": "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0",
+                  "value": null,
+                  "input": "0xa9059cbb000000000000000000000000e840cf53140f04f55d9e39e829a307bfca74297e0000000000000000000000000000000000000000000000045c1aa46f26077577",
+                  "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                  "trace_type": "call",
+                  "call_type": "call",
+                  "gas": 247623,
+                  "gas_used": 29916,
+                  "gasUsed": 29916,
+                  "trace_address": [
+                    1,
+                    0
+                  ],
+                  "subtraces": 0,
+                  "error": null,
+                  "status": 1,
+                  "function_name": "transfer",
+                  "function_input": [
+                    {
+                      "name": "dst",
+                      "value": "0xe840CF53140f04F55d9E39E829A307BFca74297e",
+                      "type": "string"
+                    },
+                    {
+                      "name": "wad",
+                      "value": 80423774093008400000,
+                      "type": "int"
+                    }
+                  ],
+                  "function_output": [
+                    {
+                      "name": "",
+                      "value": true,
+                      "type": "int"
+                    }
+                  ],
+                  "calls": [],
+                  "from_addr": null,
+                  "to_addr": null,
+                  "from_address_display_name": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+                  "to_address_display_name": "Wrapped PROS: PROS Token"
+                },
+                {
+                  "from_address": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+                  "to_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+                  "value": null,
+                  "input": "0x70a08231000000000000000000000000912c9ade24d44d8922f0866d8dcb079f1363f647",
+                  "output": "0x0000000000000000000000000000000000000000000000000000007d41f82f7e",
+                  "trace_type": "call",
+                  "call_type": "call",
+                  "gas": 217304,
+                  "gas_used": 3250,
+                  "gasUsed": 3250,
+                  "trace_address": [
+                    1,
+                    1
+                  ],
+                  "subtraces": 1,
+                  "error": null,
+                  "status": 1,
+                  "function_name": "balanceOf",
+                  "function_input": [
+                    {
+                      "name": "account",
+                      "value": "0x912c9aDe24D44d8922f0866D8Dcb079f1363f647",
+                      "type": "string"
+                    }
+                  ],
+                  "function_output": [
+                    {
+                      "name": "",
+                      "value": 537977696126,
+                      "type": "int"
+                    }
+                  ],
+                  "calls": [
+                    {
+                      "from_address": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+                      "to_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+                      "value": null,
+                      "input": "0x70a08231000000000000000000000000912c9ade24d44d8922f0866d8dcb079f1363f647",
+                      "output": "0x0000000000000000000000000000000000000000000000000000007d41f82f7e",
+                      "trace_type": "call",
+                      "call_type": "delegatecall",
+                      "gas": 213263,
+                      "gas_used": 2553,
+                      "gasUsed": 2553,
+                      "trace_address": [
+                        1,
+                        1,
+                        0
+                      ],
+                      "subtraces": 0,
+                      "error": null,
+                      "status": 1,
+                      "function_name": "balanceOf",
+                      "function_input": [
+                        {
+                          "name": "account",
+                          "value": "0x912c9aDe24D44d8922f0866D8Dcb079f1363f647",
+                          "type": "string"
+                        }
+                      ],
+                      "function_output": [
+                        {
+                          "name": "",
+                          "value": 537977696126,
+                          "type": "int"
+                        }
+                      ],
+                      "calls": [],
+                      "from_addr": null,
+                      "to_addr": null,
+                      "from_address_display_name": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+                      "to_address_display_name": "USDC: USDC Token"
+                    }
+                  ],
+                  "from_addr": null,
+                  "to_addr": null,
+                  "from_address_display_name": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+                  "to_address_display_name": "USDC: USDC Token"
+                },
+                {
+                  "from_address": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+                  "to_address": "0xe840cf53140f04f55d9e39e829a307bfca74297e",
+                  "value": null,
+                  "input": "0xfa461e33fffffffffffffffffffffffffffffffffffffffffffffffba3e55b90d9f88a890000000000000000000000000000000000000000000000000000000002f679fa00000000000000000000000000000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000020000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac1815",
+                  "output": "0x",
+                  "trace_type": "call",
+                  "call_type": "call",
+                  "gas": 213346,
+                  "gas_used": 9592,
+                  "gasUsed": 9592,
+                  "trace_address": [
+                    1,
+                    2
+                  ],
+                  "subtraces": 1,
+                  "error": null,
+                  "status": 1,
+                  "function_name": "uniswapV3SwapCallback",
+                  "function_input": [
+                    {
+                      "name": "amount0Delta",
+                      "value": -80423774093008400000,
+                      "type": "int"
+                    },
+                    {
+                      "name": "amount1Delta",
+                      "value": 49707514,
+                      "type": "int"
+                    },
+                    {
+                      "name": "_data",
+                      "value": "0x000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac1815",
+                      "type": "string"
+                    }
+                  ],
+                  "function_output": [],
+                  "calls": [
+                    {
+                      "from_address": "0xe840cf53140f04f55d9e39e829a307bfca74297e",
+                      "to_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+                      "value": null,
+                      "input": "0xa9059cbb000000000000000000000000912c9ade24d44d8922f0866d8dcb079f1363f6470000000000000000000000000000000000000000000000000000000002f679fa",
+                      "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                      "trace_type": "call",
+                      "call_type": "call",
+                      "gas": 208861,
+                      "gas_used": 8163,
+                      "gasUsed": 8163,
+                      "trace_address": [
+                        1,
+                        2,
+                        0
+                      ],
+                      "subtraces": 1,
+                      "error": null,
+                      "status": 1,
+                      "function_name": "transfer",
+                      "function_input": [
+                        {
+                          "name": "to",
+                          "value": "0x912c9aDe24D44d8922f0866D8Dcb079f1363f647",
+                          "type": "string"
+                        },
+                        {
+                          "name": "value",
+                          "value": 49707514,
+                          "type": "int"
+                        }
+                      ],
+                      "function_output": [
+                        {
+                          "name": "",
+                          "value": true,
+                          "type": "int"
+                        }
+                      ],
+                      "calls": [
+                        {
+                          "from_address": "0xe840cf53140f04f55d9e39e829a307bfca74297e",
+                          "to_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+                          "value": null,
+                          "input": "0xa9059cbb000000000000000000000000912c9ade24d44d8922f0866d8dcb079f1363f6470000000000000000000000000000000000000000000000000000000002f679fa",
+                          "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+                          "trace_type": "call",
+                          "call_type": "delegatecall",
+                          "gas": 204949,
+                          "gas_used": 7463,
+                          "gasUsed": 7463,
+                          "trace_address": [
+                            1,
+                            2,
+                            0,
+                            0
+                          ],
+                          "subtraces": 0,
+                          "error": null,
+                          "status": 1,
+                          "function_name": "transfer",
+                          "function_input": [
+                            {
+                              "name": "to",
+                              "value": "0x912c9aDe24D44d8922f0866D8Dcb079f1363f647",
+                              "type": "string"
+                            },
+                            {
+                              "name": "value",
+                              "value": 49707514,
+                              "type": "int"
+                            }
+                          ],
+                          "function_output": [
+                            {
+                              "name": "",
+                              "value": true,
+                              "type": "int"
+                            }
+                          ],
+                          "calls": [],
+                          "from_addr": null,
+                          "to_addr": null,
+                          "from_address_display_name": "0xe840cf53140f04f55d9e39e829a307bfca74297e",
+                          "to_address_display_name": "USDC: USDC Token"
+                        }
+                      ],
+                      "from_addr": null,
+                      "to_addr": null,
+                      "from_address_display_name": "0xe840cf53140f04f55d9e39e829a307bfca74297e",
+                      "to_address_display_name": "USDC: USDC Token"
+                    }
+                  ],
+                  "from_addr": null,
+                  "to_addr": null,
+                  "from_address_display_name": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+                  "to_address_display_name": "0xe840cf53140f04f55d9e39e829a307bfca74297e"
+                },
+                {
+                  "from_address": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+                  "to_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+                  "value": null,
+                  "input": "0x70a08231000000000000000000000000912c9ade24d44d8922f0866d8dcb079f1363f647",
+                  "output": "0x0000000000000000000000000000000000000000000000000000007d44eea978",
+                  "trace_type": "call",
+                  "call_type": "call",
+                  "gas": 203272,
+                  "gas_used": 1250,
+                  "gasUsed": 1250,
+                  "trace_address": [
+                    1,
+                    3
+                  ],
+                  "subtraces": 1,
+                  "error": null,
+                  "status": 1,
+                  "function_name": "balanceOf",
+                  "function_input": [
+                    {
+                      "name": "account",
+                      "value": "0x912c9aDe24D44d8922f0866D8Dcb079f1363f647",
+                      "type": "string"
+                    }
+                  ],
+                  "function_output": [
+                    {
+                      "name": "",
+                      "value": 538027403640,
+                      "type": "int"
+                    }
+                  ],
+                  "calls": [
+                    {
+                      "from_address": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+                      "to_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+                      "value": null,
+                      "input": "0x70a08231000000000000000000000000912c9ade24d44d8922f0866d8dcb079f1363f647",
+                      "output": "0x0000000000000000000000000000000000000000000000000000007d44eea978",
+                      "trace_type": "call",
+                      "call_type": "delegatecall",
+                      "gas": 199451,
+                      "gas_used": 553,
+                      "gasUsed": 553,
+                      "trace_address": [
+                        1,
+                        3,
+                        0
+                      ],
+                      "subtraces": 0,
+                      "error": null,
+                      "status": 1,
+                      "function_name": "balanceOf",
+                      "function_input": [
+                        {
+                          "name": "account",
+                          "value": "0x912c9aDe24D44d8922f0866D8Dcb079f1363f647",
+                          "type": "string"
+                        }
+                      ],
+                      "function_output": [
+                        {
+                          "name": "",
+                          "value": 538027403640,
+                          "type": "int"
+                        }
+                      ],
+                      "calls": [],
+                      "from_addr": null,
+                      "to_addr": null,
+                      "from_address_display_name": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+                      "to_address_display_name": "USDC: USDC Token"
+                    }
+                  ],
+                  "from_addr": null,
+                  "to_addr": null,
+                  "from_address_display_name": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+                  "to_address_display_name": "USDC: USDC Token"
+                }
+              ],
+              "from_addr": null,
+              "to_addr": null,
+              "from_address_display_name": "0xe840cf53140f04f55d9e39e829a307bfca74297e",
+              "to_address_display_name": "0x912c9ade24d44d8922f0866d8dcb079f1363f647"
+            }
+          ],
+          "from_addr": null,
+          "to_addr": null,
+          "from_address_display_name": "0x4ffd9c7e8641947662a43af298b734ca93530002",
+          "to_address_display_name": "0xe840cf53140f04f55d9e39e829a307bfca74297e"
+        }
+      },
+      "capturedAt": "2026-10-13T17:04:18.009Z"
+    },
+    "diagnosis": {
+      "type": "slippage-minimum-output",
+      "reason": "slippage: output below minimum",
+      "explanation": "The swap would return less than the minimum output requested, so the contract stopped it.",
+      "fix": "Refresh the quote, check the route and amount, and use a minimum output consistent with your chosen slippage tolerance. Do not remove the protection just to force execution.",
+      "providerType": "execute_revert",
+      "revertData": "0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001e736c6970706167653a206f75747075742062656c6f77206d696e696d756d0000"
+    },
+    "confidence": "Failure confirmed by Chain MCP receipt; original reason or category comes from third-party PharosScan trace. Contract-specific error code meanings require verified source.",
+    "explorer": "https://pharosscan.xyz/tx/0x6044f77a5ca13bdad37f34f6224911e73a0fb4835a5a263105bfc2b3955de6a9",
+    "capturedAt": "2026-10-13T17:04:18.011Z"
+  },
+  {
+    "hash": "0xfc04ecf08781883a68a82bcfcbaecea33011680cfc089f084438e7ad60d65939",
+    "status": "failed",
+    "network": "Pharos Pacific Mainnet",
+    "transaction": {
+      "accessList": [],
+      "blockHash": "0xea112d5a762b3c9a3914b8da6caa9fdbba6db182a214bd0828e93693fee96b30",
+      "blockNumber": "0x1338ac1",
+      "blockTimestamp": "0x6ace640e",
+      "chainId": "0x688",
+      "from": "0x15ddce897d76ac39c188ade4d353711a60395315",
+      "gas": "0x668a0",
+      "gasPrice": "0x37e11d600",
+      "hash": "0xfc04ecf08781883a68a82bcfcbaecea33011680cfc089f084438e7ad60d65939",
+      "input": "0x9c1f7cd90000000000000000000000000000000000000000000000000000000017d78400000000000000000000000000000000000000000000000d2a3ded88df46393bb7000000000000000000000000000000000000000000000d29665191d52ff4a9fb",
+      "maxFeePerGas": "0x37e11d600",
+      "maxPriorityFeePerGas": "0x37e11d600",
+      "nonce": "0x8ca2",
+      "r": "0xac54d092255666e3c30478df933cd56d519b98974b58b9c983df83e60a48abe0",
+      "s": "0x4e71a4e679d481f3f2fdf3d67bcb833772ddf8ad00297ab2c4775187dc3ceec1",
+      "to": "0x869379f2d9df67891e0159dd2520dc1681908f10",
+      "transactionIndex": "0x2",
+      "type": "0x2",
+      "v": "0x0",
+      "value": "0x0",
+      "yParity": "0x0"
+    },
+    "receipt": {
+      "blockHash": "0xea112d5a762b3c9a3914b8da6caa9fdbba6db182a214bd0828e93693fee96b30",
+      "blockNumber": "0x1338ac1",
+      "contractAddress": null,
+      "cumulativeGasUsed": "0x56fff",
+      "effectiveGasPrice": "0x37e11d600",
+      "from": "0x15ddce897d76ac39c188ade4d353711a60395315",
+      "gasUsed": "0x73cb",
+      "logs": [],
+      "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "status": "0x0",
+      "to": "0x869379f2d9df67891e0159dd2520dc1681908f10",
+      "transactionHash": "0xfc04ecf08781883a68a82bcfcbaecea33011680cfc089f084438e7ad60d65939",
+      "transactionIndex": "0x2",
+      "type": "0x2"
+    },
+    "replay": {
+      "block": 20155072,
+      "succeeded": true,
+      "message": "Replay returned successfully; historical failure cause is unresolved."
+    },
+    "traceEvidence": {
+      "source": "https://api.socialscan.io/pharos-mainnet/v1/explorer/transaction/0xfc04ecf08781883a68a82bcfcbaecea33011680cfc089f084438e7ad60d65939/traces",
+      "trace": {
+        "data": {
+          "from_address": "0x15ddce897d76ac39c188ade4d353711a60395315",
+          "to_address": "0x869379f2d9df67891e0159dd2520dc1681908f10",
+          "value": null,
+          "input": "0x9c1f7cd90000000000000000000000000000000000000000000000000000000017d78400000000000000000000000000000000000000000000000d2a3ded88df46393bb7000000000000000000000000000000000000000000000d29665191d52ff4a9fb",
+          "output": "0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000453504c3000000000000000000000000000000000000000000000000000000000",
+          "trace_type": "call",
+          "call_type": "call",
+          "gas": 420000,
+          "gas_used": 29643,
+          "gasUsed": 29643,
+          "trace_address": [],
+          "subtraces": 1,
+          "error": "execute_revert",
+          "status": 0,
+          "function_name": "0x9c1f7cd9",
+          "function_input": [
+            {
+              "name": "call_data",
+              "value": "0000000000000000000000000000000000000000000000000000000017d78400000000000000000000000000000000000000000000000d2a3ded88df46393bb7000000000000000000000000000000000000000000000d29665191d52ff4a9fb",
+              "type": "string"
+            }
+          ],
+          "function_output": [
+            {
+              "name": "return_data",
+              "value": "08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000453504c3000000000000000000000000000000000000000000000000000000000",
+              "type": "string"
+            }
+          ],
+          "calls": [
+            {
+              "from_address": "0x869379f2d9df67891e0159dd2520dc1681908f10",
+              "to_address": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+              "value": null,
+              "input": "0x3850c7bd",
+              "output": "0x000000000000000000000000000000000000000000000d304a5fc746409ec0e5fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffbb5ce000000000000000000000000000000000000000000000000000000000000002f000000000000000000000000000000000000000000000000000000000000012c000000000000000000000000000000000000000000000000000000000000012c00000000000000000000000000000000000000000000000000000000000000440000000000000000000000000000000000000000000000000000000000000001",
+              "trace_type": "call",
+              "call_type": "call",
+              "gas": 388604,
+              "gas_used": 2696,
+              "gasUsed": 2696,
+              "trace_address": [
+                0
+              ],
+              "subtraces": 0,
+              "error": null,
+              "status": 1,
+              "function_name": "slot0",
+              "function_input": [],
+              "function_output": [
+                {
+                  "name": "return_data",
+                  "value": "000000000000000000000000000000000000000000000d304a5fc746409ec0e5fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffbb5ce000000000000000000000000000000000000000000000000000000000000002f000000000000000000000000000000000000000000000000000000000000012c000000000000000000000000000000000000000000000000000000000000012c00000000000000000000000000000000000000000000000000000000000000440000000000000000000000000000000000000000000000000000000000000001",
+                  "type": "bytes"
+                }
+              ],
+              "calls": [],
+              "from_addr": null,
+              "to_addr": null,
+              "from_address_display_name": "0x869379f2d9df67891e0159dd2520dc1681908f10",
+              "to_address_display_name": "0x912c9ade24d44d8922f0866d8dcb079f1363f647"
+            }
+          ],
+          "from_addr": null,
+          "to_addr": null,
+          "from_address_display_name": "0x15ddce897d76ac39c188ade4d353711a60395315",
+          "to_address_display_name": "0x869379f2d9df67891e0159dd2520dc1681908f10"
+        }
+      },
+      "capturedAt": "2026-10-13T17:04:19.058Z"
+    },
+    "diagnosis": {
+      "type": "contract-revert",
+      "reason": "SPL0",
+      "explanation": "The contract refused the request: SPL0. This code is preserved exactly; its contract-specific meaning is not verified.",
+      "fix": "Check recipient, amounts and contract restrictions. Simulate again before sending; ask the dApp to explain the exact returned code.",
+      "providerType": "execute_revert",
+      "revertData": "0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000453504c3000000000000000000000000000000000000000000000000000000000"
+    },
+    "confidence": "Failure confirmed by Chain MCP receipt; original reason or category comes from third-party PharosScan trace. Contract-specific error code meanings require verified source.",
+    "explorer": "https://pharosscan.xyz/tx/0xfc04ecf08781883a68a82bcfcbaecea33011680cfc089f084438e7ad60d65939",
+    "capturedAt": "2026-10-13T17:04:19.059Z"
+  }
+]

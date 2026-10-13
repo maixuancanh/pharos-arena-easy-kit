@@ -1,0 +1,85 @@
+{
+  "configuration": {
+    "threshold": "1000",
+    "symbol": "USDC",
+    "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "topic": "pharos-arena-demo-8f273ac41013"
+  },
+  "results": [
+    {
+      "status": "delivered",
+      "event": {
+        "kind": "Transfer",
+        "id": "0x691abf6daa5d23f5851f929dd090aa15114c2eed5af54622881706336986a0e6:0",
+        "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+        "from": "0x200a5eB1477503CfC6e64fd8116C1bb967ba22C1",
+        "to": "0xF3503DA2961fF5118ADaa2C4fF8D9A6FB28a411f",
+        "amount": "10000.0001",
+        "amountRaw": "10000000100",
+        "transactionHash": "0x691abf6daa5d23f5851f929dd090aa15114c2eed5af54622881706336986a0e6",
+        "block": 20154645,
+        "logIndex": 0,
+        "explorer": "https://pharosscan.xyz/tx/0x691abf6daa5d23f5851f929dd090aa15114c2eed5af54622881706336986a0e6"
+      },
+      "message": "10000.0001 USDC transferred (threshold >= 1000.0 USDC).\nFrom: 0x200a5eB1477503CfC6e64fd8116C1bb967ba22C1\nTo: 0xF3503DA2961fF5118ADaa2C4fF8D9A6FB28a411f\nBlock: 20154645\nhttps://pharosscan.xyz/tx/0x691abf6daa5d23f5851f929dd090aa15114c2eed5af54622881706336986a0e6",
+      "notification": {
+        "id": "ICdoeVoxYz3n",
+        "time": 1791910611,
+        "expires": 1791953811,
+        "event": "message",
+        "topic": "pharos-arena-demo-8f273ac41013",
+        "title": "Pharos USDC transfer alert",
+        "message": "10000.0001 USDC transferred (threshold >= 1000.0 USDC).\nFrom: 0x200a5eB1477503CfC6e64fd8116C1bb967ba22C1\nTo: 0xF3503DA2961fF5118ADaa2C4fF8D9A6FB28a411f\nBlock: 20154645\nhttps://pharosscan.xyz/tx/0x691abf6daa5d23f5851f929dd090aa15114c2eed5af54622881706336986a0e6",
+        "click": "https://pharosscan.xyz/tx/0x691abf6daa5d23f5851f929dd090aa15114c2eed5af54622881706336986a0e6"
+      },
+      "capturedAt": "2026-10-13T16:56:50.920Z"
+    },
+    {
+      "status": "below-threshold",
+      "id": "0x0eb523526f9ab625edf91a318e95e99e30b0f1ed09536a07bed290bca5462de6:0"
+    },
+    {
+      "status": "below-threshold",
+      "id": "0xb783cc1f522ab66653c7a074add5190e18f78ad944320cd6c88d9bfe824f979c:0"
+    },
+    {
+      "status": "below-threshold",
+      "id": "0x762ce5905047955bd15bf916f59716f16ceaa697ef11fe7a7e9c9c9d0a95fca4:1"
+    },
+    {
+      "status": "below-threshold",
+      "id": "0x497ae944cb1668f9881bdb5d10b90e353ec281cc56e54ca755e4f51e6cb87f28:1"
+    },
+    {
+      "status": "below-threshold",
+      "id": "0x7c590224c805643194e58d93a4c08bc1fb468472d166d44244ca81b5a721d401:0"
+    }
+  ],
+  "state": {
+    "version": 1,
+    "chainId": 1672,
+    "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "topic": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+    "nextBlock": 20154716,
+    "seen": [
+      "0x3911ccde5b67fc6a816b73f8fa1933630ae6d7a697245c0945ec502cccc1d6ba:0",
+      "0x613cfcb35d7313ad23682ccb0f8fbeb82a60f00d2137e94f52d7c2bcf756aa39:0",
+      "0xc141848349a6eb77cf83f475c39faf53bcdd99c2231e2451f9f6b21b169a5691:0",
+      "0x82e8d4812a0e363cc9f4d96e3090375b6e1ee85b27472e6b84c5da5c2510fb5c:0",
+      "0x6404a1ec6aeb5e0ebeca49debdb630589c50c09a4b15aa005a4473bca3acc754:1",
+      "0x557d02642efc9c6143f138bb3609b0277d3c32e21ac0f5981420d345d86fd4fe:1",
+      "0xb3a111894c631520aa713748abfb72993cc92361fb49a4e6509743f837199054:0",
+      "0xebb9b3b3be7765b4f953cd0ffb97967c8dfdc830e31723886816ed0b41c01c46:1",
+      "0x4c4884fb00a03c0a26af66b9c739b414228485edd5ce374b5557c489a7966525:0",
+      "0xb96316ca726d847649a9399c206d872377a85010bebd7f5de311dda7b3d3b1c6:0",
+      "0xe3168e056b71798a00675737db0d131265dac86f1a45da293d0a3303f2c641e2:3",
+      "0x691abf6daa5d23f5851f929dd090aa15114c2eed5af54622881706336986a0e6:0",
+      "0x0eb523526f9ab625edf91a318e95e99e30b0f1ed09536a07bed290bca5462de6:0",
+      "0xb783cc1f522ab66653c7a074add5190e18f78ad944320cd6c88d9bfe824f979c:0",
+      "0x762ce5905047955bd15bf916f59716f16ceaa697ef11fe7a7e9c9c9d0a95fca4:1",
+      "0x497ae944cb1668f9881bdb5d10b90e353ec281cc56e54ca755e4f51e6cb87f28:1",
+      "0x7c590224c805643194e58d93a4c08bc1fb468472d166d44244ca81b5a721d401:0"
+    ]
+  },
+  "capturedAt": "2026-10-13T16:56:56.331Z"
+}

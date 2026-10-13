@@ -1,0 +1,206 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Three more Pharos Arena Easy builds</title><style>body{font:17px/1.6 system-ui;margin:auto;max-width:1040px;padding:40px 24px;background:#101722;color:#e3eaf4}a{color:#74c9ff}h1,h2{line-height:1.2}section{padding:28px;background:#192638;border-radius:14px;margin:24px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#0c1420;padding:16px;font:14px/1.6 monospace}li{margin:12px 0}.note{color:#ffda96}details{margin:16px 0}summary{cursor:pointer}</style><h1>Three more Pharos Arena Easy builds</h1><p>Fresh read-only MCP evidence, real notifications and an honest onboarding log. <a href="index.html">Earlier three builds</a> · <a href="https://github.com/maixuancanh/pharos-arena-easy-kit">Source repository</a></p><nav><a href="#onboarding">Docs MCP Onboarding</a> · <a href="#alerts">On-chain Alert Bot</a> · <a href="#support">DApp Support Agent</a></nav><section id="onboarding"><h2>Docs MCP Onboarding</h2><p>A fresh exercise using only Developer Docs MCP for Pharos onboarding guidance. The existing client and bootstrap endpoint were known beforehand. This is disclosed; it is not a first-ever onboarding claim.</p><p><strong>Outcome:</strong> connected read-only Chain MCP, listed live schemas and read chain ID 1672, block 20154679. No SkillEngine skill or transaction was executed.</p><ol><li><strong>Developer Docs MCP discovery is missing from its own onboarding answer</strong><p>Exact query: I am onboarding to ai.pharos.xyz for the first time. Give exact steps to connect Developer Docs MCP and Chain MCP in a Node.js MCP SDK client and perform a read-only call. What are their exact endpoint URLs?</p><p>The answer gave the Chain MCP URL, but explicitly could not supply the Developer Docs MCP endpoint. A new user cannot discover the second server from this answer alone.</p><p>Suggested fix: Add a Connect Developer Docs MCP section with https://docs.pharos.xyz/~gitbook/mcp, Streamable HTTP transport, supported tools and the current public authentication policy. State the bootstrap requirement: a client must already know this endpoint to ask the docs these questions.</p></li><li><strong>No complete Node.js connection and shutdown example</strong><p>Exact query: What authentication headers or API keys are required for https://mcp.pharos.xyz/mcp and https://docs.pharos.xyz/~gitbook/mcp? Show a minimal complete Node.js SDK example with transport and session termination.</p><p>The answer offered a generic configuration, but explicitly said that an SDK example with transport setup and session termination was absent.</p><p>Suggested fix: Include a tested example importing Client and StreamableHTTPClientTransport from @modelcontextprotocol/sdk, connecting, listing tools, calling get_chain_info and closing the client in finally. State the tested Node and SDK versions.</p></li><li><strong>Exact transaction-hash input keys are not given</strong><p>Exact query: What are the exact Chain MCP tool names and argument schemas for get_chain_info, get_transaction and get_transaction_receipt? How do I select Pacific mainnet versus Atlantic testnet?</p><p>The answer listed RPC methods but explicitly could not identify the MCP argument property name for get_transaction or get_transaction_receipt. RPC positional inputs do not tell a user which JSON object to send to MCP.</p><p>Suggested fix: Document the actual schemas: get_transaction({hash:&quot;0x...&quot;}) and get_transaction_receipt({hash:&quot;0x...&quot;}); show a full request and response. Explain that tools/list is the runtime source of truth for schemas.</p></li><li><strong>SkillEngine runtime expectations are not resolved</strong><p>Exact query: How do I create and run my first SkillEngine skill on ai.pharos.xyz? Give the exact skill file schema, execution endpoint, authentication and a complete read-only sample.</p><p>The answer could not provide an ai.pharos.xyz execution endpoint or authentication. It explained the local SKILL.md/cast workflow, but the requested hosted-runtime onboarding remained unresolved.</p><p>Suggested fix: Add a short architecture guide separating ai.pharos.xyz discovery, hosted Chain MCP and locally executed SkillEngine packages. Link the supported installation and first-run path. If no hosted execution API exists, say that explicitly.</p></li></ol><details><summary>Step 1: exact query and full MCP answer</summary><p>I am onboarding to ai.pharos.xyz for the first time. Give exact steps to connect Developer Docs MCP and Chain MCP in a Node.js MCP SDK client and perform a read-only call. What are their exact endpoint URLs?</p><pre>The Pharos docs specify the **Chain MCP** endpoint, but not a **Developer Docs MCP** endpoint or a Node.js MCP SDK setup for connecting both. So I can’t give exact steps for the two-server client without guessing.
+
+* **Chain MCP:** `https://mcp.pharos.xyz/mcp`
+* **Transport:** Streamable HTTP
+* **Authentication:** None
+
+The documented generic MCP configuration is:
+
+```json
+{
+  &quot;mcpServers&quot;: {
+    &quot;pharos&quot;: {
+      &quot;type&quot;: &quot;http&quot;,
+      &quot;url&quot;: &quot;https://mcp.pharos.xyz/mcp&quot;
+    }
+  }
+}
+```
+
+For a read-only call, the Chain MCP exposes `get_block_number`, which reads `eth_blockNumber`. The docs do not provide the Node.js SDK code to invoke it. See [Pharos MCP](/tooling-and-infrastructure/mcp).
+
+**Missing from the available docs:** the Developer Docs MCP endpoint, and exact Node.js MCP SDK connection and invocation steps.
+
+# Sources
+
+- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)
+- [Cross Chain Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain)
+- [Alchemy RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy)
+- [Node Configuration](https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/node-configuration)
+- [Node Management](https://docs.pharos.xyz/node-and-validator-guide/node-management)
+- [Pharos Testnet: Rebuild Node with Preserved Node Info](https://docs.pharos.xyz/pharos-testnet-rebuild-node-with-preserved-node-info)
+- [Validator Node Deployment](https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment)
+- [Chainlink CCIP](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/chainlink-ccip)
+- [Circle CCTP](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp)
+- [Call EVM From WASM](https://docs.pharos.xyz/developer-guide/interoperability/call-evm-from-wasm)
+- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)
+- [About Pharos](https://docs.pharos.xyz/introduction/readme)
+- [x402](https://docs.pharos.xyz/developer-guide/x402)
+- [Piggy Bank Tutorial](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide)
+- [Anvita Flow](https://docs.pharos.xyz/tooling-and-infrastructure/overview)
+- [Get PROS Gas](https://docs.pharos.xyz/getting-started/get-pros-gas)
+- [Nirvana RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/nirvana)
+- [Publish Service Agent](https://docs.pharos.xyz/tooling-and-infrastructure/overview/publish-skill-af)
+- [Safe MultiSig](https://docs.pharos.xyz/tooling-and-infrastructure/wallets/safe)
+- [Enable AutoPruning in Pharos Node](https://docs.pharos.xyz/enable-pruning-in-pharos-node)
+- [Using Docker](https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/using-docker-deployment)
+- [Foundry](https://docs.pharos.xyz/developer-guide/foundry)</pre></details><details><summary>Step 2: exact query and full MCP answer</summary><p>What authentication headers or API keys are required for https://mcp.pharos.xyz/mcp and https://docs.pharos.xyz/~gitbook/mcp? Show a minimal complete Node.js SDK example with transport and session termination.</p><pre>`https://mcp.pharos.xyz/mcp` is public: **no authentication header or API key is required**. It uses Streamable HTTP. The Pharos MCP documentation does not specify authentication for `https://docs.pharos.xyz/~gitbook/mcp`, so its header and API-key requirements are **not documented**. See [Pharos MCP](/tooling-and-infrastructure/mcp).
+
+The docs provide a client configuration for the Pharos endpoint:
+
+```json
+{
+  &quot;mcpServers&quot;: {
+    &quot;pharos&quot;: {
+      &quot;type&quot;: &quot;http&quot;,
+      &quot;url&quot;: &quot;https://mcp.pharos.xyz/mcp&quot;
+    }
+  }
+}
+```
+
+**A Node.js SDK example with transport setup and session termination is not included in the Pharos Developer Docs.** I can’t provide a source-grounded example or claim how the GitBook endpoint authenticates. The docs do note that self-hosted Pharos MCP servers can enable bearer-token auth with `MCP_AUTH_TOKEN`; that is separate from the public hosted endpoint.
+
+# Sources
+
+- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)
+- [Node Configuration](https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/node-configuration)
+- [Node Management](https://docs.pharos.xyz/node-and-validator-guide/node-management)
+- [ZAN RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan)
+- [Alchemy RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy)
+- [Circle CCTP](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp)
+- [Pharos Testnet: Rebuild Node with Preserved Node Info](https://docs.pharos.xyz/pharos-testnet-rebuild-node-with-preserved-node-info)
+- [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods)
+- [LayerZero](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/layerzero)
+- [Validator Node Deployment](https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment)
+- [x402](https://docs.pharos.xyz/developer-guide/x402)
+- [Nirvana RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/nirvana)
+- [Write Your First Token](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token)
+- [Node Debugging &amp; Configuration](https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration)
+- [Safe MultiSig](https://docs.pharos.xyz/tooling-and-infrastructure/wallets/safe)
+- [RPC Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/rpc)
+- [Atlantic Testnet](https://docs.pharos.xyz/getting-started/network/atlantic-testnet)
+- [Gas Model](https://docs.pharos.xyz/getting-started/gas-model)
+- [Enable AutoPruning in Pharos Node](https://docs.pharos.xyz/enable-pruning-in-pharos-node)</pre></details><details><summary>Step 3: exact query and full MCP answer</summary><p>What are the exact Chain MCP tool names and argument schemas for get_chain_info, get_transaction and get_transaction_receipt? How do I select Pacific mainnet versus Atlantic testnet?</p><pre>The docs list the tool names and their underlying RPC inputs, but **do not publish the MCP tools’ exact JSON argument-property names or full input schemas**. I can confirm the RPC-level inputs below; the MCP field names are not documented.
+
+| MCP tool                  | Underlying RPC method                                  | Documented RPC input                |
+| ------------------------- | ------------------------------------------------------ | ----------------------------------- |
+| `get_chain_info`          | `eth_chainId`, `eth_blockNumber`, `web3_clientVersion` | No parameters for these RPC methods |
+| `get_transaction`         | `eth_getTransactionByHash`                             | One `String`: transaction hash      |
+| `get_transaction_receipt` | `eth_getTransactionReceipt`                            | One `String`: transaction hash      |
+
+The MCP tool names and mappings appear in [Pharos MCP](/tooling-and-infrastructure/mcp). The RPC input types are documented in [JSON-RPC API Methods](/api-and-sdk/json-rpc-methods). **The exact MCP argument key for either transaction-hash input is not specified.**
+
+### Selecting a network
+
+* **Pacific Mainnet:** RPC `https://rpc.pharos.xyz`, chain ID `1672`. The hosted MCP endpoint, `https://mcp.pharos.xyz/mcp`, reports chain ID `1672`, so it targets Pacific. See [Pacific Mainnet](/getting-started/network/pacific-mainnet) and [Pharos MCP](/tooling-and-infrastructure/mcp).
+* **Atlantic Testnet:** RPC `https://atlantic.dplabs-internal.com`, chain ID `688689`. See [Atlantic Testnet](/getting-started/network/atlantic-testnet).
+
+For Atlantic, the MCP guide documents self-hosting and configuring `PHAROS_RPC_URL` and `PHAROS_CHAIN_ID`. Set them to the Atlantic RPC URL and `688689`. The docs do not describe a hosted MCP endpoint for Atlantic.
+
+# Sources
+
+- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)
+- [Cross Chain Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain)
+- [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods)
+- [Alchemy RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy)
+- [Hardhat](https://docs.pharos.xyz/developer-guide/hardhat)
+- [Block Explorer](https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer)
+- [RPC Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/rpc)
+- [Get PROS Gas](https://docs.pharos.xyz/getting-started/get-pros-gas)
+- [Goldsky](https://docs.pharos.xyz/tooling-and-infrastructure/indexing/goldsky)
+- [Atlantic Testnet](https://docs.pharos.xyz/getting-started/network/atlantic-testnet)
+- [Pacific Mainnet](https://docs.pharos.xyz/getting-started/network/pacific-mainnet)
+- [LayerZero](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/layerzero)
+- [ZAN RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan)
+- [Chainlink Data Feeds](https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-ds)
+- [Circle CCTP](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp)
+- [Node Management](https://docs.pharos.xyz/node-and-validator-guide/node-management)</pre></details><details><summary>Step 4: exact query and full MCP answer</summary><p>For ai.pharos.xyz Chain MCP get_logs, what is the maximum inclusive block range, rate limit, and correct retry behavior after HTTP 429? Provide exact documented values, not generic advice.</p><pre>For the **Pharos MCP** endpoint documented at `https://mcp.pharos.xyz/mcp` — the docs do not identify `ai.pharos.xyz` as the endpoint:
+
+* **Maximum range:** 1,000 blocks per `get_logs` call. For inclusive `fromBlock` and `toBlock`, keep `toBlock - fromBlock + 1 ≤ 1,000` — for example, blocks 100–1,099.
+* **Rate limit:** 120 requests per minute per IP.
+* **After HTTP 429:** Back off and retry after the interval specified in the response’s `Retry-After` header. The docs do not specify a fixed number of seconds; use the header value.
+
+See [Pharos MCP](/tooling-and-infrastructure/mcp) for the range cap, rate limit, and 429 guidance.
+
+# Sources
+
+- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)
+- [Node Debugging &amp; Configuration](https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration)
+- [Cross Chain Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain)
+- [Alchemy RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy)
+- [Using Docker](https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/using-docker-deployment)
+- [Pacific Mainnet](https://docs.pharos.xyz/getting-started/network/pacific-mainnet)
+- [Get PROS Gas](https://docs.pharos.xyz/getting-started/get-pros-gas)
+- [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods)
+- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)
+- [Chainlink CCIP](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/chainlink-ccip)</pre></details><details><summary>Step 5: exact query and full MCP answer</summary><p>How do I create and run my first SkillEngine skill on ai.pharos.xyz? Give the exact skill file schema, execution endpoint, authentication and a complete read-only sample.</p><pre>The Pharos Developer Docs **do not document `ai.pharos.xyz` as a SkillEngine runtime**. They provide no SkillEngine HTTP execution endpoint, request format, or authentication scheme for that site, so I can’t give those details without guessing.
+
+The documented [Pharos Skill Engine](/tooling-and-infrastructure/pharos-skill-engine-guide) is a local package, **not an API**. An agent reads `SKILL.md` and runs `cast` or `forge` commands. Its reference-file format includes an operation overview, command template, parameters, output parsing, error handling, and agent guidelines.
+
+Here’s a read-only reference sample using the documented `cast call` pattern:
+
+````markdown
+# Wallet Query Instructions
+
+## Read native PHRS balance
+
+### Overview
+Read an account's native balance. This query does not send a transaction.
+
+### Command Template
+```bash
+cast balance &lt;address&gt; --rpc-url https://atlantic.dplabs-internal.com --ether
+````
+
+### Parameters
+
+| Parameter   | Type    | Required | Description      |
+| ----------- | ------- | -------- | ---------------- |
+| `&lt;address&gt;` | address | Yes      | Account to query |
+
+### Output Parsing
+
+The command returns the balance in PHRS.
+
+### Error Handling
+
+Check the address and RPC URL if the query fails.
+
+&gt; **Agent Guidelines**:
+&gt;
+&gt; 1. Ask for the account address.
+&gt; 2. Run the read-only command.
+&gt; 3. Return the balance.
+
+```
+
+The docs separately describe [Pharos MCP](/spaces/NmFp0ycownpuaUNf2xeE/pages/390XouAbPVLF5MWI49pT &quot;mention&quot;), a hosted, public endpoint at `https://mcp.pharos.xyz/mcp` with no authentication. It supports read-only chain tools, but it is **not documented as a SkillEngine execution endpoint**.
+
+For hosted Skill packages, [Publish Service Agent](/spaces/NmFp0ycownpuaUNf2xeE/pages/rZioDwR2w5hHhkTpu0L5 &quot;mention&quot;) documents `SKILL.md` frontmatter fields `name` and `description`; it does not specify an `ai.pharos.xyz` execution API.
+```
+
+# Sources
+
+- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)
+- [Piggy Bank Tutorial](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide)
+- [Publish Service Agent](https://docs.pharos.xyz/tooling-and-infrastructure/overview/publish-skill-af)
+- [Anvita Flow](https://docs.pharos.xyz/tooling-and-infrastructure/overview)
+- [Alchemy RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy)
+- [Rust](https://docs.pharos.xyz/developer-guide/rust)
+- [Write Your First Token](https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token)
+- [Write Your First Token](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token)
+- [RPC Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/rpc)
+- [x402](https://docs.pharos.xyz/developer-guide/x402)
+- [Nirvana RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/nirvana)
+- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)
+- [About Pharos](https://docs.pharos.xyz/introduction/readme)
+- [Goldsky](https://docs.pharos.xyz/tooling-and-infrastructure/indexing/goldsky)
+- [Node Debugging &amp; Configuration](https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration)
+- [Pharos Network Snapshots](https://docs.pharos.xyz/node-and-validator-guide/pharos-network-snapshots)
+- [Vision &amp; Mission](https://docs.pharos.xyz/introduction/vision-and-mission)
+- [Encyclopedia](https://docs.pharos.xyz/introduction/encyclopedia)</pre></details><p><a href="tasks/docs-mcp-onboarding/README.md">Full chronological log and run instructions</a> · <a href="evidence/docs-probe-mcp.jsonl">Original Docs MCP transcript</a> · <a href="evidence/onboarding-run.json">Working chain run</a></p></section><section id="alerts"><h2>On-chain Alert Bot</h2><p>Configurable USDC threshold, filtered Chain MCP Transfer events, persistent delivery identities and real ntfy notifications.</p><p><strong>Verified:</strong> 5 first-run notifications, 1 restart notification(s), below-threshold filtering, service readback and suppression of an already delivered event.</p><pre>node more.mjs alert --topic YOUR_OWN_RANDOM_TOPIC --threshold 1000 --polls 3 --state .state/my-alert.json</pre><p><a href="https://ntfy.sh/pharos-arena-demo-8f273ac41013">Open real notification channel</a></p><pre>10000.0001 USDC transferred (threshold &gt;= 1000.0 USDC).
+From: 0x200a5eB1477503CfC6e64fd8116C1bb967ba22C1
+To: 0xF3503DA2961fF5118ADaa2C4fF8D9A6FB28a411f
+Block: 20154645
+https://pharosscan.xyz/tx/0x691abf6daa5d23f5851f929dd090aa15114c2eed5af54622881706336986a0e6</pre><p class="note">ntfy is used as the “or similar” channel. The demo topic is public. Hosted history expires; readback is archived. A crash after service acknowledgement but before the local checkpoint can cause one duplicate.</p><p><a href="tasks/on-chain-alert-bot/README.md">Run instructions and limitations</a> · <a href="evidence/alert-live-mcp.jsonl">Chain MCP transcript</a> · <a href="evidence/alert-channel-readback.jsonl">Archived real channel messages</a> · <a href="evidence/alert-dedup.json">Suppressed duplicate</a></p></section><section id="support"><h2>DApp Support Agent</h2><p>Transaction and receipt via Chain MCP; historical failure categories from attributed PharosScan traces. Three real failed transactions:</p><h3>insufficient-native-balance</h3><p><a href="https://pharosscan.xyz/tx/0x4196ad6ab953608dcae1dd20c5cfc2e50818fe20649e68eeb1fd93f7e8a7a9cc">0x4196ad6ab953608dcae1dd20c5cfc2e50818fe20649e68eeb1fd93f7e8a7a9cc</a></p><p>PharosScan reports that the sender did not have enough native coin for this transfer.</p><p><strong>Suggested fix:</strong> Check the PROS balance and reduce the transfer amount, leaving enough for fees.</p><p>Block 20154802 · failed receipt 0x0 · trace category insufficient_balance</p><h3>slippage-minimum-output</h3><p><a href="https://pharosscan.xyz/tx/0x6044f77a5ca13bdad37f34f6224911e73a0fb4835a5a263105bfc2b3955de6a9">0x6044f77a5ca13bdad37f34f6224911e73a0fb4835a5a263105bfc2b3955de6a9</a></p><p>The swap would return less than the minimum output requested, so the contract stopped it.</p><p><strong>Suggested fix:</strong> Refresh the quote, check the route and amount, and use a minimum output consistent with your chosen slippage tolerance. Do not remove the protection just to force execution.</p><p>Block 20155076 · failed receipt 0x0 · trace category execute_revert</p><h3>contract-revert</h3><p><a href="https://pharosscan.xyz/tx/0xfc04ecf08781883a68a82bcfcbaecea33011680cfc089f084438e7ad60d65939">0xfc04ecf08781883a68a82bcfcbaecea33011680cfc089f084438e7ad60d65939</a></p><p>The contract refused the request: SPL0. This code is preserved exactly; its contract-specific meaning is not verified.</p><p><strong>Suggested fix:</strong> Check recipient, amounts and contract restrictions. Simulate again before sending; ask the dApp to explain the exact returned code.</p><p>Block 20155073 · failed receipt 0x0 · trace category execute_revert</p><p class="note">The SPL0 revert reason is decoded exactly; its contract-specific meaning has not been verified. The agent does not invent an ABI error name or infer out-of-gas from gas usage alone. Previous-block replay is a diagnostic hint, not exact historical pre-state.</p><pre>node more.mjs support 0x4196ad6ab953608dcae1dd20c5cfc2e50818fe20649e68eeb1fd93f7e8a7a9cc</pre><p><a href="tasks/dapp-support-agent/README.md">Run instructions and limitations</a> · <a href="evidence/support-three.json">All receipts, traces and diagnoses</a> · <a href="evidence/support-three-mcp.jsonl">Original Chain MCP transcript</a></p></section></html>
