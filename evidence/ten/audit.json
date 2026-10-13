@@ -1,0 +1,239 @@
+{
+  "activity": {
+    "wallet": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+    "categories": {
+      "transfers-in": {
+        "count": 2,
+        "uniqueTransactions": 2,
+        "nativeTotal": "0.0",
+        "tokenTotals": {
+          "0xec47e6f3ef1e7bc8e00f670ac3d5016798fe44d0": {
+            "symbol": "APC3M",
+            "decimals": 18,
+            "amount": "9715.543403490410598214"
+          },
+          "0xc879c018db60520f4355c26ed1a6d572cdac1815": {
+            "symbol": "USDC",
+            "decimals": 6,
+            "amount": "30000.0001"
+          }
+        }
+      },
+      "transfers-out": {
+        "count": 5,
+        "uniqueTransactions": 5,
+        "nativeTotal": "0.2",
+        "tokenTotals": {
+          "0xec47e6f3ef1e7bc8e00f670ac3d5016798fe44d0": {
+            "symbol": "APC3M",
+            "decimals": 18,
+            "amount": "9715.543403490410598214"
+          },
+          "0xc879c018db60520f4355c26ed1a6d572cdac1815": {
+            "symbol": "USDC",
+            "decimals": 6,
+            "amount": "30000.0001"
+          }
+        }
+      },
+      "swaps": {
+        "count": 0,
+        "uniqueTransactions": 0,
+        "nativeTotal": "0.0",
+        "tokenTotals": {}
+      },
+      "approvals": {
+        "count": 2,
+        "uniqueTransactions": 2,
+        "nativeTotal": "0.0",
+        "tokenTotals": {}
+      },
+      "contract-interactions": {
+        "count": 3,
+        "uniqueTransactions": 3,
+        "nativeTotal": "0.0",
+        "tokenTotals": {}
+      },
+      "failed": {
+        "count": 0,
+        "uniqueTransactions": 0,
+        "nativeTotal": "0.0",
+        "tokenTotals": {}
+      }
+    },
+    "records": [
+      {
+        "hash": "0xdff8671828e07ee67a27e5108a6de1cf7abe6dfa28b242d0db8d3103873c20c5",
+        "category": "contract-interactions",
+        "value": "0",
+        "asset": "PROS",
+        "from": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+        "to": "0xd0428799fbc35557834d33121ba4472692c8908a",
+        "time": "2026-10-13T18:53:40+00:00",
+        "method": "Request Redeem",
+        "explorer": "https://pharosscan.xyz/tx/0xdff8671828e07ee67a27e5108a6de1cf7abe6dfa28b242d0db8d3103873c20c5",
+        "classification": "explorer method/selector heuristic"
+      },
+      {
+        "hash": "0x09d00c1cd8bd92414ff3cd5cb8a55463a45443e2fb84a4c4d112309d1814cce6",
+        "category": "approvals",
+        "value": "0",
+        "asset": "PROS",
+        "from": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+        "to": "0xec47e6f3ef1e7bc8e00f670ac3d5016798fe44d0",
+        "time": "2026-10-13T18:53:33+00:00",
+        "method": "Approve",
+        "explorer": "https://pharosscan.xyz/tx/0x09d00c1cd8bd92414ff3cd5cb8a55463a45443e2fb84a4c4d112309d1814cce6",
+        "classification": "explorer method/selector heuristic"
+      },
+      {
+        "hash": "0x691abf6daa5d23f5851f929dd090aa15114c2eed5af54622881706336986a0e6",
+        "category": "contract-interactions",
+        "value": "0",
+        "asset": "PROS",
+        "from": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+        "to": "0xd0428799fbc35557834d33121ba4472692c8908a",
+        "time": "2026-10-13T16:55:53+00:00",
+        "method": "Deposit With Referral",
+        "explorer": "https://pharosscan.xyz/tx/0x691abf6daa5d23f5851f929dd090aa15114c2eed5af54622881706336986a0e6",
+        "classification": "explorer method/selector heuristic"
+      },
+      {
+        "hash": "0xd4b9d7bb56b5ef2a047d727b2d51499bbaee8ba3f8db29705ed58355e288a8f6",
+        "category": "approvals",
+        "value": "0",
+        "asset": "PROS",
+        "from": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+        "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+        "time": "2026-10-13T16:55:46+00:00",
+        "method": "Approve",
+        "explorer": "https://pharosscan.xyz/tx/0xd4b9d7bb56b5ef2a047d727b2d51499bbaee8ba3f8db29705ed58355e288a8f6",
+        "classification": "explorer method/selector heuristic"
+      },
+      {
+        "hash": "0x431c69f65d48ef628cf45732c18f6ad84b31b13a16acaf0a1b8a1c32533714f3",
+        "category": "transfers-out",
+        "value": "0.1",
+        "asset": "PROS",
+        "from": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+        "to": "0x1af9560f9af3adc534b324e27ed5aff7c720ab06",
+        "time": "2026-10-13T16:55:30+00:00",
+        "method": "Transfer",
+        "explorer": "https://pharosscan.xyz/tx/0x431c69f65d48ef628cf45732c18f6ad84b31b13a16acaf0a1b8a1c32533714f3",
+        "classification": "explorer method/selector heuristic"
+      },
+      {
+        "hash": "0xc141848349a6eb77cf83f475c39faf53bcdd99c2231e2451f9f6b21b169a5691",
+        "category": "contract-interactions",
+        "value": "0",
+        "asset": "PROS",
+        "from": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+        "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+        "time": "2026-10-13T16:54:22+00:00",
+        "method": "Transfer",
+        "explorer": "https://pharosscan.xyz/tx/0xc141848349a6eb77cf83f475c39faf53bcdd99c2231e2451f9f6b21b169a5691",
+        "classification": "explorer method/selector heuristic"
+      },
+      {
+        "hash": "0x6a865b7d2a8e3e29b1741809e7ff207e2df8953e3b55c7953c91d69b35799878",
+        "category": "transfers-out",
+        "value": "0.1",
+        "asset": "PROS",
+        "from": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+        "to": "0x1af9560f9af3adc534b324e27ed5aff7c720ab06",
+        "time": "2026-10-13T16:53:45+00:00",
+        "method": "Transfer",
+        "explorer": "https://pharosscan.xyz/tx/0x6a865b7d2a8e3e29b1741809e7ff207e2df8953e3b55c7953c91d69b35799878",
+        "classification": "explorer method/selector heuristic"
+      },
+      {
+        "hash": "0xdff8671828e07ee67a27e5108a6de1cf7abe6dfa28b242d0db8d3103873c20c5",
+        "logIndex": 0,
+        "category": "transfers-out",
+        "value": "9715.543403490410598214",
+        "asset": "APC3M",
+        "token": "0xec47e6f3ef1e7bc8e00f670ac3d5016798fe44d0",
+        "from": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+        "to": "0xd0428799fbc35557834d33121ba4472692c8908a",
+        "time": "2026-10-13T18:53:40+00:00",
+        "explorer": "https://pharosscan.xyz/tx/0xdff8671828e07ee67a27e5108a6de1cf7abe6dfa28b242d0db8d3103873c20c5",
+        "classification": "indexed ERC20 Transfer"
+      },
+      {
+        "hash": "0x691abf6daa5d23f5851f929dd090aa15114c2eed5af54622881706336986a0e6",
+        "logIndex": 1,
+        "category": "transfers-in",
+        "value": "9715.543403490410598214",
+        "asset": "APC3M",
+        "token": "0xec47e6f3ef1e7bc8e00f670ac3d5016798fe44d0",
+        "from": "0x0000000000000000000000000000000000000000",
+        "to": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+        "time": "2026-10-13T16:55:53+00:00",
+        "explorer": "https://pharosscan.xyz/tx/0x691abf6daa5d23f5851f929dd090aa15114c2eed5af54622881706336986a0e6",
+        "classification": "indexed ERC20 Transfer"
+      },
+      {
+        "hash": "0x691abf6daa5d23f5851f929dd090aa15114c2eed5af54622881706336986a0e6",
+        "logIndex": 0,
+        "category": "transfers-out",
+        "value": "10000.0001",
+        "asset": "USDC",
+        "token": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+        "from": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+        "to": "0xf3503da2961ff5118adaa2c4ff8d9a6fb28a411f",
+        "time": "2026-10-13T16:55:53+00:00",
+        "explorer": "https://pharosscan.xyz/tx/0x691abf6daa5d23f5851f929dd090aa15114c2eed5af54622881706336986a0e6",
+        "classification": "indexed ERC20 Transfer"
+      },
+      {
+        "hash": "0xc141848349a6eb77cf83f475c39faf53bcdd99c2231e2451f9f6b21b169a5691",
+        "logIndex": 0,
+        "category": "transfers-out",
+        "value": "20000",
+        "asset": "USDC",
+        "token": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+        "from": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+        "to": "0x1af9560f9af3adc534b324e27ed5aff7c720ab06",
+        "time": "2026-10-13T16:54:22+00:00",
+        "explorer": "https://pharosscan.xyz/tx/0xc141848349a6eb77cf83f475c39faf53bcdd99c2231e2451f9f6b21b169a5691",
+        "classification": "indexed ERC20 Transfer"
+      },
+      {
+        "hash": "0x815244a61c2210d1cc4bcadcbce3aa8f8f2041880748519996fa78588c1fe4a3",
+        "logIndex": 1,
+        "category": "transfers-in",
+        "value": "30000.0001",
+        "asset": "USDC",
+        "token": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+        "from": "0x0000000000000000000000000000000000000000",
+        "to": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+        "time": "2026-10-13T16:48:44+00:00",
+        "explorer": "https://pharosscan.xyz/tx/0x815244a61c2210d1cc4bcadcbce3aa8f8f2041880748519996fa78588c1fe4a3",
+        "classification": "indexed ERC20 Transfer"
+      }
+    ],
+    "uniqueTransactions": 8,
+    "notes": "Counts are activity records. Token Transfer records can share a transaction with a swap or approval. Amounts are not USD values; failed requests add no moved value."
+  },
+  "coverage": {
+    "complete": true,
+    "pages": 1,
+    "maxPages": 20,
+    "totalIndexed": 16,
+    "since": "2026-10-01T00:00:00Z",
+    "until": "2026-10-13T23:40:17.095Z",
+    "source": "PharosScan/SocialScan public indexer",
+    "warning": "Indexer coverage reached requested start; this does not prove indexer completeness."
+  },
+  "tokenCoverage": {
+    "complete": true,
+    "pages": 1,
+    "maxPages": 20,
+    "totalIndexed": 12,
+    "since": "2026-10-01T00:00:00Z",
+    "until": "2026-10-13T23:40:17.095Z",
+    "source": "PharosScan/SocialScan public indexer",
+    "warning": "Indexer coverage reached requested start; this does not prove indexer completeness."
+  },
+  "capturedAt": "2026-10-13T23:41:10.763Z"
+}

@@ -1,0 +1,38 @@
+{
+  "addresses": [
+    "0x936564245b69f5a293b42cbd752e0ee3bb68b470",
+    "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+    "0xeb16e77f2821f773736e183f2617c82de3f4852d",
+    "0x768b959191ce5876cabbbc014a08d72615bdde54",
+    "0x733a038c0160cb5c048e57a62a85bffc9d3d782a"
+  ],
+  "range": {
+    "fromBlock": 20176435,
+    "toBlock": 20177432
+  },
+  "moves": [],
+  "summary": [
+    {
+      "wallet": "0x936564245b69f5a293b42cbd752e0ee3bb68b470",
+      "moves": 0
+    },
+    {
+      "wallet": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+      "moves": 0
+    },
+    {
+      "wallet": "0xeb16e77f2821f773736e183f2617c82de3f4852d",
+      "moves": 0
+    },
+    {
+      "wallet": "0x768b959191ce5876cabbbc014a08d72615bdde54",
+      "moves": 0
+    },
+    {
+      "wallet": "0x733a038c0160cb5c048e57a62a85bffc9d3d782a",
+      "moves": 0
+    }
+  ],
+  "labelsSource": "Explicit user configuration; unlabelled addresses are shown literally.",
+  "capturedAt": "2026-10-13T23:41:13.599Z"
+}

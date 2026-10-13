@@ -1,0 +1,60 @@
+{
+  "status": "verified",
+  "plan": {
+    "request": "How do I read ERC20 totalSupply on Pharos?",
+    "intent": {
+      "kind": "contract",
+      "function": "totalSupply"
+    },
+    "resolvedTarget": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "question": "How do I read the ERC20 totalSupply() function on Pharos using a read-only call? Explain exactly what this function returns, its parameters and units. Use the Pharos contract tutorials and cite the documentation.",
+    "answer": {
+      "question": "How do I read the ERC20 totalSupply() function on Pharos using a read-only call? Explain exactly what this function returns, its parameters and units. Use the Pharos contract tutorials and cite the documentation.",
+      "status": "answered",
+      "answer": "Use a read-only `cast call` against the token contract:\n\n```bash\ncast call <TOKEN_ADDRESS> \"totalSupply()(uint256)\" --rpc-url <PHAROS_RPC_URL>\n```\n\n`totalSupply()` takes **no function parameters**. It returns one `uint256`: the token’s total supply, not a particular account’s balance. The Pharos Rust tutorial’s ABI marks it `view` and declares that return type; its token example sets `DECIMALS` to 18. See [Rust](https://docs.pharos.xyz/developer-guide/rust).\n\nThe returned integer is in the token’s smallest units; it is not automatically formatted using decimals. To display whole tokens, divide by `10 ** decimals()` for that token. Do not assume 18 decimals for every token.\n\n`cast call` performs a read without broadcasting a transaction. At the RPC level, Pharos `eth_call` executes a message call without creating a transaction and returns hexadecimal data. See [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide) and [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods) in the JSON-RPC methods.\n\n# Sources\n\n- [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods)\n- [Rust](https://docs.pharos.xyz/developer-guide/rust)\n- [Call EVM From WASM](https://docs.pharos.xyz/developer-guide/interoperability/call-evm-from-wasm)\n- [Write Your First Token](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token)\n- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)\n- [Gas Model](https://docs.pharos.xyz/getting-started/gas-model)\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)\n- [Chainlink Push Engine Feeds](https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe)\n- [Token Registry](https://docs.pharos.xyz/getting-started/token-registry)\n- [About Pharos](https://docs.pharos.xyz/introduction/readme)\n- [FAQs](https://docs.pharos.xyz/getting-started/faqs)\n- [Node Management](https://docs.pharos.xyz/node-and-validator-guide/node-management)\n- [Interoperability](https://docs.pharos.xyz/developer-guide/interoperability)",
+      "sources": [
+        "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods",
+        "https://docs.pharos.xyz/developer-guide/rust",
+        "https://docs.pharos.xyz/developer-guide/interoperability/call-evm-from-wasm",
+        "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide",
+        "https://docs.pharos.xyz/getting-started/gas-model",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe",
+        "https://docs.pharos.xyz/getting-started/token-registry",
+        "https://docs.pharos.xyz/introduction/readme",
+        "https://docs.pharos.xyz/getting-started/faqs",
+        "https://docs.pharos.xyz/node-and-validator-guide/node-management",
+        "https://docs.pharos.xyz/developer-guide/interoperability"
+      ],
+      "provider": "Pharos Developer Docs MCP",
+      "capturedAt": "2026-10-13T23:45:58.297Z"
+    },
+    "createdAt": "2026-10-13T23:45:58.297Z"
+  },
+  "executed": true,
+  "result": {
+    "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "function": "totalSupply",
+    "args": [],
+    "block": "0x133e323",
+    "raw": "0x000000000000000000000000000000000000000000000000000010845c5c5174",
+    "value": "18160671281524"
+  },
+  "verification": {
+    "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "function": "totalSupply",
+    "args": [],
+    "block": "0x133e323",
+    "raw": "0x000000000000000000000000000000000000000000000000000010845c5c5174",
+    "value": "18160671281524"
+  },
+  "humanValue": {
+    "decimals": 6,
+    "amount": "18160671.281524"
+  },
+  "block": "0x133e323",
+  "interpretation": "totalSupply returned 18160671281524 raw token units (18160671.281524 tokens at 6 decimals) at block 20177699.",
+  "verificationMethod": "Repeat the same read at the same block; this checks consistency, not independent-provider agreement.",
+  "capturedAt": "2026-10-13T23:45:59.667Z"
+}

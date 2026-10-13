@@ -1,0 +1,51 @@
+{
+  "status": "verified",
+  "plan": {
+    "request": "How do I read my native PROS balance on Pharos?",
+    "intent": {
+      "kind": "native",
+      "function": "get_balance"
+    },
+    "resolvedTarget": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+    "question": "How do I read the native PROS balance of an address on Pharos via get_balance/eth_getBalance? Explain units and a read-only verification method.",
+    "answer": {
+      "question": "How do I read the native PROS balance of an address on Pharos via get_balance/eth_getBalance? Explain units and a read-only verification method.",
+      "status": "answered",
+      "answer": "`get_balance` reads the address’s **native PROS** balance; it maps to JSON-RPC `eth_getBalance`. This is an account-balance query, not an ERC-20 contract call. See [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp).\n\nFor direct RPC, query the Pharos mainnet endpoint with an address and block tag:\n\n```bash\ncurl https://rpc.pharos.xyz \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"jsonrpc\":\"2.0\",\"method\":\"eth_getBalance\",\"params\":[\"0xYOUR_ADDRESS\",\"latest\"],\"id\":1}'\n```\n\nThe result is a **hexadecimal wei** amount. Convert it to PROS by parsing the hex as an integer and dividing by `10^18`. The method accepts tags such as `latest` or a specific block number. See [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods) and [Pacific Mainnet](https://docs.pharos.xyz/getting-started/network/pacific-mainnet).\n\n**Read-only verification:** make the RPC call without signing or sending a transaction. Compare its converted balance with the address page on [PharosScan](https://www.pharosscan.xyz); the explorer displays the on-chain PROS balance.\n\n# Sources\n\n- [Get PROS Gas](https://docs.pharos.xyz/getting-started/get-pros-gas)\n- [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods)\n- [eth_getProof — Storage State Verification (SPV)](https://docs.pharos.xyz/api-and-sdk/eth-getproof)\n- [Token Registry](https://docs.pharos.xyz/getting-started/token-registry)\n- [Chainlink Push Engine Feeds](https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe)\n- [Pacific Mainnet](https://docs.pharos.xyz/getting-started/network/pacific-mainnet)\n- [Node Management](https://docs.pharos.xyz/node-and-validator-guide/node-management)\n- [RPC Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/rpc)\n- [Block Explorer](https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer)\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)",
+      "sources": [
+        "https://docs.pharos.xyz/getting-started/get-pros-gas",
+        "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods",
+        "https://docs.pharos.xyz/api-and-sdk/eth-getproof",
+        "https://docs.pharos.xyz/getting-started/token-registry",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe",
+        "https://docs.pharos.xyz/getting-started/network/pacific-mainnet",
+        "https://docs.pharos.xyz/node-and-validator-guide/node-management",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/rpc",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+      ],
+      "provider": "Pharos Developer Docs MCP",
+      "capturedAt": "2026-10-13T23:49:25.506Z"
+    },
+    "createdAt": "2026-10-13T23:49:25.506Z"
+  },
+  "executed": true,
+  "result": {
+    "address": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+    "balanceWei": "168347912593363296",
+    "balance": "0.168347912593363296",
+    "symbol": "PROS",
+    "balanceHex": "0x2561788d8ce5160"
+  },
+  "verification": {
+    "address": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+    "balanceWei": "168347912593363296",
+    "balance": "0.168347912593363296",
+    "symbol": "PROS",
+    "balanceHex": "0x2561788d8ce5160"
+  },
+  "block": "0x133e3d0",
+  "interpretation": "The address held 0.168347912593363296 PROS at block 20177872.",
+  "verificationMethod": "Repeat the same read at the same block; this checks consistency, not independent-provider agreement.",
+  "capturedAt": "2026-10-13T23:49:26.328Z"
+}

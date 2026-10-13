@@ -1,0 +1,21 @@
+{
+  "wallet": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+  "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+  "conditions": [
+    {
+      "signal": "nativeBalanceWei",
+      "op": "gte",
+      "threshold": "0"
+    },
+    {
+      "signal": "supplyRaw",
+      "op": "gte",
+      "threshold": "1"
+    },
+    {
+      "signal": "gasPriceWei",
+      "op": "lte",
+      "threshold": "0"
+    }
+  ]
+}

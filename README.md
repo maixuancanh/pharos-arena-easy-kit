@@ -105,3 +105,14 @@ The contract reader supports standard ERC-20 string metadata. Tokens using bytes
 - [DApp Support Agent](tasks/dapp-support-agent/README.md): transaction/receipt through Chain MCP, original PharosScan trace, and three actual failed transaction examples. SPL0 is decoded but its contract-specific meaning remains unverified.
 
 Use `node more.mjs alert ...` or `node more.mjs support TXHASH`; see each task README for complete commands and limits. `npm test` covers threshold precision, notification retries/deduplication, ABI error decoding and conservative failure classification.
+
+
+## Ten more tasks (Medium to Hard)
+
+[Batch overview](TEN-TASKS.md) · [Public proof](https://maixuancanh.github.io/pharos-arena-easy-kit/ten.html) · [Latest weekly digest](https://maixuancanh.github.io/pharos-arena-easy-kit/digest-latest.html)
+
+The ten new implementations are runnable through `node ten.mjs`. They have separate task READMEs, live capture outputs, original MCP/indexer transcripts and explicit coverage limits. Nine are Medium and the final Doc-Grounded Builder is Hard. These ten are implemented but have not been submitted to Arena. The earlier six submissions are unchanged.
+
+Four local Skill packages follow the documented SkillEngine knowledge-package format. Their helpers evaluate policies, chain conditions or preflight simulations, and retain the Skill file hash. No hosted SkillEngine runtime or Anvita publication is claimed. Nothing signs or broadcasts a transaction.
+
+The weekly digest GitHub workflow generates current/previous seven-day reports and deploys the static proof site every Monday at 07:00 Vietnam time, with manual dispatch available. A local worker can also run at the default seven-day interval, but local output reaches the public page through deployment.

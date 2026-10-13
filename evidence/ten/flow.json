@@ -1,0 +1,70 @@
+{
+  "skill": {
+    "name": "pharos-state-brief",
+    "path": "skills/pharos-state-brief/SKILL.md",
+    "sha256": "d32250d939b9e864644ee7720fec0d2ba6fbedac0d5887fdbe18ee03468d3a80",
+    "execution": "Local agent instructions plus deterministic helper; no hosted SkillEngine API is claimed."
+  },
+  "request": "Give me a Pharos account and token state brief.",
+  "flow": [
+    "user request",
+    "local Skill instructions",
+    "Chain MCP snapshot and metadata",
+    "Skill output formatted from those results"
+  ],
+  "data": {
+    "block": 20177475,
+    "tag": "0x133e243",
+    "wallet": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+    "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "values": {
+      "nativeBalanceWei": "168347912593363296",
+      "supplyRaw": "18160671281524",
+      "gasPriceWei": "10000000000"
+    },
+    "observed": {
+      "native": {
+        "address": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+        "balanceWei": "168347912593363296",
+        "balance": "0.168347912593363296",
+        "symbol": "PROS",
+        "balanceHex": "0x2561788d8ce5160"
+      },
+      "supply": {
+        "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+        "function": "totalSupply",
+        "args": [],
+        "block": "0x133e243",
+        "raw": "0x000000000000000000000000000000000000000000000000000010845c5c5174",
+        "value": "18160671281524"
+      },
+      "gas": {
+        "gasPriceWei": "10000000000",
+        "gasPriceGwei": "10",
+        "gasPriceHex": "0x2540be400",
+        "maxPriorityFeePerGasWei": "0",
+        "maxPriorityFeePerGasGwei": "0",
+        "maxPriorityFeePerGasHex": "0x0"
+      }
+    },
+    "note": "Balance and supply are pinned to the same block. Gas price is the current node quote, not a historical block value.",
+    "capturedAt": "2026-10-13T23:41:53.893Z"
+  },
+  "token": {
+    "network": "Pharos Pacific Mainnet",
+    "chainId": 1672,
+    "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "block": 20177475,
+    "blockTag": "0x133e243",
+    "name": "USDC",
+    "symbol": "USDC",
+    "decimals": 6,
+    "totalSupply": "18160671.281524",
+    "totalSupplyRaw": "18160671281524",
+    "explanation": "USDC (USDC) has a total supply of 18160671.281524 USDC at block 20177475.",
+    "explorer": "https://pharosscan.xyz/address/0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "capturedAt": "2026-10-13T23:41:55.561Z"
+  },
+  "brief": "At block 20177475, 0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1 held 0.168347912593363296 PROS. USDC (USDC) reported total supply 18160671.281524 at block 20177475. Current gas quote: 10.0 gwei.",
+  "capturedAt": "2026-10-13T23:41:55.561Z"
+}

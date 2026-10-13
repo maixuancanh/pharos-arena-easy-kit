@@ -1,0 +1,36 @@
+{
+  "skill": {
+    "name": "pharos-dry-run",
+    "path": "skills/pharos-dry-run/SKILL.md",
+    "sha256": "4c262e5c3b480a3ecbe87147b1ec56ec668063fc0727e6a818f536a0aa84fe58",
+    "execution": "Local agent instructions plus deterministic helper; no hosted SkillEngine API is claimed."
+  },
+  "simulation": {
+    "status": "predicted-revert",
+    "canExecute": false,
+    "executionMode": "simulation-only; signing and broadcasting are not implemented",
+    "transaction": {
+      "from": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+      "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "data": "0xa9059cbb000000000000000000000000f3503da2961ff5118adaa2c4ff8d9a6fb28a411f0000000000000000000000000000000000000000000000000000000000000001",
+      "value": "0x0"
+    },
+    "block": "0x133e242",
+    "amountRaw": "1",
+    "error": "MCP tool failed: {\n  \"error\": {\n    \"message\": \"execution reverted: ERC20: transfer amount exceeds balance\",\n    \"code\": 3,\n    \"data\": \"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000\"\n  }\n}",
+    "estimatedCostWei": null,
+    "balancesBefore": {
+      "sender": "0",
+      "recipient": "8456850942369"
+    },
+    "balancesAfterPredicted": null,
+    "predictionAssumptions": "Standard non-fee ERC20 transfer; token contract behavior and current gas estimation can differ at execution. No state was changed.",
+    "capturedAt": "2026-10-13T23:41:50.057Z"
+  },
+  "barrier": {
+    "executed": false,
+    "reason": "simulation-failed",
+    "executorInvocations": 0
+  },
+  "note": "The executor only returns an unsigned preparation. Failed simulations cannot reach it. No private key, signing or broadcast path exists."
+}

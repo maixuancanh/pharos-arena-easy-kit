@@ -1,0 +1,41 @@
+{
+  "skill": {
+    "name": "pharos-policy-gate",
+    "path": "skills/pharos-policy-gate/SKILL.md",
+    "sha256": "b8118c0836374d325d0edc6263797d7bdec652a6c736ce725597a64fbc42ad81",
+    "execution": "Local agent instructions plus deterministic helper; no hosted SkillEngine API is claimed."
+  },
+  "decision": "deny",
+  "rule": "spend-limit",
+  "trace": [
+    {
+      "rule": "spend-limit",
+      "pass": false,
+      "value": "1",
+      "limit": "0"
+    },
+    {
+      "rule": "allowlist",
+      "pass": true,
+      "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815"
+    },
+    {
+      "rule": "time-window",
+      "pass": true,
+      "hour": 23.683333333333334,
+      "start": 0,
+      "end": 24
+    }
+  ],
+  "evaluatedAt": "2026-10-13T23:41:41.057Z",
+  "executed": false,
+  "result": null,
+  "request": {
+    "from": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+    "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "value": "0x1",
+    "data": "0x18160ddd"
+  },
+  "mode": "Read-only simulation action; no transaction broadcast.",
+  "capturedAt": "2026-10-13T23:41:41.057Z"
+}

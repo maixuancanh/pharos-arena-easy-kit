@@ -1,0 +1,40 @@
+import {getAddress,parseUnits,formatUnits} from 'ethers';
+export const address=x=>getAddress(x).toLowerCase();
+export function uint(x){if(typeof x!=='string'||!(/^(0x[0-9a-f]+|\d+)$/i.test(x)))throw new Error('Expected unsigned integer string');const n=BigInt(x);if(n>2n**256n-1n)throw new Error('Integer exceeds uint256');return n;}
+function date(x){if(!/^\d{4}-\d{2}-\d{2}(?:T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2}))?$/.test(x??''))throw new Error('Use YYYY-MM-DD (UTC) or an ISO timestamp with timezone');const d=Date.parse(x),calendar=Date.parse(x.slice(0,10)+'T00:00:00Z');if(!Number.isFinite(d)||!Number.isFinite(calendar)||new Date(calendar).toISOString().slice(0,10)!==x.slice(0,10))throw new Error('Invalid calendar date');return d;}
+export function dateRange(since,until){const start=date(since),end=date(until);if(start>=end)throw new Error('Start must precede exclusive end');return {start,end,since,until,semantics:'UTC; start inclusive, end exclusive'};}
+export function groupActivity(wallet,transactions,tokens=[]){
+ wallet=address(wallet);const names=['transfers-in','transfers-out','swaps','approvals','contract-interactions','failed'];
+ const groups=Object.fromEntries(names.map(k=>[k,{count:0,nativeRaw:0n,tokenRaw:{},transactions:new Set()}]));const records=[];
+ for(const tx of transactions){
+  const from=tx.from_address?.toLowerCase(),to=tx.to_address?.toLowerCase();if(from!==wallet&&to!==wallet)continue;
+  let category=Number(tx.receipt_status)===0?'failed':tx.method_id==='0x095ea7b3'||/^approve$/i.test(tx.method??'')?'approvals':/swap|exact.?input|exact.?output/i.test(tx.method??'')?'swaps':tx.method_id==='0x'||!tx.method_id?(to===wallet?'transfers-in':'transfers-out'):'contract-interactions';
+  const g=groups[category];g.count++;g.transactions.add(tx.hash);if(category!=='failed')g.nativeRaw+=parseUnits(String(tx.value??'0'),18);
+  records.push({hash:tx.hash,category,value:String(tx.value??'0'),asset:'PROS',from,to,time:tx.block_timestamp,method:tx.method??tx.method_id,explorer:`https://pharosscan.xyz/tx/${tx.hash}`,classification:'explorer method/selector heuristic'});
+ }
+ const seen=new Set();for(const e of tokens){const from=e.from_address?.toLowerCase(),to=e.to_address?.toLowerCase();if(from!==wallet&&to!==wallet)continue;const key=`${e.transaction_hash}:${e.log_index}`;if(seen.has(key))continue;seen.add(key);const category=to===wallet?'transfers-in':'transfers-out',g=groups[category];const contract=address(e.token_address),decimals=Number(e.decimals??e.token_info?.decimals);if(!Number.isInteger(decimals)||decimals<0||decimals>36)throw new Error('Unsupported token decimals');const raw=parseUnits(String(e.value),decimals);const previous=g.tokenRaw[contract]??{raw:0n,decimals,symbol:e.token_symbol??e.symbol??contract};if(previous.decimals!==decimals)throw new Error('Inconsistent token decimals');previous.raw+=raw;g.tokenRaw[contract]=previous;g.count++;g.transactions.add(e.transaction_hash);records.push({hash:e.transaction_hash,logIndex:e.log_index,category,value:String(e.value),asset:previous.symbol,token:contract,from,to,time:e.block_timestamp,explorer:`https://pharosscan.xyz/tx/${e.transaction_hash}`,classification:'indexed ERC20 Transfer'});}
+ return {wallet,categories:Object.fromEntries(Object.entries(groups).map(([k,g])=>[k,{count:g.count,uniqueTransactions:g.transactions.size,nativeTotal:formatUnits(g.nativeRaw,18),tokenTotals:Object.fromEntries(Object.entries(g.tokenRaw).map(([a,t])=>[a,{symbol:t.symbol,decimals:t.decimals,amount:formatUnits(t.raw,t.decimals)}]))}])),records,uniqueTransactions:new Set(records.map(r=>r.hash)).size,notes:'Counts are activity records. Token Transfer records can share a transaction with a swap or approval. Amounts are not USD values; failed requests add no moved value.'};
+}
+export function policyDecision(policy,request,now=new Date()){
+ const value=uint(request.value??'0'),limit=uint(policy.maxValueWei);const allowlist=policy.allowlist.map(address);const to=address(request.to);const start=policy.utcWindow.start,end=policy.utcWindow.end;
+ if(!Number.isFinite(start)||!Number.isFinite(end)||start<0||start>=24||end<0||end>24||start===end||!Number.isFinite(now.getTime()))throw new Error('Invalid UTC window or trusted clock');
+ const trace=[];const spend=value<=limit;trace.push({rule:'spend-limit',pass:spend,value:value.toString(),limit:limit.toString()});const allowed=allowlist.includes(to);trace.push({rule:'allowlist',pass:allowed,to});const hour=now.getUTCHours()+now.getUTCMinutes()/60;const time=start<end?hour>=start&&hour<end:hour>=start||hour<end;trace.push({rule:'time-window',pass:time,hour,start,end});
+ const denied=trace.find(t=>!t.pass);return {decision:denied?'deny':'allow',rule:denied?.rule??'all-rules-passed',trace,evaluatedAt:now.toISOString()};
+}
+export async function guardedAction(policy,request,execute,now){const decision=policyDecision(policy,request,now);return {...decision,executed:decision.decision==='allow',result:decision.decision==='allow'?await execute():null};}
+export function guardianDecision(conditions,values){
+ if(!Array.isArray(conditions)||conditions.length<3||new Set(conditions.map(c=>c.signal)).size!==conditions.length)throw new Error('At least three independent signals required');
+ const trace=conditions.map(c=>{const value=uint(values[c.signal]),threshold=uint(c.threshold);if(!['gte','lte','gt','lt','eq'].includes(c.op))throw new Error('Unsupported comparator');const pass={gte:value>=threshold,lte:value<=threshold,gt:value>threshold,lt:value<threshold,eq:value===threshold}[c.op];return {...c,value:value.toString(),pass};});return {decision:trace.every(x=>x.pass)?'fire':'hold',trace};
+}
+export function riskAssessment(profile,transactions,{flagged=[],now=new Date(),approvalInputs=[]}={}){
+ const flags=new Set(flagged.map(address));const failed=transactions.filter(t=>Number(t.receipt_status)===0).length;const rate=transactions.length?failed/transactions.length:null;const age=profile.block_timestamp?(now.getTime()-Date.parse(profile.block_timestamp))/86400000:null;
+ const exposures=transactions.filter(t=>flags.has(t.to_address?.toLowerCase())||flags.has(t.from_address?.toLowerCase()));const unlimited=approvalInputs.filter(t=>/^0x095ea7b3/i.test(t.input??'')&&t.input.length===138&&BigInt('0x'+t.input.slice(74))===2n**256n-1n);
+ const signals=[
+  {name:'verified-code',status:profile.is_contract?profile.is_verified===true?'pass':profile.is_verified===false?'flag':'unknown':'not-applicable',weight:25,reason:profile.is_contract?'Explorer code verification, not proof of safety.':'EOA: contract verification does not apply.'},
+  {name:'contract-age',status:profile.is_contract&&age!==null&&Number.isFinite(age)?age<7?'flag':'pass':'unknown',weight:15,valueDays:age,reason:'Only the explorer-reported deployment timestamp is used; missing age is unknown.'},
+  {name:'failed-history',status:rate===null?'unknown':rate>=0.3?'flag':'pass',weight:30,failureFraction:rate,sampleSize:transactions.length,reason:'Repeated failures may indicate configuration problems or risky interactions, not necessarily abuse.'},
+  {name:'flagged-counterparty',status:!flags.size?'unknown':exposures.length?'flag':'pass',weight:40,matches:exposures.map(t=>t.hash),reason:flags.size?'Matches an explicitly supplied flagged list. The list needs its own provenance.':'No flagged-address intelligence was configured; this check is unknown.'},
+  {name:'unlimited-approval',status:approvalInputs.length?unlimited.length?'flag':'pass':'unknown',weight:20,matches:unlimited.map(t=>t.hash),reason:'Maximum uint256 approvals expose tokens to a spender if that spender is compromised.'}
+ ];
+ const score=signals.filter(s=>s.status==='flag').reduce((s,x)=>s+x.weight,0);return {level:score>=60?'high':score>=25?'medium':'low',score,signals,verdict:score?'Review the listed flags before interacting.':'No configured flags were found in this sample; this is not a safety guarantee.',coverage:'Bounded public history and sampled approval calls. Unknown data is not a pass.'};
+}

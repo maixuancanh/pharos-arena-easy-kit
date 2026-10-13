@@ -1,0 +1,18 @@
+{
+  "policy": {
+    "maxValueWei": "0",
+    "allowlist": [
+      "0xc879c018db60520f4355c26ed1a6d572cdac1815"
+    ],
+    "utcWindow": {
+      "start": 0,
+      "end": 24
+    }
+  },
+  "request": {
+    "from": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+    "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "value": "0x1",
+    "data": "0x18160ddd"
+  }
+}

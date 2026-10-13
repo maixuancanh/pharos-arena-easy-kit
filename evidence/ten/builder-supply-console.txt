@@ -1,0 +1,62 @@
+{
+  "status": "verified",
+  "plan": {
+    "request": "How do I read the USDC total supply on Pharos?",
+    "intent": {
+      "kind": "contract",
+      "function": "totalSupply"
+    },
+    "resolvedTarget": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "question": "How do I read the ERC20 totalSupply() function on Pharos using a read-only call? Explain exactly what this function returns, its parameters and units. Use the Pharos contract tutorials and cite the documentation.",
+    "answer": {
+      "question": "How do I read the ERC20 totalSupply() function on Pharos using a read-only call? Explain exactly what this function returns, its parameters and units. Use the Pharos contract tutorials and cite the documentation.",
+      "status": "answered",
+      "answer": "Use `cast call` to invoke `totalSupply()` without sending a transaction:\n\n```bash\ncast call <token_contract_address> \"totalSupply()(uint256)\" --rpc-url <PHAROS_RPC_URL>\n```\n\nThis returns the contract’s total supply as a `uint256`. The function takes **no arguments**; the contract address and RPC URL identify what to query. Its ABI marks it `view`, and Pharos’s `eth_call` runs contract reads without creating a transaction. See [Rust](https://docs.pharos.xyz/developer-guide/rust) and [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods).\n\nThe value is the token amount in the contract’s integer units, not necessarily a human-formatted amount. Check that token’s `decimals()` value to interpret it; the tutorial’s example sets `DECIMALS` to `18`. **Do not assume every token uses 18 decimals.** See [Rust](https://docs.pharos.xyz/developer-guide/rust).\n\n# Sources\n\n- [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods)\n- [Rust](https://docs.pharos.xyz/developer-guide/rust)\n- [Call EVM From WASM](https://docs.pharos.xyz/developer-guide/interoperability/call-evm-from-wasm)\n- [Write Your First Token](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token)\n- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)\n- [Gas Model](https://docs.pharos.xyz/getting-started/gas-model)\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)\n- [Chainlink Push Engine Feeds](https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe)\n- [Token Registry](https://docs.pharos.xyz/getting-started/token-registry)\n- [About Pharos](https://docs.pharos.xyz/introduction/readme)\n- [Write Your First Token](https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token)\n- [Write Your First Uniswap Contract](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-uniswap-contract)\n- [Write Your First Uniswap Contract](https://docs.pharos.xyz/developer-guide/foundry/write-your-first-uniswap-contract)\n- [Write Your First NFT](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-nft)\n- [Write Your First NFT](https://docs.pharos.xyz/developer-guide/foundry/write-your-first-nft)",
+      "sources": [
+        "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods",
+        "https://docs.pharos.xyz/developer-guide/rust",
+        "https://docs.pharos.xyz/developer-guide/interoperability/call-evm-from-wasm",
+        "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide",
+        "https://docs.pharos.xyz/getting-started/gas-model",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe",
+        "https://docs.pharos.xyz/getting-started/token-registry",
+        "https://docs.pharos.xyz/introduction/readme",
+        "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token",
+        "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-uniswap-contract",
+        "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-uniswap-contract",
+        "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-nft",
+        "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-nft"
+      ],
+      "provider": "Pharos Developer Docs MCP",
+      "capturedAt": "2026-10-13T23:48:43.927Z"
+    },
+    "createdAt": "2026-10-13T23:48:43.928Z"
+  },
+  "executed": true,
+  "result": {
+    "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "function": "totalSupply",
+    "args": [],
+    "block": "0x133e3aa",
+    "raw": "0x000000000000000000000000000000000000000000000000000010845c5c5174",
+    "value": "18160671281524"
+  },
+  "verification": {
+    "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "function": "totalSupply",
+    "args": [],
+    "block": "0x133e3aa",
+    "raw": "0x000000000000000000000000000000000000000000000000000010845c5c5174",
+    "value": "18160671281524"
+  },
+  "humanValue": {
+    "decimals": 6,
+    "amount": "18160671.281524"
+  },
+  "block": "0x133e3aa",
+  "interpretation": "totalSupply returned 18160671281524 raw token units (18160671.281524 tokens at 6 decimals) at block 20177834.",
+  "verificationMethod": "Repeat the same read at the same block; this checks consistency, not independent-provider agreement.",
+  "capturedAt": "2026-10-13T23:48:45.526Z"
+}

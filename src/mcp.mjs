@@ -6,7 +6,7 @@ import { setTimeout as sleep } from 'node:timers/promises';
 
 export const CHAIN_MCP = 'https://mcp.pharos.xyz/mcp';
 export const DOCS_MCP = 'https://docs.pharos.xyz/~gitbook/mcp';
-const allowed = new Set(['get_chain_info','get_block','get_code','eth_call','get_logs','get_transaction','get_balance','estimate_gas','get_transaction_receipt','searchDocumentation','getPage','askQuestion']);
+const allowed = new Set(['get_chain_info','get_block','get_code','eth_call','get_logs','get_transaction','get_balance','get_gas_price','get_transaction_count','estimate_gas','get_transaction_receipt','searchDocumentation','getPage','askQuestion']);
 
 export function unwrapTool(result) {
   const text = (result.content ?? []).filter(c=>c.type==='text').map(c=>c.text).join('\n');

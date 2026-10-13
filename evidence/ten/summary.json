@@ -1,0 +1,147 @@
+{
+  "verifiedAt": "2026-10-13T23:50:06.724Z",
+  "count": 10,
+  "tiers": {
+    "Medium": 9,
+    "Hard": 1
+  },
+  "submissionStatus": "not-submitted",
+  "potentialBasePoints": 1100,
+  "metrics": {
+    "whaleAddresses": 5,
+    "whaleSignificantMoves": 4,
+    "auditTransactions": 8,
+    "policyDenies": 3,
+    "guardianOutcomes": [
+      "fire",
+      "hold"
+    ],
+    "simulationGas": "79757",
+    "simulationFailureExecutorInvocations": 0,
+    "builderVerifiedRequests": 3,
+    "builderUnsupportedRefusal": true,
+    "digestObservedTicks": 2
+  },
+  "tasks": [
+    {
+      "order": 1,
+      "slug": "docs-chain-mcp-agent",
+      "name": "Docs MCP + Chain MCP Agent",
+      "tier": "Medium",
+      "result": "Sourced Docs MCP explanations were followed by real Chain MCP calls to totalSupply and decimals. Both reads were verified at a pinned block.",
+      "limits": "Only whitelisted read-only intents are supported. Same-provider same-block read repetition checks consistency, not independent-provider agreement. Mixed write/read requests and mismatched targets are refused.",
+      "evidence": [
+        "compose-totalSupply",
+        "compose-decimals"
+      ]
+    },
+    {
+      "order": 2,
+      "slug": "audit-log-agent",
+      "name": "Audit-Log Agent",
+      "tier": "Medium",
+      "result": "The captured report contains 8 unique transactions. Both normal and ERC20 history reached the selected interval start in the indexer. Markdown and CSV exports are included.",
+      "limits": "Method labels/selector classification of swaps and contract calls is heuristic. Token events are indexed Transfers. Counts are activity records, with separate unique transaction counts. No USD conversion. A page cap produces an explicitly partial report; indexer completeness is not guaranteed.",
+      "evidence": [
+        "audit"
+      ]
+    },
+    {
+      "order": 3,
+      "slug": "whale-watching-agent",
+      "name": "Whale-Watching Agent",
+      "tier": "Medium",
+      "result": "Five configurable public addresses; 4 significant USDC moves matched the configured threshold in a real Chain MCP log scan.",
+      "limits": "The demo watchlist was selected from public onchain activity, not the user's wallets. Labels are explicit configuration; unknown addresses remain literal. This command reports a bounded recent range. Long-running cursor monitoring is a separate extension, not claimed here.",
+      "evidence": [
+        "whale"
+      ]
+    },
+    {
+      "order": 4,
+      "slug": "wallet-risk-checker",
+      "name": "Wallet Risk Checker",
+      "tier": "Medium",
+      "result": "A verified older contract sample scored low; an unverified contract with a high observed failure fraction scored medium. Five signals are evaluated with explicit unknown states.",
+      "limits": "Both examples use bounded, partial history. Low means no observed configured flags, not proven safe or clean. An empty flagged list is unknown, not a pass. Only successful approvals sent by the checked owner are sampled; no external threat-intelligence feed is claimed.",
+      "evidence": [
+        "risk-clean",
+        "risk-observed"
+      ]
+    },
+    {
+      "order": 5,
+      "slug": "weekly-digest-agent",
+      "name": "Weekly Digest Agent",
+      "tier": "Medium",
+      "result": "Current seven-day metrics are compared to the preceding seven days, with 3 distinct notable transactions. Two actual worker ticks were captured using an accelerated two-second interval. The production GitHub workflow runs Mondays at 00:00 UTC (07:00 Vietnam) and deploys the refreshed digest page.",
+      "limits": "The accelerated demo verifies scheduling, not the passage of an actual week. Hosted starts may be delayed by GitHub. Indexer/page-cap limitations propagate into the digest. A local worker writes local HTML; the included hosted workflow supplies recurring public publication.",
+      "evidence": [
+        "digest"
+      ]
+    },
+    {
+      "order": 6,
+      "slug": "policy-gatekeeper",
+      "name": "Policy Gatekeeper",
+      "tier": "Medium",
+      "result": "One allowed read-only call and one actual denied configuration for each spend, allowlist and trusted UTC time-window rule. Denied requests did not invoke their action.",
+      "limits": "This demo Skill gates read-only eth_call simulations. It is not a production signing gateway. No private key or broadcast method exists. UTC windows use the trusted host clock, not a client-supplied timestamp.",
+      "evidence": [
+        "policy-allow",
+        "policy-spend-deny",
+        "policy-address-deny",
+        "policy-time-deny"
+      ]
+    },
+    {
+      "order": 7,
+      "slug": "threshold-guardian",
+      "name": "Threshold Guardian",
+      "tier": "Medium",
+      "result": "Three distinct live signals (native balance, token supply and gas quote) were evaluated. One configurable run fired the token report; another held and did not run the report action.",
+      "limits": "Fire performs a read-only report, not a rebalance. Supply and native balance are pinned; the gas quote is current and cannot be pinned by this API.",
+      "evidence": [
+        "guardian-fire",
+        "guardian-hold"
+      ]
+    },
+    {
+      "order": 8,
+      "slug": "dry-run-executor",
+      "name": "Dry-Run Executor",
+      "tier": "Medium",
+      "result": "A successful read-only ERC20 transfer simulation estimated 79757 gas and 797570000000000 wei. An excessive transfer reverted and invoked the executor zero times.",
+      "limits": "The successful sender is a public funded EOA used for simulation only; ownership is not claimed. Expected balances assume a standard non-fee ERC20. Gas estimate uses current state while the call/balance reads use a fixed block. Successful execution only prepares an unsigned transaction; actual signing/broadcasting is outside this build.",
+      "evidence": [
+        "dry-run-success",
+        "dry-run-revert"
+      ]
+    },
+    {
+      "order": 9,
+      "slug": "skill-chain-mcp-flow",
+      "name": "Skill + Chain MCP Flow",
+      "tier": "Medium",
+      "result": "A single account/state request loaded the local state-brief Skill, fetched live Chain MCP balance/supply/gas/metadata, and produced a brief from those exact inputs.",
+      "limits": "SkillEngine follows the official knowledge-package pattern; these are custom local Skills, not an invented hosted runtime or an Anvita deployment. The native balance and supply snapshot share one block; token metadata/report calls may use a later block and both are shown.",
+      "evidence": [
+        "flow"
+      ]
+    },
+    {
+      "order": 10,
+      "slug": "doc-grounded-builder-agent",
+      "name": "Doc-Grounded Builder Agent",
+      "tier": "Hard",
+      "result": "Three different supported how-do-I requests were planned with sourced Docs MCP answers, executed through Chain MCP, and verified. An unsupported banana-on-Mars request was refused without a chain action.",
+      "limits": "This Hard-task build has a bounded three-intent scope. It does not synthesize arbitrary contract code or deploy contracts. Verification is same-provider consistency, not independent corroboration.",
+      "evidence": [
+        "builder-supply",
+        "builder-decimals",
+        "builder-native",
+        "builder-unsupported"
+      ]
+    }
+  ]
+}

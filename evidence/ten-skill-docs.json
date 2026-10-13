@@ -1,0 +1,22 @@
+{
+  "question": "What is Pharos SkillEngine, where is the official package or repository, and how should I author and run a custom read-only Skill? Provide actual SKILL.md frontmatter and required structure; clarify whether there is an execution runtime API.",
+  "status": "answered",
+  "answer": "Pharos Skill Engine is a **knowledge-and-tooling package**: an AI reads `SKILL.md` and reference files, then runs commands such as Foundry’s `cast`. It is **not an SDK or execution API**. Anvita Flow can host a Skill as a Service Agent, but that is a managed platform runtime, not a SkillEngine runtime API. See [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide) and [Anvita Flow](https://docs.pharos.xyz/tooling-and-infrastructure/overview).\n\nThe Skill Engine guide names `pharos-skill-engine-0.1.0.zip`, but provides **no official download URL or repository**. The publishing guide documents the package format:\n\n```yaml\n---\nname: my-read-skill\ndescription: Read public data from a Pharos contract when users ask about its state.\n---\n```\n\nUse a folder matching `name`, with uppercase `SKILL.md` at its root. Add `references/<topic>.md` for command templates, parameters, output parsing, errors, and agent guidelines. Register read intents in the `SKILL.md` Capability Index. For a read-only skill, specify read commands such as `cast call` or `cast balance`; omit write operations.\n\nTo run locally, open the skill folder in Claude Code and prompt the agent. The agent follows the instructions; it does not call a SkillEngine execution API. Publishing uses a zipped package in Anvita Flow’s Developer Console. See [Publish Service Agent](https://docs.pharos.xyz/tooling-and-infrastructure/overview/publish-skill-af) and [Piggy Bank Tutorial](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide).\n\n# Sources\n\n- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)\n- [About Pharos](https://docs.pharos.xyz/introduction/readme)\n- [Why Pharos](https://docs.pharos.xyz/introduction/why-pharos)\n- [Piggy Bank Tutorial](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide)\n- [Goldsky](https://docs.pharos.xyz/tooling-and-infrastructure/indexing/goldsky)\n- [Encyclopedia](https://docs.pharos.xyz/introduction/encyclopedia)\n- [Anvita Flow](https://docs.pharos.xyz/tooling-and-infrastructure/overview)\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)\n- [Alchemy RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy)\n- [Pharos Node Monitoring](https://docs.pharos.xyz/pharos-node-monitoring)\n- [Publish Service Agent](https://docs.pharos.xyz/tooling-and-infrastructure/overview/publish-skill-af)\n- [x402](https://docs.pharos.xyz/developer-guide/x402)\n- [Validator Node Deployment](https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment)",
+  "sources": [
+    "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide",
+    "https://docs.pharos.xyz/introduction/readme",
+    "https://docs.pharos.xyz/introduction/why-pharos",
+    "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide",
+    "https://docs.pharos.xyz/tooling-and-infrastructure/indexing/goldsky",
+    "https://docs.pharos.xyz/introduction/encyclopedia",
+    "https://docs.pharos.xyz/tooling-and-infrastructure/overview",
+    "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+    "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy",
+    "https://docs.pharos.xyz/pharos-node-monitoring",
+    "https://docs.pharos.xyz/tooling-and-infrastructure/overview/publish-skill-af",
+    "https://docs.pharos.xyz/developer-guide/x402",
+    "https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment"
+  ],
+  "provider": "Pharos Developer Docs MCP",
+  "capturedAt": "2026-10-13T23:32:16.046Z"
+}

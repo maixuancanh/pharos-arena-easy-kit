@@ -1,0 +1,20 @@
+{
+  "status": "unsupported",
+  "plan": {
+    "request": "How do I grow bananas on Mars using the Pharos blockchain?",
+    "intent": null,
+    "resolvedTarget": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "question": "How do I grow bananas on Mars using the Pharos blockchain?",
+    "answer": {
+      "question": "How do I grow bananas on Mars using the Pharos blockchain?",
+      "status": "no-answer",
+      "answer": "No good answer found in Pharos Developer Docs. Try a more specific Pharos question.",
+      "sources": [],
+      "provider": "Pharos Developer Docs MCP",
+      "capturedAt": "2026-10-13T23:49:36.108Z"
+    },
+    "createdAt": "2026-10-13T23:49:36.108Z"
+  },
+  "executed": false,
+  "reason": "No supported executable intent; documents cannot authorize arbitrary execution."
+}

@@ -1,0 +1,58 @@
+{
+  "status": "verified",
+  "plan": {
+    "request": "How do I read ERC20 decimals on Pharos?",
+    "intent": {
+      "kind": "contract",
+      "function": "decimals"
+    },
+    "resolvedTarget": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "question": "How do I read the ERC20 decimals() function on Pharos using a read-only call? Explain exactly what this function returns, its parameters and units. Use the Pharos contract tutorials and cite the documentation.",
+    "answer": {
+      "question": "How do I read the ERC20 decimals() function on Pharos using a read-only call? Explain exactly what this function returns, its parameters and units. Use the Pharos contract tutorials and cite the documentation.",
+      "status": "answered",
+      "answer": "Use `cast call` to execute `decimals()` without sending a transaction:\n\n```bash\ncast call <TOKEN_ADDRESS> \"decimals()(uint8)\" --rpc-url <PHAROS_RPC_URL>\n```\n\nThe function takes **no parameters** and returns a `uint8`: the token’s decimal-place count. This count has no token-amount unit; it tells you how to interpret integer token amounts. For example, the Pharos Rust token tutorial sets `DECIMALS` to `18`. With that setting, divide an integer amount by `10^18` to express it in whole tokens.\n\nFor a typed application call, the Pharos Rust tutorial’s ABI declares `decimals` with `inputs: []`, `outputs: uint8`, and `stateMutability: pure`; it calls read methods with `.call()`. Pharos `eth_call` also executes a call without creating a transaction and returns hexadecimal data.\n\nSources: [Rust](https://docs.pharos.xyz/developer-guide/rust); [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods); [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide).\n\n# Sources\n\n- [Call EVM From WASM](https://docs.pharos.xyz/developer-guide/interoperability/call-evm-from-wasm)\n- [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods)\n- [Canonical Contracts](https://docs.pharos.xyz/getting-started/canonical-contracts)\n- [Rust](https://docs.pharos.xyz/developer-guide/rust)\n- [Write Your First Uniswap Contract](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-uniswap-contract)\n- [Chainlink Push Engine Feeds](https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe)\n- [EVM](https://docs.pharos.xyz/resources/evm)\n- [FAQs](https://docs.pharos.xyz/getting-started/faqs)\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)\n- [Interoperability](https://docs.pharos.xyz/developer-guide/interoperability)\n- [Write Your First Token](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token)\n- [Token Registry](https://docs.pharos.xyz/getting-started/token-registry)\n- [Write Your First Token](https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token)\n- [x402](https://docs.pharos.xyz/developer-guide/x402)\n- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)",
+      "sources": [
+        "https://docs.pharos.xyz/developer-guide/interoperability/call-evm-from-wasm",
+        "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods",
+        "https://docs.pharos.xyz/getting-started/canonical-contracts",
+        "https://docs.pharos.xyz/developer-guide/rust",
+        "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-uniswap-contract",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe",
+        "https://docs.pharos.xyz/resources/evm",
+        "https://docs.pharos.xyz/getting-started/faqs",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+        "https://docs.pharos.xyz/developer-guide/interoperability",
+        "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token",
+        "https://docs.pharos.xyz/getting-started/token-registry",
+        "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token",
+        "https://docs.pharos.xyz/developer-guide/x402",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide"
+      ],
+      "provider": "Pharos Developer Docs MCP",
+      "capturedAt": "2026-10-13T23:46:24.370Z"
+    },
+    "createdAt": "2026-10-13T23:46:24.370Z"
+  },
+  "executed": true,
+  "result": {
+    "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "function": "decimals",
+    "args": [],
+    "block": "0x133e33d",
+    "raw": "0x0000000000000000000000000000000000000000000000000000000000000006",
+    "value": "6"
+  },
+  "verification": {
+    "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "function": "decimals",
+    "args": [],
+    "block": "0x133e33d",
+    "raw": "0x0000000000000000000000000000000000000000000000000000000000000006",
+    "value": "6"
+  },
+  "block": "0x133e33d",
+  "interpretation": "This token reports 6 decimal places; divide raw token amounts by 10^6.",
+  "verificationMethod": "Repeat the same read at the same block; this checks consistency, not independent-provider agreement.",
+  "capturedAt": "2026-10-13T23:46:25.348Z"
+}

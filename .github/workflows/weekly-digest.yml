@@ -1,0 +1,52 @@
+name: Publish Pharos weekly digest
+on:
+  schedule:
+    # Monday 07:00 Vietnam time. GitHub may delay scheduled starts.
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/weekly-digest.yml'
+      - 'ten.mjs'
+      - 'src/ten/**'
+      - 'ten.html'
+      - 'scripts/stage-pages.mjs'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pharos-pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - uses: actions/configure-pages@v6.0.0
+      - run: node scripts/stage-pages.mjs
+      - name: Generate current and previous seven-day digest
+        run: >-
+          node ten.mjs digest
+          --wallet 0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1
+          --period-days 7 --max-pages 20
+          --output public/evidence/ten/digest-latest.json
+          --evidence public/evidence/ten/digest-latest-explorer.jsonl
+          --html public/digest-latest.html
+      - uses: actions/upload-pages-artifact@v5.0.0
+        with:
+          path: public
+      - name: Deploy public digest and task evidence
+        id: deployment
+        uses: actions/deploy-pages@v5.0.1
