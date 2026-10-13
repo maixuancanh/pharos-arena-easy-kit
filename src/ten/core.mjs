@@ -26,6 +26,7 @@ export function guardianDecision(conditions,values){
  if(!Array.isArray(conditions)||conditions.length<3||new Set(conditions.map(c=>c.signal)).size!==conditions.length)throw new Error('At least three independent signals required');
  const trace=conditions.map(c=>{const value=uint(values[c.signal]),threshold=uint(c.threshold);if(!['gte','lte','gt','lt','eq'].includes(c.op))throw new Error('Unsupported comparator');const pass={gte:value>=threshold,lte:value<=threshold,gt:value>threshold,lt:value<threshold,eq:value===threshold}[c.op];return {...c,value:value.toString(),pass};});return {decision:trace.every(x=>x.pass)?'fire':'hold',trace};
 }
+export function ownerApprovalCandidates(rows,wallet){wallet=address(wallet);return rows.filter(t=>t.method_id==='0x095ea7b3'&&t.from_address?.toLowerCase()===wallet&&Number(t.receipt_status)===1);}
 export function riskAssessment(profile,transactions,{flagged=[],now=new Date(),approvalInputs=[]}={}){
  const flags=new Set(flagged.map(address));const failed=transactions.filter(t=>Number(t.receipt_status)===0).length;const rate=transactions.length?failed/transactions.length:null;const age=profile.block_timestamp?(now.getTime()-Date.parse(profile.block_timestamp))/86400000:null;
  const exposures=transactions.filter(t=>flags.has(t.to_address?.toLowerCase())||flags.has(t.from_address?.toLowerCase()));const unlimited=approvalInputs.filter(t=>/^0x095ea7b3/i.test(t.input??'')&&t.input.length===138&&BigInt('0x'+t.input.slice(74))===2n**256n-1n);
