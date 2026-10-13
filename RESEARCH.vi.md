@@ -1,5 +1,8 @@
 # Pharos Season of AI — khảo sát và 3 task đã triển khai
 
+**Cập nhật 13/10/2026:** đã công khai [repo](https://github.com/maixuancanh/pharos-arena-easy-kit) và [bằng chứng](https://maixuancanh.github.io/pharos-arena-easy-kit/), đã nộp đủ 3 bài; My work xác nhận cả 3 IN REVIEW. Chưa được cộng điểm. Các mô tả chưa nộp/chưa công khai bên dưới là trạng thái khảo sát trước đó; xem SUBMISSION.md để biết trạng thái mới nhất.
+
+
 Kiểm tra ngày **13/10/2026**, múi giờ Việt Nam. Báo cáo phân biệt thông báo người dùng cung cấp, trang chính thức kiểm tra trực tiếp, kết quả chạy và phần chưa xác minh.
 
 ## Cuộc thi hoạt động thế nào?
