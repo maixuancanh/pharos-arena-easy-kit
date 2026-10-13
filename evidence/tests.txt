@@ -1,0 +1,21 @@
+
+> pharos-arena-easy-kit@1.0.0 test
+> node --test
+
+✔ read pins all four values to one block and preserves large token amounts (4.2ms)
+✔ wrong network fails before any contract read (0.435ms)
+✔ real Chain MCP get_code wrapper rejects an address with no contract (0.251ms)
+✔ monitor filters exact contract and event, decodes and deduplicates overlap (1.8594ms)
+✔ monitor pages in 1000-block windows and never advances on RPC failure (0.3302ms)
+✔ foreign or malformed log cannot silently advance the cursor (0.2483ms)
+✔ documentation cannot present an unsourced answer as success (0.3163ms)
+✔ upstream no-answer remains no-answer even with a generic source URL (0.1016ms)
+✔ MCP failures are errors and result wrappers are unwrapped without losing zero (0.2087ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 354.9837

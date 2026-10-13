@@ -1,0 +1,19 @@
+{
+  "question": "How can I query ERC-20 Transfer event logs using Pharos Chain MCP, and what is the maximum block range?",
+  "status": "answered",
+  "answer": "Call MCP’s `get_logs` tool (the `eth_getLogs` method) with a block range and filters. Set `address` to the ERC-20 contract and `topics[0]` to the `Transfer` event signature topic:\n\n```json\n{\n  \"fromBlock\": \"0x1000\",\n  \"toBlock\": \"0x13e7\",\n  \"address\": \"0xYourTokenContract\",\n  \"topics\": [\"0xTransferEventSignatureTopic\"]\n}\n```\n\nThe maximum range is **1,000 blocks per call**. Split wider ranges into 1,000-block windows. Filtering by contract address and event topic narrows results.\n\nSee [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp) and [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods).\n\n# Sources\n\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)\n- [Cross Chain Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain)\n- [Node Debugging & Configuration](https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration)\n- [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods)\n- [Why Pharos](https://docs.pharos.xyz/introduction/why-pharos)\n- [Circle CCTP](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp)\n- [Gas Model](https://docs.pharos.xyz/getting-started/gas-model)\n- [Rollback Blocks](https://docs.pharos.xyz/node-and-validator-guide/rollback-blocks)\n- [Foundry](https://docs.pharos.xyz/developer-guide/foundry)\n- [Block Explorer](https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer)",
+  "sources": [
+    "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+    "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain",
+    "https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration",
+    "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods",
+    "https://docs.pharos.xyz/introduction/why-pharos",
+    "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp",
+    "https://docs.pharos.xyz/getting-started/gas-model",
+    "https://docs.pharos.xyz/node-and-validator-guide/rollback-blocks",
+    "https://docs.pharos.xyz/developer-guide/foundry",
+    "https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer"
+  ],
+  "provider": "Pharos Developer Docs MCP",
+  "capturedAt": "2026-10-13T14:48:50.359Z"
+}

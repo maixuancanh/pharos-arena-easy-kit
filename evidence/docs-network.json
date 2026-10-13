@@ -1,0 +1,19 @@
+{
+  "question": "What is the Pharos Pacific mainnet chain ID and RPC URL?",
+  "status": "answered",
+  "answer": "Pharos Pacific Mainnet uses **chain ID `1672`** and RPC URL [`https://rpc.pharos.xyz`](https://rpc.pharos.xyz).\n\nSource: [Pacific Mainnet](https://docs.pharos.xyz/getting-started/network/pacific-mainnet).\n\n# Sources\n\n- [Pacific Mainnet](https://docs.pharos.xyz/getting-started/network/pacific-mainnet)\n- [ZAN RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan)\n- [Atlantic Testnet](https://docs.pharos.xyz/getting-started/network/atlantic-testnet)\n- [Node Management](https://docs.pharos.xyz/node-and-validator-guide/node-management)\n- [Node Debugging & Configuration](https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration)\n- [RPC Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/rpc)\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)\n- [Alchemy RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy)\n- [Cross Chain Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain)\n- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)",
+  "sources": [
+    "https://docs.pharos.xyz/getting-started/network/pacific-mainnet",
+    "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan",
+    "https://docs.pharos.xyz/getting-started/network/atlantic-testnet",
+    "https://docs.pharos.xyz/node-and-validator-guide/node-management",
+    "https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration",
+    "https://docs.pharos.xyz/tooling-and-infrastructure/rpc",
+    "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+    "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy",
+    "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain",
+    "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide"
+  ],
+  "provider": "Pharos Developer Docs MCP",
+  "capturedAt": "2026-10-13T14:48:14.661Z"
+}

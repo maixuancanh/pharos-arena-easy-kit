@@ -1,0 +1,138 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pharos Arena — Three Easy Builds</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f5f6fa;color:#18213b;font:16px/1.6 system-ui,sans-serif}main{max-width:1050px;margin:auto;padding:42px 24px}header{background:#07194b;color:white;padding:34px;border-radius:20px}h1{font-size:clamp(28px,5vw,46px);line-height:1.12;max-width:760px;margin:15px 0}h2{margin:0 0 12px;font-size:26px}h3{font-size:17px}small,.muted{color:#57657d}header .muted{color:#c3d4ef}.tag{display:inline-block;background:#244180;padding:4px 12px;border-radius:20px;font-size:13px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}.stat{background:white;padding:20px;border:1px solid #dbe2ef;border-radius:12px}.stat b{display:block;font-size:29px;color:#123ca6}section{margin:22px 0;background:#fff;border:1px solid #dbe2ef;border-radius:16px;padding:26px;scroll-margin-top:15px}nav{display:flex;gap:20px;flex-wrap:wrap;margin:22px 0}a{color:#174ba9;text-underline-offset:3px}pre{padding:16px;background:#101b31;color:#e1eaff;border-radius:10px;overflow:auto;max-height:500px;font:13px/1.6 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}code{overflow-wrap:anywhere}summary{cursor:pointer;font-weight:600;padding:12px 0}details{border-top:1px solid #e2e8f0}table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px;border-bottom:1px solid #e2e8f0;overflow-wrap:anywhere}.note{padding:16px;background:#edf3ff;border-radius:10px}footer{font-size:14px;color:#57657d} @media(max-width:600px){main{padding:16px}.stats{grid-template-columns:1fr}header,section{padding:20px}}
+</style><main><header><span class="tag">Pharos Season of AI · Evidence pack</span><h1>Three tools. Real MCP calls.<br>Inspectable results.</h1><p class="muted">Contract state reader, continuous event monitor and sourced documentation CLI.</p><p>Captured on 13 October 2026 · Pharos Pacific mainnet · Chain 1672</p></header>
+<div class="stats"><div class="stat"><b>3 / 3</b>Tasks exercised against official MCP</div><div class="stat"><b>17 + 3</b>Unique Transfer events across two runs</div><div class="stat"><b>150</b>Potential base points after approval</div></div>
+<p class="note"><strong>Recorded evidence, not a live dashboard.</strong> Code is runnable locally. Public source and captured evidence prepared for Arena review. No points or video bonuses have been awarded.</p>
+<nav><a href="#read">01 Contract state</a><a href="#monitor">02 Event monitor</a><a href="#docs">03 Docs CLI</a><a href="RESEARCH.vi.md">Nghiên cứu tiếng Việt</a><a href="SUBMISSION.md">Submission copy</a></nav>
+<section id="read"><small>01 / CHAIN MCP / EASY</small><h2>Read Contract State</h2><p>Four values read from the same USDC contract at one pinned block. Exact decimal formatting, with labeled contract and block.</p><table><tr><th>Value</th><th>Captured result</th></tr><tr><td>Name / symbol</td><td>USDC / USDC</td></tr><tr><td>Decimals</td><td>6</td></tr><tr><td>Total supply</td><td>17255330.463491 USDC</td></tr><tr><td>Block</td><td>20147121</td></tr><tr><td>Contract</td><td><code>0xc879c018db60520f4355c26ed1a6d572cdac1815</code></td></tr></table><p><a href="tasks/read-contract-state/README.md">Install &amp; run</a> · <a href="evidence/read-final-mcp.jsonl">Original MCP calls</a></p><details><summary>Inspect output</summary><pre>{
+  &quot;network&quot;: &quot;Pharos Pacific Mainnet&quot;,
+  &quot;chainId&quot;: 1672,
+  &quot;contract&quot;: &quot;0xc879c018db60520f4355c26ed1a6d572cdac1815&quot;,
+  &quot;block&quot;: 20147121,
+  &quot;blockTag&quot;: &quot;0x1336bb1&quot;,
+  &quot;name&quot;: &quot;USDC&quot;,
+  &quot;symbol&quot;: &quot;USDC&quot;,
+  &quot;decimals&quot;: 6,
+  &quot;totalSupply&quot;: &quot;17255330.463491&quot;,
+  &quot;totalSupplyRaw&quot;: &quot;17255330463491&quot;,
+  &quot;explanation&quot;: &quot;USDC (USDC) has a total supply of 17255330.463491 USDC at block 20147121.&quot;,
+  &quot;explorer&quot;: &quot;https://pharosscan.xyz/address/0xc879c018db60520f4355c26ed1a6d572cdac1815&quot;,
+  &quot;capturedAt&quot;: &quot;2026-10-13T14:51:26.155Z&quot;
+}</pre></details></section>
+<section id="monitor"><small>02 / CHAIN MCP / EASY</small><h2>Event/Log Monitor</h2><p>15 polls captured 17 unique Transfer events. 3 were produced after monitoring began. Restarting from the saved cursor captured 3 additional events with no repeated identities.</p><p><strong>First after-start event:</strong> 78.496253 USDC at block 20146968. <a href="https://pharosscan.xyz/tx/0xb469bfb4ff6ad987f593b748dd114a26c3fd7e7bc9944caddff722e6d1910cf3">View observed transaction</a>.</p><p class="muted">Filters: USDC address + Transfer signature. Three-block confirmation delay. Deep reorgs and exactly-once delivery across an OS crash are outside this demonstration's guarantees.</p><p><a href="tasks/event-log-monitor/README.md">Install &amp; run</a> · <a href="evidence/monitor-console.jsonl">15-poll console</a> · <a href="evidence/monitor-mcp.jsonl">Original MCP calls</a></p><details><summary>Inspect a live-captured event</summary><pre>{
+  &quot;kind&quot;: &quot;Transfer&quot;,
+  &quot;id&quot;: &quot;0xb469bfb4ff6ad987f593b748dd114a26c3fd7e7bc9944caddff722e6d1910cf3:0&quot;,
+  &quot;contract&quot;: &quot;0xc879c018db60520f4355c26ed1a6d572cdac1815&quot;,
+  &quot;from&quot;: &quot;0x912c9aDe24D44d8922f0866D8Dcb079f1363f647&quot;,
+  &quot;to&quot;: &quot;0x936564245B69f5a293b42cbd752E0eE3bb68b470&quot;,
+  &quot;amount&quot;: &quot;78.496253&quot;,
+  &quot;amountRaw&quot;: &quot;78496253&quot;,
+  &quot;transactionHash&quot;: &quot;0xb469bfb4ff6ad987f593b748dd114a26c3fd7e7bc9944caddff722e6d1910cf3&quot;,
+  &quot;block&quot;: 20146968,
+  &quot;logIndex&quot;: 0,
+  &quot;explorer&quot;: &quot;https://pharosscan.xyz/tx/0xb469bfb4ff6ad987f593b748dd114a26c3fd7e7bc9944caddff722e6d1910cf3&quot;,
+  &quot;symbol&quot;: &quot;USDC&quot;,
+  &quot;observedAt&quot;: &quot;2026-10-13T14:49:02.814Z&quot;,
+  &quot;observedAfterStart&quot;: true
+}</pre></details><details><summary>Inspect monitor summary</summary><pre>{
+  &quot;polls&quot;: 15,
+  &quot;uniqueEvents&quot;: 17,
+  &quot;eventsAfterStart&quot;: 3,
+  &quot;firstLiveEvent&quot;: {
+    &quot;kind&quot;: &quot;Transfer&quot;,
+    &quot;id&quot;: &quot;0xb469bfb4ff6ad987f593b748dd114a26c3fd7e7bc9944caddff722e6d1910cf3:0&quot;,
+    &quot;contract&quot;: &quot;0xc879c018db60520f4355c26ed1a6d572cdac1815&quot;,
+    &quot;from&quot;: &quot;0x912c9aDe24D44d8922f0866D8Dcb079f1363f647&quot;,
+    &quot;to&quot;: &quot;0x936564245B69f5a293b42cbd752E0eE3bb68b470&quot;,
+    &quot;amount&quot;: &quot;78.496253&quot;,
+    &quot;amountRaw&quot;: &quot;78496253&quot;,
+    &quot;transactionHash&quot;: &quot;0xb469bfb4ff6ad987f593b748dd114a26c3fd7e7bc9944caddff722e6d1910cf3&quot;,
+    &quot;block&quot;: 20146968,
+    &quot;logIndex&quot;: 0,
+    &quot;explorer&quot;: &quot;https://pharosscan.xyz/tx/0xb469bfb4ff6ad987f593b748dd114a26c3fd7e7bc9944caddff722e6d1910cf3&quot;,
+    &quot;symbol&quot;: &quot;USDC&quot;,
+    &quot;observedAt&quot;: &quot;2026-10-13T14:49:02.814Z&quot;,
+    &quot;observedAfterStart&quot;: true
+  },
+  &quot;resumeEvents&quot;: 3,
+  &quot;duplicatesAcrossRuns&quot;: 0
+}</pre></details></section>
+<section id="docs"><small>03 / DEVELOPER DOCS MCP / EASY</small><h2>Doc-Search CLI</h2><p>Three real questions returned source-linked answers. An unsupported question returned a clear no-answer result.</p><p><a href="tasks/doc-search-cli/README.md">Install, queries &amp; full outputs</a></p><details><summary>ANSWERED — What is the Pharos Pacific mainnet chain ID and RPC URL?</summary><pre>Pharos Pacific Mainnet uses **chain ID `1672`** and RPC URL [`https://rpc.pharos.xyz`](https://rpc.pharos.xyz).
+
+Source: [Pacific Mainnet](https://docs.pharos.xyz/getting-started/network/pacific-mainnet).
+
+# Sources
+
+- [Pacific Mainnet](https://docs.pharos.xyz/getting-started/network/pacific-mainnet)
+- [ZAN RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan)
+- [Atlantic Testnet](https://docs.pharos.xyz/getting-started/network/atlantic-testnet)
+- [Node Management](https://docs.pharos.xyz/node-and-validator-guide/node-management)
+- [Node Debugging &amp; Configuration](https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration)
+- [RPC Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/rpc)
+- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)
+- [Alchemy RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy)
+- [Cross Chain Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain)
+- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)</pre><p><a href="evidence/docs-network-mcp.jsonl">Original MCP response</a></p></details><details><summary>ANSWERED — How do I deploy a Solidity contract on Pharos with Foundry?</summary><pre>Deploy from a Foundry project using a Pharos RPC endpoint and a funded testnet wallet:
+
+1. Install Foundry, then set up your contract and deployment script. The [Write Your First Token](https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token) includes an example project and a script that reads `PRIVATE_KEY` and broadcasts deployment.
+2. Compile and test:
+
+   ```sh
+   forge build
+   forge test
+   ```
+3. Export the deployer key, then run the script:
+
+   ```sh
+   export PRIVATE_KEY=&lt;your private key&gt;
+   forge script script/DeployToken.s.sol --rpc-url &lt;PHAROS_RPC_URL&gt; --broadcast
+   ```
+
+   Replace the example contract and constructor arguments with yours. Keep the private key out of source control.
+4. Ensure the wallet has enough testnet tokens to cover deployment costs.
+
+For a deployment flow that passes the key explicitly to Foundry, see [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide) in the Pharos Skill Engine guide.
+
+# Sources
+
+- [Write Your First NFT](https://docs.pharos.xyz/developer-guide/foundry/write-your-first-nft)
+- [Write Your First Token](https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token)
+- [Solidity](https://docs.pharos.xyz/resources/solidity)
+- [Canonical Contracts](https://docs.pharos.xyz/getting-started/canonical-contracts)
+- [Write Your First Uniswap Contract](https://docs.pharos.xyz/developer-guide/foundry/write-your-first-uniswap-contract)
+- [Validator Node Deployment](https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment)
+- [Foundry](https://docs.pharos.xyz/developer-guide/foundry)
+- [Write Your First Uniswap Contract](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-uniswap-contract)
+- [Piggy Bank Tutorial](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide)
+- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)</pre><p><a href="evidence/docs-deploy-mcp.jsonl">Original MCP response</a></p></details><details><summary>ANSWERED — How can I query ERC-20 Transfer event logs using Pharos Chain MCP, and what is the maximum block range?</summary><pre>Call MCP’s `get_logs` tool (the `eth_getLogs` method) with a block range and filters. Set `address` to the ERC-20 contract and `topics[0]` to the `Transfer` event signature topic:
+
+```json
+{
+  &quot;fromBlock&quot;: &quot;0x1000&quot;,
+  &quot;toBlock&quot;: &quot;0x13e7&quot;,
+  &quot;address&quot;: &quot;0xYourTokenContract&quot;,
+  &quot;topics&quot;: [&quot;0xTransferEventSignatureTopic&quot;]
+}
+```
+
+The maximum range is **1,000 blocks per call**. Split wider ranges into 1,000-block windows. Filtering by contract address and event topic narrows results.
+
+See [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp) and [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods).
+
+# Sources
+
+- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)
+- [Cross Chain Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain)
+- [Node Debugging &amp; Configuration](https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration)
+- [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods)
+- [Why Pharos](https://docs.pharos.xyz/introduction/why-pharos)
+- [Circle CCTP](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp)
+- [Gas Model](https://docs.pharos.xyz/getting-started/gas-model)
+- [Rollback Blocks](https://docs.pharos.xyz/node-and-validator-guide/rollback-blocks)
+- [Foundry](https://docs.pharos.xyz/developer-guide/foundry)
+- [Block Explorer](https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer)</pre><p><a href="evidence/docs-logs-mcp.jsonl">Original MCP response</a></p></details><details><summary>NO ANSWER — What is the officially documented Pharos banana-powered quantum teleportation API endpoint and its activation spell?</summary><pre>No good answer found in Pharos Developer Docs. Try a more specific Pharos question.</pre><p><a href="evidence/docs-no-answer-mcp.jsonl">Original MCP response</a></p></details></section>
+<section><h2>Reproduce it</h2><pre>npm ci
+npm test
+npm run read
+npm run monitor
+npm run docs -- "What is the Pharos Pacific mainnet chain ID and RPC URL?"</pre><p>Node.js 22+. No wallet, signing key or MCP API key required. Monitor runs until Ctrl+C.</p><p><a href="README.md">Full README</a> · <a href="evidence/tests.txt">9 passing tests</a> · <a href="evidence/summary.json">Verification summary</a> · <a href="evidence/SHA256SUMS.txt">Evidence checksums</a></p></section><footer>Official services: mcp.pharos.xyz/mcp and docs.pharos.xyz/~gitbook/mcp. Explorer links refer to observed public transactions. Reviewer approval and reward allocation remain with Pharos.</footer></main></html>

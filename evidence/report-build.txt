@@ -1,0 +1,38 @@
+{
+  "verifiedAt": "2026-10-13T14:58:19.356Z",
+  "read": {
+    "block": 20147121,
+    "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "supply": "17255330.463491"
+  },
+  "monitor": {
+    "polls": 15,
+    "uniqueEvents": 17,
+    "eventsAfterStart": 3,
+    "firstLiveEvent": {
+      "kind": "Transfer",
+      "id": "0xb469bfb4ff6ad987f593b748dd114a26c3fd7e7bc9944caddff722e6d1910cf3:0",
+      "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "from": "0x912c9aDe24D44d8922f0866D8Dcb079f1363f647",
+      "to": "0x936564245B69f5a293b42cbd752E0eE3bb68b470",
+      "amount": "78.496253",
+      "amountRaw": "78496253",
+      "transactionHash": "0xb469bfb4ff6ad987f593b748dd114a26c3fd7e7bc9944caddff722e6d1910cf3",
+      "block": 20146968,
+      "logIndex": 0,
+      "explorer": "https://pharosscan.xyz/tx/0xb469bfb4ff6ad987f593b748dd114a26c3fd7e7bc9944caddff722e6d1910cf3",
+      "symbol": "USDC",
+      "observedAt": "2026-10-13T14:49:02.814Z",
+      "observedAfterStart": true
+    },
+    "resumeEvents": 3,
+    "duplicatesAcrossRuns": 0
+  },
+  "docs": {
+    "answered": 3,
+    "noAnswer": 1
+  },
+  "submissionStatus": "not submitted",
+  "publicationStatus": "local only",
+  "potentialBasePoints": 150
+}

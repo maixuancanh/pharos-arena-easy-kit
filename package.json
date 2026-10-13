@@ -1,0 +1,21 @@
+{
+  "name": "pharos-arena-easy-kit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Three independently runnable Pharos Agent Arena Easy tasks",
+  "scripts": {
+    "test": "node --test",
+    "read": "node cli.mjs read",
+    "monitor": "node cli.mjs monitor",
+    "docs": "node cli.mjs docs",
+    "discover": "node cli.mjs discover"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "ethers": "6.17.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "network": "Pharos Pacific Mainnet",
+  "chainId": 1672,
+  "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+  "block": 20147121,
+  "blockTag": "0x1336bb1",
+  "name": "USDC",
+  "symbol": "USDC",
+  "decimals": 6,
+  "totalSupply": "17255330.463491",
+  "totalSupplyRaw": "17255330463491",
+  "explanation": "USDC (USDC) has a total supply of 17255330.463491 USDC at block 20147121.",
+  "explorer": "https://pharosscan.xyz/address/0xc879c018db60520f4355c26ed1a6d572cdac1815",
+  "capturedAt": "2026-10-13T14:51:26.155Z"
+}
