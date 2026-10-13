@@ -1,6 +1,6 @@
 # Pharos Arena Easy Kit
 
-**Submission status (13 October 2026): all three tasks are IN REVIEW under @maixuancanh.** [Public proof page](https://maixuancanh.github.io/pharos-arena-easy-kit/) · [Repository](https://github.com/maixuancanh/pharos-arena-easy-kit). No points awarded yet.
+**Submission status (14 October 2026): all six Easy tasks are IN REVIEW under @maixuancanh.** [Public proof page](https://maixuancanh.github.io/pharos-arena-easy-kit/) · [Repository](https://github.com/maixuancanh/pharos-arena-easy-kit). No points awarded yet.
 
 Three independently runnable submissions for **Pharos Season of AI / Agent Arena**, built and exercised on 13 October 2026. The tools use the official hosted MCP servers, not a local RPC substitute.
 
