@@ -1,6 +1,6 @@
 # Submission copy — three separate Arena builds
 
-Status: code and live MCP evidence are ready locally. No public repository/demo has been published; no registration, submission or social post has been sent. These blocks describe observed results, not awarded points.
+Status updated 13 October 2026: all three tasks were submitted through Arena under @maixuancanh and verified IN REVIEW in My work. Public repository: https://github.com/maixuancanh/pharos-arena-easy-kit . Public proof page: https://maixuancanh.github.io/pharos-arena-easy-kit/ . No video was submitted and no points have been awarded. The separate campaign registration form was not changed; its prior registration status is unknown. Reward wallet is blank and was not changed.
 
 ## Read Contract State
 
@@ -50,12 +50,14 @@ A lightweight CLI on top of Pharos Developer Docs MCP. Developers ask a natural-
 
 **Proof to publish**: `tasks/doc-search-cli/README.md`, the `evidence/docs-*.json` outputs and `evidence/docs-*-mcp.jsonl` transcripts; readable summary at `index.html#docs`.
 
-## Finish publication and submit
+## Submission record
 
-1. Publish this source package to the user's chosen GitHub repository. The single repository can host all three tasks, with a distinct task README link for each submission.
-2. Optionally host the static evidence report as a public proof page. Label it as a captured demonstration; the runnable CLI is in the repository.
-3. Complete the campaign form using the user's actual email, Telegram, Discord and GitHub details. Do not assume those details or claim Telegram membership before it is true.
-4. Sign into Arena with the user's GitHub account and submit each task separately. Use the published task README/repo and proof URLs. The authenticated form's exact field labels have not been inspected.
-5. Optional video bonus: record each real CLI run, show the MCP endpoint and output, publish the walkthrough on the required social platform, and add its real URL. No video exists in this package, and no bonus is claimed.
+| Task | Proof URL | Verified status |
+|---|---|---|
+| Read Contract State | https://maixuancanh.github.io/pharos-arena-easy-kit/#read | IN REVIEW |
+| Event/Log Monitor | https://maixuancanh.github.io/pharos-arena-easy-kit/#monitor | IN REVIEW |
+| Doc-Search CLI | https://maixuancanh.github.io/pharos-arena-easy-kit/#docs | IN REVIEW |
 
-Potential base score: **150 points if all three tasks are accepted for full credit**. The official announcement supplied by the user and current leaderboard disagree about whether bonuses count toward rank; confirm before claiming Contributor status.
+Each submission includes the public repo link, task-specific run instructions, original MCP evidence links and honest limitations. Video fields were left blank. Submission confirmations were observed on each task and all three rows appeared on https://pharos-agent-arena.vercel.app/me . No resubmissions were made.
+
+Potential base score: **150 points if all three are approved for full credit**. The reward wallet is still blank; the user's chosen address must be provided separately. The authenticated form did not block submission on that field.

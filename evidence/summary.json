@@ -1,5 +1,5 @@
 {
-  "verifiedAt": "2026-10-13T15:01:55.190Z",
+  "verifiedAt": "2026-10-13T15:06:29.005Z",
   "read": {
     "block": 20147121,
     "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
@@ -32,7 +32,7 @@
     "answered": 3,
     "noAnswer": 1
   },
-  "submissionStatus": "not submitted",
+  "submissionStatus": "all three submitted; IN REVIEW on 2026-10-13",
   "publicationStatus": "public repository and GitHub Pages",
   "potentialBasePoints": 150
 }
