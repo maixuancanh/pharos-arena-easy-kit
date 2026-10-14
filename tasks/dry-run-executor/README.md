@@ -36,4 +36,4 @@ The matching MCP/Docs/indexer transcripts and console captures are in [evidence/
 
 The successful sender is a public funded EOA used for simulation only; ownership is not claimed. Expected balances assume a standard non-fee ERC20. Gas estimate uses current state while the call/balance reads use a fixed block. Successful execution only prepares an unsigned transaction; actual signing/broadcasting is outside this build.
 
-This task has been implemented and locally verified. It has not been submitted to Arena in this batch and has no awarded points.
+Submitted to Arena on 14 October 2026. Status verified: IN REVIEW; no points awarded at that check. See evidence/ten/submissions.json for the submission record.

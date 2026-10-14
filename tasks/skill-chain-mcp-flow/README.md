@@ -35,4 +35,4 @@ The matching MCP/Docs/indexer transcripts and console captures are in [evidence/
 
 SkillEngine follows the official knowledge-package pattern; these are custom local Skills, not an invented hosted runtime or an Anvita deployment. The native balance and supply snapshot share one block; token metadata/report calls may use a later block and both are shown.
 
-This task has been implemented and locally verified. It has not been submitted to Arena in this batch and has no awarded points.
+Submitted to Arena on 14 October 2026. Status verified: IN REVIEW; no points awarded at that check. See evidence/ten/submissions.json for the submission record.

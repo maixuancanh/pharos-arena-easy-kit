@@ -111,7 +111,7 @@ Use `node more.mjs alert ...` or `node more.mjs support TXHASH`; see each task R
 
 [Batch overview](TEN-TASKS.md) · [Public proof](https://maixuancanh.github.io/pharos-arena-easy-kit/ten.html) · [Latest weekly digest](https://maixuancanh.github.io/pharos-arena-easy-kit/digest-latest.html)
 
-The ten new implementations are runnable through `node ten.mjs`. They have separate task READMEs, live capture outputs, original MCP/indexer transcripts and explicit coverage limits. Nine are Medium and the final Doc-Grounded Builder is Hard. These ten are implemented but have not been submitted to Arena. The earlier six submissions are unchanged.
+The ten new implementations are runnable through `node ten.mjs`. They have separate task READMEs, live capture outputs, original MCP/indexer transcripts and explicit coverage limits. Nine are Medium and the final Doc-Grounded Builder is Hard. All ten were submitted on 14 October 2026 and verified IN REVIEW, alongside the earlier six. No points had been awarded at that check. Submission records: [evidence/ten/submissions.json](evidence/ten/submissions.json).
 
 Four local Skill packages follow the documented SkillEngine knowledge-package format. Their helpers evaluate policies, chain conditions or preflight simulations, and retain the Skill file hash. No hosted SkillEngine runtime or Anvita publication is claimed. Nothing signs or broadcasts a transaction.
 

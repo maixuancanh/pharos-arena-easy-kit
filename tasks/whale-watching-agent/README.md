@@ -35,4 +35,4 @@ The matching MCP/Docs/indexer transcripts and console captures are in [evidence/
 
 The demo watchlist was selected from public onchain activity, not the user's wallets. Labels are explicit configuration; unknown addresses remain literal. This command reports a bounded recent range. Long-running cursor monitoring is a separate extension, not claimed here.
 
-This task has been implemented and locally verified. It has not been submitted to Arena in this batch and has no awarded points.
+Submitted to Arena on 14 October 2026. Status verified: IN REVIEW; no points awarded at that check. See evidence/ten/submissions.json for the submission record.

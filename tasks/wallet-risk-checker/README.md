@@ -36,4 +36,4 @@ The matching MCP/Docs/indexer transcripts and console captures are in [evidence/
 
 Both examples use bounded, partial history. Low means no observed configured flags, not proven safe or clean. An empty flagged list is unknown, not a pass. Only successful approvals sent by the checked owner are sampled; no external threat-intelligence feed is claimed.
 
-This task has been implemented and locally verified. It has not been submitted to Arena in this batch and has no awarded points.
+Submitted to Arena on 14 October 2026. Status verified: IN REVIEW; no points awarded at that check. See evidence/ten/submissions.json for the submission record.

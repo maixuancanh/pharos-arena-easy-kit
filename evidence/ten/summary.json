@@ -1,11 +1,11 @@
 {
-  "verifiedAt": "2026-10-13T23:50:06.724Z",
+  "verifiedAt": "2026-10-14T00:54:48.274Z",
   "count": 10,
   "tiers": {
     "Medium": 9,
     "Hard": 1
   },
-  "submissionStatus": "not-submitted",
+  "submissionStatus": "in-review",
   "potentialBasePoints": 1100,
   "metrics": {
     "whaleAddresses": 5,

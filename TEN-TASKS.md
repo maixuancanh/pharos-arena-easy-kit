@@ -1,6 +1,6 @@
 # 10 task Pharos mới — triển khai từ dễ đến khó
 
-Chọn từ board ngày 14/10/2026: 9 Medium và 1 Hard; sáu task Easy trước đó đã nộp. Đợt này chỉ triển khai và kiểm chứng, chưa submit Arena.
+Chọn từ board ngày 14/10/2026: 9 Medium và 1 Hard; sáu task Easy trước đó đã nộp. Cả 10 task đã submit ngày 14/10/2026, xác nhận IN REVIEW. Tổng 16 bài đang chờ duyệt; chưa có điểm được trao tại thời điểm kiểm tra.
 
 | Thứ tự | Task | Tier | Bằng chứng |
 |---:|---|---|---|

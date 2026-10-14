@@ -39,4 +39,4 @@ The matching MCP/Docs/indexer transcripts and console captures are in [evidence/
 
 This Hard-task build has a bounded three-intent scope. It does not synthesize arbitrary contract code or deploy contracts. Verification is same-provider consistency, not independent corroboration.
 
-This task has been implemented and locally verified. It has not been submitted to Arena in this batch and has no awarded points.
+Submitted to Arena on 14 October 2026. Status verified: IN REVIEW; no points awarded at that check. See evidence/ten/submissions.json for the submission record.

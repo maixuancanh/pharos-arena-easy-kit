@@ -1,0 +1,96 @@
+{
+  "verifiedAt": "2026-10-14T00:54:20.975Z",
+  "status": "in-review",
+  "submissions": [
+    {
+      "slug": "docs-chain-mcp-agent",
+      "name": "Docs MCP + Chain MCP Agent",
+      "proof": "https://maixuancanh.github.io/pharos-arena-easy-kit/ten.html#docs-chain-mcp-agent",
+      "repo": "https://github.com/maixuancanh/pharos-arena-easy-kit/tree/main/tasks/docs-chain-mcp-agent",
+      "notes": "Sourced Docs MCP explanations were followed by real Chain MCP calls to totalSupply and decimals. Both reads were verified at a pinned block.\n\nReproduce: see this task README for the exact CLI commands and configuration. The proof page links original MCP transcripts and output files.\n\nScope: Only whitelisted read-only intents are supported. Same-provider same-block read repetition checks consistency, not independent-provider agreement. Mixed write/read requests and mismatched targets are refused.",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T00:51:50.643Z"
+    },
+    {
+      "slug": "audit-log-agent",
+      "name": "Audit-Log Agent",
+      "proof": "https://maixuancanh.github.io/pharos-arena-easy-kit/ten.html#audit-log-agent",
+      "repo": "https://github.com/maixuancanh/pharos-arena-easy-kit/tree/main/tasks/audit-log-agent",
+      "notes": "The captured report contains 8 unique transactions. Both normal and ERC20 history reached the selected interval start in the indexer. Markdown and CSV exports are included.\n\nReproduce: see this task README for the exact CLI commands and configuration. The proof page links original MCP transcripts and output files.\n\nScope: Method labels/selector classification of swaps and contract calls is heuristic. Token events are indexed Transfers. Counts are activity records, with separate unique transaction counts. No USD conversion. A page cap produces an explicitly partial report; indexer completeness is not guaranteed.",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T00:52:18.183Z"
+    },
+    {
+      "slug": "whale-watching-agent",
+      "name": "Whale-Watching Agent",
+      "proof": "https://maixuancanh.github.io/pharos-arena-easy-kit/ten.html#whale-watching-agent",
+      "repo": "https://github.com/maixuancanh/pharos-arena-easy-kit/tree/main/tasks/whale-watching-agent",
+      "notes": "Five configurable public addresses; 4 significant USDC moves matched the configured threshold in a real Chain MCP log scan.\n\nReproduce: see this task README for the exact CLI commands and configuration. The proof page links original MCP transcripts and output files.\n\nScope: The demo watchlist was selected from public onchain activity, not the user's wallets. Labels are explicit configuration; unknown addresses remain literal. This command reports a bounded recent range. Long-running cursor monitoring is a separate extension, not claimed here.",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T00:52:32.091Z"
+    },
+    {
+      "slug": "wallet-risk-checker",
+      "name": "Wallet Risk Checker",
+      "proof": "https://maixuancanh.github.io/pharos-arena-easy-kit/ten.html#wallet-risk-checker",
+      "repo": "https://github.com/maixuancanh/pharos-arena-easy-kit/tree/main/tasks/wallet-risk-checker",
+      "notes": "A verified older contract sample scored low; an unverified contract with a high observed failure fraction scored medium. Five signals are evaluated with explicit unknown states.\n\nReproduce: see this task README for the exact CLI commands and configuration. The proof page links original MCP transcripts and output files.\n\nScope: Both examples use bounded, partial history. Low means no observed configured flags, not proven safe or clean. An empty flagged list is unknown, not a pass. Only successful approvals sent by the checked owner are sampled; no external threat-intelligence feed is claimed.",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T00:52:44.650Z"
+    },
+    {
+      "slug": "weekly-digest-agent",
+      "name": "Weekly Digest Agent",
+      "proof": "https://maixuancanh.github.io/pharos-arena-easy-kit/ten.html#weekly-digest-agent",
+      "repo": "https://github.com/maixuancanh/pharos-arena-easy-kit/tree/main/tasks/weekly-digest-agent",
+      "notes": "Current seven-day metrics are compared to the preceding seven days, with 3 distinct notable transactions. Two actual worker ticks were captured using an accelerated two-second interval. The production GitHub workflow runs Mondays at 00:00 UTC (07:00 Vietnam) and deploys the refreshed digest page.\n\nReproduce: see this task README for the exact CLI commands and configuration. The proof page links original MCP transcripts and output files.\n\nScope: The accelerated demo verifies scheduling, not the passage of an actual week. Hosted starts may be delayed by GitHub. Indexer/page-cap limitations propagate into the digest. A local worker writes local HTML; the included hosted workflow supplies recurring public publication.",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T00:52:57.767Z"
+    },
+    {
+      "slug": "policy-gatekeeper",
+      "name": "Policy Gatekeeper",
+      "proof": "https://maixuancanh.github.io/pharos-arena-easy-kit/ten.html#policy-gatekeeper",
+      "repo": "https://github.com/maixuancanh/pharos-arena-easy-kit/tree/main/tasks/policy-gatekeeper",
+      "notes": "One allowed read-only call and one actual denied configuration for each spend, allowlist and trusted UTC time-window rule. Denied requests did not invoke their action.\n\nReproduce: see this task README for the exact CLI commands and configuration. The proof page links original MCP transcripts and output files.\n\nScope: This demo Skill gates read-only eth_call simulations. It is not a production signing gateway. No private key or broadcast method exists. UTC windows use the trusted host clock, not a client-supplied timestamp.",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T00:53:12.981Z"
+    },
+    {
+      "slug": "threshold-guardian",
+      "name": "Threshold Guardian",
+      "proof": "https://maixuancanh.github.io/pharos-arena-easy-kit/ten.html#threshold-guardian",
+      "repo": "https://github.com/maixuancanh/pharos-arena-easy-kit/tree/main/tasks/threshold-guardian",
+      "notes": "Three distinct live signals (native balance, token supply and gas quote) were evaluated. One configurable run fired the token report; another held and did not run the report action.\n\nReproduce: see this task README for the exact CLI commands and configuration. The proof page links original MCP transcripts and output files.\n\nScope: Fire performs a read-only report, not a rebalance. Supply and native balance are pinned; the gas quote is current and cannot be pinned by this API.",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T00:53:26.092Z"
+    },
+    {
+      "slug": "dry-run-executor",
+      "name": "Dry-Run Executor",
+      "proof": "https://maixuancanh.github.io/pharos-arena-easy-kit/ten.html#dry-run-executor",
+      "repo": "https://github.com/maixuancanh/pharos-arena-easy-kit/tree/main/tasks/dry-run-executor",
+      "notes": "A successful read-only ERC20 transfer simulation estimated 79757 gas and 797570000000000 wei. An excessive transfer reverted and invoked the executor zero times.\n\nReproduce: see this task README for the exact CLI commands and configuration. The proof page links original MCP transcripts and output files.\n\nScope: The successful sender is a public funded EOA used for simulation only; ownership is not claimed. Expected balances assume a standard non-fee ERC20. Gas estimate uses current state while the call/balance reads use a fixed block. Successful execution only prepares an unsigned transaction; actual signing/broadcasting is outside this build.",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T00:53:39.177Z"
+    },
+    {
+      "slug": "skill-chain-mcp-flow",
+      "name": "Skill + Chain MCP Flow",
+      "proof": "https://maixuancanh.github.io/pharos-arena-easy-kit/ten.html#skill-chain-mcp-flow",
+      "repo": "https://github.com/maixuancanh/pharos-arena-easy-kit/tree/main/tasks/skill-chain-mcp-flow",
+      "notes": "A single account/state request loaded the local state-brief Skill, fetched live Chain MCP balance/supply/gas/metadata, and produced a brief from those exact inputs.\n\nReproduce: see this task README for the exact CLI commands and configuration. The proof page links original MCP transcripts and output files.\n\nScope: SkillEngine follows the official knowledge-package pattern; these are custom local Skills, not an invented hosted runtime or an Anvita deployment. The native balance and supply snapshot share one block; token metadata/report calls may use a later block and both are shown.",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T00:53:54.075Z"
+    },
+    {
+      "slug": "doc-grounded-builder-agent",
+      "name": "Doc-Grounded Builder Agent",
+      "proof": "https://maixuancanh.github.io/pharos-arena-easy-kit/ten.html#doc-grounded-builder-agent",
+      "repo": "https://github.com/maixuancanh/pharos-arena-easy-kit/tree/main/tasks/doc-grounded-builder-agent",
+      "notes": "Three different supported how-do-I requests were planned with sourced Docs MCP answers, executed through Chain MCP, and verified. An unsupported banana-on-Mars request was refused without a chain action.\n\nReproduce: see this task README for the exact CLI commands and configuration. The proof page links original MCP transcripts and output files.\n\nScope: This Hard-task build has a bounded three-intent scope. It does not synthesize arbitrary contract code or deploy contracts. Verification is same-provider consistency, not independent corroboration.",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T00:54:09.821Z"
+    }
+  ]
+}

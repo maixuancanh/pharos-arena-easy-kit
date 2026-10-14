@@ -37,4 +37,4 @@ The matching MCP/Docs/indexer transcripts and console captures are in [evidence/
 
 Method labels/selector classification of swaps and contract calls is heuristic. Token events are indexed Transfers. Counts are activity records, with separate unique transaction counts. No USD conversion. A page cap produces an explicitly partial report; indexer completeness is not guaranteed.
 
-This task has been implemented and locally verified. It has not been submitted to Arena in this batch and has no awarded points.
+Submitted to Arena on 14 October 2026. Status verified: IN REVIEW; no points awarded at that check. See evidence/ten/submissions.json for the submission record.
