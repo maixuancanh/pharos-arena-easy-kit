@@ -119,4 +119,4 @@ The weekly digest GitHub workflow generates current/previous seven-day reports a
 
 ## Remaining twelve builds
 
-All twelve remaining board tasks have runnable implementations, instructions and evidence. [Review table](REMAINING-TASKS.md) and [public proof](remaining.html) distinguish eight tasks ready for review from four partial cases. [Machine-readable review](evidence/remaining/review.json) describes the limits. These twelve have not been submitted to Arena; the earlier sixteen remain separate.
+All twelve remaining board tasks have runnable implementations, instructions and evidence. [Review table](REMAINING-TASKS.md) and [public proof](remaining.html) distinguish eight tasks ready for review from four partial cases. [Machine-readable review](evidence/remaining/review.json) describes the limits. Eight of these twelve were submitted on 14 October 2026 and verified IN REVIEW. Four partial tasks remain unsubmitted. Together with the earlier sixteen, My work shows 24 submissions IN REVIEW. See [submission records](evidence/remaining/submissions.json).

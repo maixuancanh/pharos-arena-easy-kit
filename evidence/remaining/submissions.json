@@ -1,0 +1,46 @@
+{
+  "verifiedAt": "2026-10-14T01:27:09.233Z",
+  "count": 8,
+  "tasks": [
+    {
+      "slug": "natural-language-payment-agent",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T01:24:40.657Z"
+    },
+    {
+      "slug": "invoice-to-payment-agent",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T01:25:26.596Z"
+    },
+    {
+      "slug": "recurring-payment-agent",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T01:25:33.537Z"
+    },
+    {
+      "slug": "batch-executor",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T01:26:06.646Z"
+    },
+    {
+      "slug": "saga-executor",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T01:26:25.438Z"
+    },
+    {
+      "slug": "trend-watcher",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T01:26:38.630Z"
+    },
+    {
+      "slug": "arbitrage-scanner",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T01:26:53.691Z"
+    },
+    {
+      "slug": "portfolio-assistant",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T01:27:09.233Z"
+    }
+  ]
+}

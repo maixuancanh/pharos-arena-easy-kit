@@ -1,10 +1,10 @@
 {
-  "verifiedAt": "2026-10-14T01:16:12.295Z",
+  "verifiedAt": "2026-10-14T01:27:09.233Z",
   "count": 12,
   "implemented": 12,
   "ready": 8,
   "partial": 4,
-  "submissionStatus": "not-submitted",
+  "submissionStatus": "8-in-review-4-not-submitted",
   "tasks": [
     {
       "slug": "natural-language-payment-agent",
@@ -14,7 +14,9 @@
       "evidence": [
         "evidence/remaining/payments/intent-live.json",
         "evidence/remaining/payments/ambiguity.json"
-      ]
+      ],
+      "submissionStatus": "in-review",
+      "submittedVerifiedAt": "2026-10-14T01:24:40.657Z"
     },
     {
       "slug": "invoice-to-payment-agent",
@@ -24,7 +26,9 @@
       "evidence": [
         "evidence/remaining/payments/invoice-json-live.json",
         "evidence/remaining/payments/invoice-text-live.json"
-      ]
+      ],
+      "submissionStatus": "in-review",
+      "submittedVerifiedAt": "2026-10-14T01:25:26.596Z"
     },
     {
       "slug": "recurring-payment-agent",
@@ -35,7 +39,9 @@
         "evidence/remaining/payments/schedule-live.json",
         "evidence/remaining/payments/schedule-restart.json",
         "evidence/remaining/payments/local-receipts-final.json"
-      ]
+      ],
+      "submissionStatus": "in-review",
+      "submittedVerifiedAt": "2026-10-14T01:25:33.537Z"
     },
     {
       "slug": "batch-executor",
@@ -44,7 +50,9 @@
       "limits": "Controlled local demonstrations and separate read-only mainnet inputs. No hosted SkillEngine runtime is claimed.",
       "evidence": [
         "evidence/remaining/execution/batch.json"
-      ]
+      ],
+      "submissionStatus": "in-review",
+      "submittedVerifiedAt": "2026-10-14T01:26:06.646Z"
     },
     {
       "slug": "saga-executor",
@@ -54,7 +62,9 @@
       "evidence": [
         "evidence/remaining/execution/saga-success.json",
         "evidence/remaining/execution/saga-forced-failure.json"
-      ]
+      ],
+      "submissionStatus": "in-review",
+      "submittedVerifiedAt": "2026-10-14T01:26:25.438Z"
     },
     {
       "slug": "trend-watcher",
@@ -63,7 +73,9 @@
       "limits": "Controlled local demonstrations and separate read-only mainnet inputs. No hosted SkillEngine runtime is claimed.",
       "evidence": [
         "evidence/remaining/execution/trend.json"
-      ]
+      ],
+      "submissionStatus": "in-review",
+      "submittedVerifiedAt": "2026-10-14T01:26:38.630Z"
     },
     {
       "slug": "gas-fee-optimizer",
@@ -72,7 +84,8 @@
       "limits": "Organizer never misses deadline is only demonstrated for healthy controlled scheduler ticks; no unconditional timing guarantee.",
       "evidence": [
         "evidence/remaining/execution/gas.json"
-      ]
+      ],
+      "submissionStatus": "not-submitted"
     },
     {
       "slug": "arbitrage-scanner",
@@ -81,7 +94,9 @@
       "limits": "Reads two local EVM reference-rate contracts with controlled prices; simulated execution explicitly allowed. Profit is a quoted estimate, not an executable market guarantee.",
       "evidence": [
         "evidence/remaining/execution/arbitrage.json"
-      ]
+      ],
+      "submissionStatus": "in-review",
+      "submittedVerifiedAt": "2026-10-14T01:26:53.691Z"
     },
     {
       "slug": "portfolio-assistant",
@@ -90,7 +105,9 @@
       "limits": "Reference account has zero positions. Rate is historical annualized share-price change, not guaranteed yield. Unlike assets are not compared without an oracle.",
       "evidence": [
         "evidence/remaining/defi/live-result.json"
-      ]
+      ],
+      "submissionStatus": "in-review",
+      "submittedVerifiedAt": "2026-10-14T01:27:09.233Z"
     },
     {
       "slug": "yield-optimizer",
@@ -100,7 +117,8 @@
       "evidence": [
         "evidence/remaining/defi/yield-cost-scenarios.json",
         "evidence/remaining/defi/live-result.json"
-      ]
+      ],
+      "submissionStatus": "not-submitted"
     },
     {
       "slug": "liquidation-watchdog",
@@ -110,7 +128,8 @@
       "evidence": [
         "evidence/remaining/defi/watchdog-cli.json",
         "evidence/remaining/defi/local-evm.json"
-      ]
+      ],
+      "submissionStatus": "not-submitted"
     },
     {
       "slug": "multi-protocol-aggregator",
@@ -121,7 +140,9 @@
         "evidence/remaining/defi/actions-lending.json",
         "evidence/remaining/defi/local-evm.json",
         "evidence/remaining/defi/funded-public-request.json"
-      ]
+      ],
+      "submissionStatus": "not-submitted"
     }
-  ]
+  ],
+  "submitted": 8
 }
