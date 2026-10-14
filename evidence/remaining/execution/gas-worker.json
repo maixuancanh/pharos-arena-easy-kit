@@ -1,90 +1,356 @@
 {
-  "network": "local Ganache chain 31337; not Pharos",
-  "clock": "real wall clock, healthy local process",
+  "network": "isolated Ganache chain 31337; not Pharos",
+  "clock": "real wall clock",
+  "dispatchLeadMs": 200,
+  "pollMs": 20,
+  "slowQuote": {
+    "startedAt": 1791944755117,
+    "finishedAt": 1791944756623,
+    "priceWei": "4000000000"
+  },
   "observed": [
-    1791940189874,
-    1791940189936,
-    1791940189997,
-    1791940190060,
-    1791940190122,
-    1791940190184,
-    1791940190245,
-    1791940190308,
-    1791940190371,
-    1791940190373
+    {
+      "at": 1791944755117,
+      "priceWei": "4000000000",
+      "source": "cached controlled quote; background quote intentionally slow"
+    },
+    {
+      "at": 1791944755162,
+      "priceWei": "4000000000",
+      "source": "cached controlled quote; background quote intentionally slow"
+    },
+    {
+      "at": 1791944755210,
+      "priceWei": "4000000000",
+      "source": "cached controlled quote; background quote intentionally slow"
+    },
+    {
+      "at": 1791944755257,
+      "priceWei": "4000000000",
+      "source": "cached controlled quote; background quote intentionally slow"
+    },
+    {
+      "at": 1791944755304,
+      "priceWei": "4000000000",
+      "source": "cached controlled quote; background quote intentionally slow"
+    },
+    {
+      "at": 1791944755352,
+      "priceWei": "4000000000",
+      "source": "cached controlled quote; background quote intentionally slow"
+    },
+    {
+      "at": 1791944755400,
+      "priceWei": "4000000000",
+      "source": "cached controlled quote; background quote intentionally slow"
+    },
+    {
+      "at": 1791944755432,
+      "priceWei": "4000000000",
+      "source": "cached controlled quote; background quote intentionally slow"
+    },
+    {
+      "at": 1791944755479,
+      "priceWei": "4000000000",
+      "source": "cached controlled quote; background quote intentionally slow"
+    },
+    {
+      "at": 1791944755527,
+      "priceWei": "4000000000",
+      "source": "cached controlled quote; background quote intentionally slow"
+    },
+    {
+      "at": 1791944755574,
+      "priceWei": "4000000000",
+      "source": "cached controlled quote; background quote intentionally slow"
+    },
+    {
+      "at": 1791944755622,
+      "priceWei": "4000000000",
+      "source": "cached controlled quote; background quote intentionally slow"
+    },
+    {
+      "at": 1791944755669,
+      "priceWei": "4000000000",
+      "source": "cached controlled quote; background quote intentionally slow"
+    },
+    {
+      "at": 1791944755716,
+      "priceWei": "4000000000",
+      "source": "cached controlled quote; background quote intentionally slow"
+    },
+    {
+      "at": 1791944755764,
+      "priceWei": "4000000000",
+      "source": "cached controlled quote; background quote intentionally slow"
+    },
+    {
+      "at": 1791944755811,
+      "priceWei": "4000000000",
+      "source": "cached controlled quote; background quote intentionally slow"
+    },
+    {
+      "at": 1791944755857,
+      "priceWei": "4000000000",
+      "source": "cached controlled quote; background quote intentionally slow"
+    }
   ],
-  "state": {
+  "beforeMining": {
     "history": [
       {
-        "at": 1791940189874,
-        "priceWei": "2000000000"
+        "at": 1791944755069,
+        "priceWei": "1500000000"
       },
       {
-        "at": 1791940189936,
-        "priceWei": "2000000000"
+        "at": 1791944755117,
+        "priceWei": "4000000000"
       },
       {
-        "at": 1791940189997,
-        "priceWei": "2000000000"
+        "at": 1791944755162,
+        "priceWei": "4000000000"
       },
       {
-        "at": 1791940190060,
-        "priceWei": "2000000000"
+        "at": 1791944755210,
+        "priceWei": "4000000000"
       },
       {
-        "at": 1791940190122,
-        "priceWei": "2000000000"
+        "at": 1791944755257,
+        "priceWei": "4000000000"
       },
       {
-        "at": 1791940190184,
-        "priceWei": "2000000000"
+        "at": 1791944755304,
+        "priceWei": "4000000000"
       },
       {
-        "at": 1791940190245,
-        "priceWei": "2000000000"
+        "at": 1791944755352,
+        "priceWei": "4000000000"
       },
       {
-        "at": 1791940190308,
-        "priceWei": "2000000000"
+        "at": 1791944755400,
+        "priceWei": "4000000000"
       },
       {
-        "at": 1791940190371,
-        "priceWei": "2000000000"
+        "at": 1791944755432,
+        "priceWei": "4000000000"
       },
       {
-        "at": 1791940190373,
-        "priceWei": "2000000000"
+        "at": 1791944755479,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755527,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755574,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755622,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755669,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755716,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755764,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755811,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755857,
+        "priceWei": "4000000000"
       }
     ],
     "jobs": [
       {
-        "id": "wall-clock-deadline",
-        "requestedAt": 1791940189872,
-        "deadline": 1791940190372,
-        "requestPriceWei": "2000000000",
-        "targetPriceWei": "1",
+        "id": "favorable-unmined",
+        "requestedAt": 1791944755053,
+        "deadline": 1791944758053,
+        "dispatchLeadMs": 200,
+        "requestPriceWei": "3000000000",
+        "targetPriceWei": "2000000000",
         "transaction": {
-          "to": "0x0D6d193c52e1703FaB53D90C040F326e1f9A04F7",
+          "to": "0xf8D305003c076756EC8bD6803c9D783E42E76245",
           "value": "1"
         },
-        "status": "confirmed",
-        "reason": "deadline",
-        "latenessMs": 1,
-        "submittedAt": 1791940190373,
-        "hash": "0x6e3f2aa8a3d6d2d754b15179381a314ff9f0a17fdbaa7979cfc95f88ef3f8f94",
-        "receipt": {
-          "hash": "0x6e3f2aa8a3d6d2d754b15179381a314ff9f0a17fdbaa7979cfc95f88ef3f8f94",
-          "blockNumber": 1,
-          "status": 1,
-          "gasUsed": "21000",
-          "gasPrice": "2000000000",
-          "actualPaidWei": "42000000000000"
+        "status": "pending",
+        "reason": "favorable-gas",
+        "submittedAt": 1791944755069,
+        "latenessMs": 0,
+        "hash": "0xb91fcf61528b8b69c9bbb4aa5cd924012db8716536ab2af31223afd4cfe1144f",
+        "acceptedAt": 1791944755116
+      },
+      {
+        "id": "deadline-while-other-pending",
+        "requestedAt": 1791944755053,
+        "deadline": 1791944756053,
+        "dispatchLeadMs": 200,
+        "requestPriceWei": "3000000000",
+        "targetPriceWei": "1",
+        "transaction": {
+          "to": "0xf8D305003c076756EC8bD6803c9D783E42E76245",
+          "value": "2"
         },
-        "actualPaidWei": "42000000000000",
-        "requestTimeBenchmarkWei": "42000000000000",
-        "savedWei": "0"
+        "status": "pending",
+        "reason": "deadline-buffer",
+        "submittedAt": 1791944755857,
+        "latenessMs": 0,
+        "hash": "0xb677134b1f406e31cda84bae98d10b9b384a9d1549dee3a600294460ea33ac4f",
+        "acceptedAt": 1791944755905
       }
     ]
   },
-  "guarantee": "Best effort first timer tick at or after deadline. latenessMs is measured, never hidden. No absolute timing or inclusion guarantee."
+  "state": {
+    "history": [
+      {
+        "at": 1791944755069,
+        "priceWei": "1500000000"
+      },
+      {
+        "at": 1791944755117,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755162,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755210,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755257,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755304,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755352,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755400,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755432,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755479,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755527,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755574,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755622,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755669,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755716,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755764,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755811,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755857,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 1791944755923,
+        "priceWei": "1"
+      }
+    ],
+    "jobs": [
+      {
+        "id": "favorable-unmined",
+        "requestedAt": 1791944755053,
+        "deadline": 1791944758053,
+        "dispatchLeadMs": 200,
+        "requestPriceWei": "3000000000",
+        "targetPriceWei": "2000000000",
+        "transaction": {
+          "to": "0xf8D305003c076756EC8bD6803c9D783E42E76245",
+          "value": "1"
+        },
+        "status": "confirmed",
+        "reason": "favorable-gas",
+        "submittedAt": 1791944755069,
+        "latenessMs": 0,
+        "hash": "0xb91fcf61528b8b69c9bbb4aa5cd924012db8716536ab2af31223afd4cfe1144f",
+        "acceptedAt": 1791944755116,
+        "receipt": {
+          "hash": "0xb91fcf61528b8b69c9bbb4aa5cd924012db8716536ab2af31223afd4cfe1144f",
+          "blockNumber": 1,
+          "status": 1,
+          "gasUsed": "21000",
+          "gasPrice": "1500000000",
+          "actualPaidWei": "31500000000000"
+        },
+        "actualPaidWei": "31500000000000",
+        "requestTimeBenchmarkWei": "63000000000000",
+        "savedWei": "31500000000000"
+      },
+      {
+        "id": "deadline-while-other-pending",
+        "requestedAt": 1791944755053,
+        "deadline": 1791944756053,
+        "dispatchLeadMs": 200,
+        "requestPriceWei": "3000000000",
+        "targetPriceWei": "1",
+        "transaction": {
+          "to": "0xf8D305003c076756EC8bD6803c9D783E42E76245",
+          "value": "2"
+        },
+        "status": "confirmed",
+        "reason": "deadline-buffer",
+        "submittedAt": 1791944755857,
+        "latenessMs": 0,
+        "hash": "0xb677134b1f406e31cda84bae98d10b9b384a9d1549dee3a600294460ea33ac4f",
+        "acceptedAt": 1791944755905,
+        "receipt": {
+          "hash": "0xb677134b1f406e31cda84bae98d10b9b384a9d1549dee3a600294460ea33ac4f",
+          "blockNumber": 1,
+          "status": 1,
+          "gasUsed": "21000",
+          "gasPrice": "4000000000",
+          "actualPaidWei": "84000000000000"
+        },
+        "actualPaidWei": "84000000000000",
+        "requestTimeBenchmarkWei": "63000000000000",
+        "savedWei": "-21000000000000"
+      }
+    ]
+  },
+  "restartBroadcasts": 0,
+  "acceptanceBeforeDeadline": true,
+  "scope": "Healthy local host, pre-authorized disposable signer and responsive broadcast RPC. Mining intentionally paused. Scheduler uses cached gas while a slow quote runs. Deadlines concern broadcast acceptance, not mining. Outages/suspension can still cause misses; lead margin is configurable and lateness is recorded.",
+  "benchmark": "Actual receipt gas used * request-time gas price; counterfactual comparison, not a historical transaction."
 }

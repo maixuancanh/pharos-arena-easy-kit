@@ -1,15 +1,16 @@
-# yield-optimizer
+# Yield Optimizer
 
-Three live historical share-price yields are available: JTRSY, HYB and deJTRSY. They are annualized observations over roughly 9.9 days, not forward APYs or promises. Actual entry/exit fees and native-gas conversion to USDC remain unknown; default output is unknown, so full recommendation evidence is pending.
+Compares three live Pharos vault share-price histories: JTRSY, HYB and deJTRSY. The recommendation wrapper accepts explicit entry/exit fee inputs and a total gas budget in the underlying asset, respects a minimum holding horizon, and reports projected net gain plus break-even gas. Missing costs return unknown; a short horizon or negative economics returns stay put. There are no signatures or broadcasts.
 
-Run: node scripts/remaining-defi.mjs yield --config configs/remaining/defi.json
+Run:
 
-Optional explicit policy: add fees keyed by vault ID, each with entryFee and exitFee fractions. optimizer provides principal, days, minDays, current and gasCost in underlying quote units. These assumptions are disclosed separately from live yields. Formula: move capital after current exit and destination entry fees compounds over the holding period, then destination exit applies; compare with staying and exiting at horizon; subtract gas. Minimum holding period and positive net gain gate recommendations. No keys or broadcasts.
+    node scripts/remaining-yield-policy-demo.mjs
+    node --test tests/remaining-yield-policy.test.mjs tests/remaining-defi.test.mjs
 
-Evidence: evidence/remaining/defi/live-result.json. Tests include negative economics, profitable policy scenario, missing sources and overflow.
+The demo refreshes onchain yields and native gas via Pharos Chain MCP. Native quote is context only; no PROS/USDC conversion is invented. Example policy uses 0.5% entry/exit allowances and a total 5 USDC gas budget, 10000 USDC principal, 90-day horizon and 30-day minimum. These are disclosed cost inputs, not measured investor fees. Recommendation is conditional on those costs, eligibility, settlement and historical returns repeating. It is not a verified executable investment quote.
 
-Validation: `node --test tests/remaining-defi.test.mjs`
+At captured block20186816 the conditional HYB result adds about247.98 USDC versus staying. See exact current numbers in [yield-policy.json](../../evidence/remaining/defi/yield-policy.json) and original [MCP transcript](../../evidence/remaining/defi/yield-policy-mcp.jsonl). Results can change on rerun.
 
-Primary sources: [Centrifuge deployments](https://docs.centrifuge.io/developer/protocol/deployments/), [vault semantics](https://docs.centrifuge.io/user/concepts/vaults/), [Morpho official SDK addresses](https://github.com/morpho-org/sdks/blob/main/packages/morpho-ts/src/addresses.ts). Original source snapshots are under evidence/remaining/defi. ABI decoding and deployed bytecode were checked; this is not full compiler bytecode equivalence verification.
+CLI supports config.costPolicy: {kind: 'user-supplied-budget', asset: assetContractAddress, gasBudget: quoteAssetAmount, fees: {vaultId: {entryFee: fraction, exitFee: fraction, source: provenance}}}. optimizer supplies current, principal, days, minDays. Without the policy, the existing unknown-cost guard remains.
 
-Additional cost scenario: `node scripts/remaining-defi-yield-cost.mjs` reads actual Pharos gas price, combines it with explicitly assumed 600000 gas units, 1 USDC/PROS and 0.5% entry/exit fees, then compares three previously captured live yields. `evidence/remaining/defi/yield-cost-scenarios.json` contains a positive-net recommendation, high-cost stay-put, minimum-holding stay-put and unknown-fee default. Under these assumptions the captured 90-day HYB projection adds about 253.29 USDC versus staying on 10000 USDC. These are scenario assumptions, not verified fees or an executable transaction cost. The yield snapshot block and fresh gas quote provenance are distinct.
+Formula compounds capital after current exit and destination entry fees, applies destination exit at horizon, compares against staying and exiting, then deducts total gas budget. Historical annualized share-price change is not forward APY. Public reads are chain1672; fee terms and total gas cost must be verified for the investor before action. Source: [Centrifuge pricing](https://docs.centrifuge.io/user/concepts/pricing/) and [investor flow](https://docs.centrifuge.io/user/investor/).

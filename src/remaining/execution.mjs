@@ -44,24 +44,43 @@ export async function scanArbitrage(path,sources,{now,quantity=1,feeBps=30,slipp
 
 export class GasQueue {
  constructor(path){this.path=path;}
+ update(fn){const release=lock(this.path);try{const s=readState(this.path,{history:[],jobs:[]});const result=fn(s);saveState(this.path,s);return result;}finally{release();}}
  enqueue(job){
-  if(!job.id||!Number.isFinite(job.deadline)||!Number.isFinite(job.requestedAt)||job.deadline<=job.requestedAt||BigInt(job.requestPriceWei)<=0n||BigInt(job.targetPriceWei)<=0n||!job.transaction)throw Error('Invalid gas queue job');
-  const release=lock(this.path);try{const s=readState(this.path,{history:[],jobs:[]});if(s.jobs.some(x=>x.id===job.id))throw Error('Duplicate job');s.jobs.push({...job,status:'queued'});saveState(this.path,s);}finally{release();}
+  if(!job.id||!Number.isFinite(job.deadline)||!Number.isFinite(job.requestedAt)||job.deadline<=job.requestedAt||BigInt(job.requestPriceWei)<=0n||BigInt(job.targetPriceWei)<=0n||!job.transaction||!Number.isFinite(job.dispatchLeadMs??0)||(job.dispatchLeadMs??0)<0)throw Error('Invalid gas queue job');
+  this.update(s=>{if(s.jobs.some(x=>x.id===job.id))throw Error('Duplicate job');s.jobs.push({...job,status:'queued'});});
  }
- async tick(now,priceWei,submit){
-  if(!Number.isFinite(now)||BigInt(priceWei)<=0n)throw Error('Invalid observation');
-  const release=lock(this.path);try{
-  const s=readState(this.path,{history:[],jobs:[]});s.history.push({at:now,priceWei:String(priceWei)});saveState(this.path,s);const results=[];
-  const pending=[];
-  for(const job of s.jobs.filter(x=>x.status==='queued')){
-   if(now<job.deadline&&BigInt(priceWei)>BigInt(job.targetPriceWei))continue;
-   job.reason=now>=job.deadline?'deadline':'favorable-gas';job.latenessMs=Math.max(0,now-job.deadline);job.submittedAt=now;job.status='submitting';saveState(this.path,s);
-   try{const tx=await submit(job.transaction,priceWei);job.hash=tx.hash;job.status='pending';saveState(this.path,s);pending.push({job,tx});}
-   catch(e){job.error=e.message;job.status=e.permanent?'failed':'needs-reconciliation';saveState(this.path,s);results.push({...job});}
-  }
-  await Promise.all(pending.map(async({job,tx})=>{try{const r=receiptData(await tx.wait());Object.assign(job,{receipt:r,actualPaidWei:r.actualPaidWei,requestTimeBenchmarkWei:String(BigInt(r.gasUsed)*BigInt(job.requestPriceWei)),status:'confirmed'});job.savedWei=String(BigInt(job.requestTimeBenchmarkWei)-BigInt(job.actualPaidWei));}catch(e){job.error=e.message;job.status=e.permanent?'failed':'needs-reconciliation';}saveState(this.path,s);results.push({...job});}));return results;
-  }finally{release();}
+ async tick(now,priceWei,submit,{waitForReceipts=true,submitTimeoutMs=10000}={}){
+  if(!Number.isFinite(now)||BigInt(priceWei)<=0n||!Number.isFinite(submitTimeoutMs)||submitTimeoutMs<=0)throw Error('Invalid observation');
+  // Claim jobs under a synchronous disk lock. Never hold it across transport or receipts.
+  const due=this.update(s=>{s.history.push({at:now,priceWei:String(priceWei)});const out=[];
+   for(const job of s.jobs.filter(x=>x.status==='queued')){
+    const dispatchAt=Math.max(job.requestedAt,job.deadline-(job.dispatchLeadMs??0));
+    if(now<dispatchAt&&BigInt(priceWei)>BigInt(job.targetPriceWei))continue;
+    job.reason=now>=job.deadline?'deadline':now>=dispatchAt?'deadline-buffer':'favorable-gas';
+    job.submittedAt=now;job.latenessMs=Math.max(0,now-job.deadline);job.status='submitting';out.push({...job});
+   }return out;
+  });
+  const pending=[],results=[];
+  await Promise.all(due.map(async job=>{
+   let timer;
+   try{
+    const tx=await Promise.race([Promise.resolve().then(()=>submit(job.transaction,priceWei)),new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('Broadcast timeout: reconcile before retry')),submitTimeoutMs);})]);
+    if(!tx?.hash)throw Error('Broadcast returned no hash');
+    const saved=this.update(s=>{const j=s.jobs.find(x=>x.id===job.id);Object.assign(j,{hash:tx.hash,status:'pending',acceptedAt:Date.now()});return {...j};});
+    if(waitForReceipts)pending.push({job:saved,tx});else results.push(saved);
+   }catch(e){const saved=this.update(s=>{const j=s.jobs.find(x=>x.id===job.id);j.error=e.message;j.status=e.permanent?'failed':'needs-reconciliation';return {...j};});results.push(saved);}
+   finally{clearTimeout(timer);}
+  }));
+  await Promise.all(pending.map(async({job,tx})=>{
+   try{results.push(this.recordReceipt(job.id,await tx.wait()));}
+   catch(e){results.push(this.update(s=>{const j=s.jobs.find(x=>x.id===job.id);j.error=e.message;j.status=e.permanent?'failed':'needs-reconciliation';return {...j};}));}
+  }));return results;
  }
+ recordReceipt(id,receipt){return this.update(s=>{const j=s.jobs.find(x=>x.id===id);if(!j||!['pending','needs-reconciliation'].includes(j.status))throw Error('No pending job');if(!receipt)return {...j};if((receipt.hash??receipt.transactionHash)!==j.hash)throw Error('Receipt hash mismatch');
+  try{const r=receiptData(receipt);Object.assign(j,{receipt:r,actualPaidWei:r.actualPaidWei,requestTimeBenchmarkWei:String(BigInt(r.gasUsed)*BigInt(j.requestPriceWei)),status:'confirmed'});j.savedWei=String(BigInt(j.requestTimeBenchmarkWei)-BigInt(j.actualPaidWei));}
+  catch(e){j.error=e.message;j.status=e.permanent?'failed':'needs-reconciliation';}return {...j};
+ });}
+ async reconcile(getReceipt){const jobs=readState(this.path,{jobs:[]}).jobs.filter(j=>j.status==='pending'&&j.hash);return Promise.all(jobs.map(async j=>{try{return this.recordReceipt(j.id,await getReceipt(j.hash));}catch(e){return{id:j.id,status:'pending',receiptReadError:e.message};}}));}
 }
 
 export async function runSaga(path,steps,{maxAttempts=3,retryDelayMs=50}={}){

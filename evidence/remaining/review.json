@@ -1,10 +1,10 @@
 {
-  "verifiedAt": "2026-10-14T01:27:09.233Z",
+  "verifiedAt": "2026-10-14T02:29:46.695Z",
   "count": 12,
   "implemented": 12,
-  "ready": 8,
-  "partial": 4,
-  "submissionStatus": "8-in-review-4-not-submitted",
+  "ready": 12,
+  "partial": 0,
+  "submissionStatus": "8-in-review-4-ready-not-submitted",
   "tasks": [
     {
       "slug": "natural-language-payment-agent",
@@ -79,10 +79,11 @@
     },
     {
       "slug": "gas-fee-optimizer",
-      "status": "partial",
-      "result": "Persistent gas queue with local paid-fee comparisons and a wall-clock worker.",
-      "limits": "Organizer never misses deadline is only demonstrated for healthy controlled scheduler ticks; no unconditional timing guarantee.",
+      "status": "ready-for-review",
+      "result": "Deadline dispatch now releases disk locks before network/receipt waits. Actual wall-clock demo broadcasts both jobs before their deadlines while mining is paused and a quote is slow; receipts report actual fees, restart sends zero duplicates.",
+      "limits": "Local EVM chain31337 with controlled quotes, 200ms lead, 20ms polling and a responsive disposable signer/RPC. Deadline means node acceptance, not mining. Outages or host suspension remain observable failures; no unconditional real-world timing guarantee.",
       "evidence": [
+        "evidence/remaining/execution/gas-worker.json",
         "evidence/remaining/execution/gas.json"
       ],
       "submissionStatus": "not-submitted"
@@ -111,35 +112,34 @@
     },
     {
       "slug": "yield-optimizer",
-      "status": "partial",
-      "result": "Three live historical yield sources compared; explicit fee and gas-conversion assumptions demonstrate recommend, stay-put and minimum-holding branches. Default unknown fee policy blocks recommendation.",
-      "limits": "Protocol-specific fees and PROS/USDC conversion were not independently verified. Configured cost scenarios are assumptions; historical returns are extrapolated.",
+      "status": "ready-for-review",
+      "result": "Three fresh Pharos vault yields compared at block20186816. Cost-policy wrapper reports conditional net gain, break-even gas, minimum holding, high-cost stay-put and unknown-cost rejection; never guesses a PROS exchange rate.",
+      "limits": "Fee allowances and USDC gas budget are explicitly configured scenario inputs, not independently verified investor costs. Recommendation is conditional on those inputs and historical returns repeating. No executable route, eligibility or future yield guarantee.",
       "evidence": [
-        "evidence/remaining/defi/yield-cost-scenarios.json",
-        "evidence/remaining/defi/live-result.json"
+        "evidence/remaining/defi/yield-policy.json",
+        "evidence/remaining/defi/yield-policy-mcp.jsonl"
       ],
       "submissionStatus": "not-submitted"
     },
     {
       "slug": "liquidation-watchdog",
-      "status": "partial",
-      "result": "Configurable Morpho reader and timestamped health alerts implemented. A deployed local lending fixture proves collateral/debt/oracle reads and concrete repayment guidance.",
-      "limits": "The discovered public Pharos market has no oracle and no meaningful position. Public result remains unknown. Local lending fixture is not a live Pharos borrower.",
+      "status": "ready-for-review",
+      "result": "Mutable lending contract with actual funded collateral, borrowed tokens and oracle price updates. Chain reads generate timestamped warning/critical alerts and repayment guidance; a mined repayment restores healthy state.",
+      "limits": "Purpose-built isolated local EVM chain31337 integration demo; not Pharos testnet or a mainnet borrower. No interest accrual or production liquidation engine. Public Pharos zero-oracle market remains unknown. Organizer acceptance of local demonstrations is unconfirmed.",
       "evidence": [
-        "evidence/remaining/defi/watchdog-cli.json",
-        "evidence/remaining/defi/local-evm.json"
+        "evidence/remaining/defi/integration-evm.json",
+        "evidence/remaining/defi/watchdog-cli.json"
       ],
       "submissionStatus": "not-submitted"
     },
     {
       "slug": "multi-protocol-aggregator",
-      "status": "partial",
-      "result": "Three live vault adapters, routing and outage isolation; unsigned deposit/withdraw and async request paths implemented. Two local venues pass four request preflights.",
-      "limits": "Mainnet requests revert for the inspected public addresses. Local fixtures omit KYC, balances, allowance and settlement; no mainnet action eligibility claimed.",
+      "status": "ready-for-review",
+      "result": "Two funded local vaults share one query/action interface: highest-yield deposit, lowest-yield withdrawal, successful unsigned preflights, receipt-verified lab execution, outage isolation and insufficient-allowance rejection.",
+      "limits": "Isolated local chain31337 uses purpose-built vaults, real local token/allowance/share accounting and controlled prices. Local harness alone signs ephemeral transactions. Public Centrifuge eligibility/KYC and asynchronous settlement remain distinct; inspected mainnet addresses were blocked. No demo video. Organizer acceptance of local demonstrations is unconfirmed.",
       "evidence": [
-        "evidence/remaining/defi/actions-lending.json",
-        "evidence/remaining/defi/local-evm.json",
-        "evidence/remaining/defi/funded-public-request.json"
+        "evidence/remaining/defi/integration-evm.json",
+        "evidence/remaining/defi/live-result.json"
       ],
       "submissionStatus": "not-submitted"
     }

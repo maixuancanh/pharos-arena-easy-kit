@@ -1,30 +1,17 @@
-# Gas fee optimizer
+# Gas Fee Optimizer
 
-Persistent history and queue hold expensive transactions until favorable gas or the first deadline tick. Real local receipts calculate gasUsed * effective gas price; compare with gasUsed * request-time quote. A favorable run pays less and a deadline run submits despite higher gas. All jobs due in a tick are broadcast before any receipt wait. The wall-clock worker records actual lateness rather than hiding it.
+The persistent queue holds expensive requests until favorable gas or a configurable deadline lead. Broadcasting and receipt collection use separate phases and short disk locks: a pending receipt or slow quote does not block another deadline. Broadcast ambiguity is persisted and never automatically retried. Restart preserves pending jobs. Receipt hash is checked before fee accounting.
 
-## Reproduce
+Run from repo root:
 
-From the repository root with Node 22 or newer:
+    npm ci --ignore-scripts
+    node scripts/remaining-execution-worker.mjs
+    node --test tests/remaining-gas-deadline.test.mjs tests/remaining-execution.test.mjs
 
-```sh
-npm ci
-node --test tests/remaining-execution.test.mjs tests/remaining-execution-evm.test.mjs
-node scripts/remaining-execution-demo.mjs --live
-node scripts/remaining-execution-worker.mjs
-```
+The real wall-clock demo uses local chain31337, 200ms lead and 20ms polling. Mining is paused; first transaction stays pending while the second deadline is dispatched. A background gas quote takes 1500ms; dispatch uses the cached quote. Both node acceptance timestamps precede deadlines. Mining resumes and actual receipts compare gasUsed * paidPrice with gasUsed * requestTimePrice. Favorable job pays less; deadline job is sent even when gas is high. Restart broadcasts zero duplicates.
 
-Omit --live for a deterministic offline demonstration. All signing uses ephemeral Ganache accounts on local chain 31337; no user keys are loaded or stored. --live adds read-only Pharos Chain MCP gas quotes, never a public-chain broadcast.
+Evidence: [gas-worker.json](../../evidence/remaining/execution/gas-worker.json). Implementation: [GasQueue](../../src/remaining/execution.mjs), [worker](../../scripts/remaining-execution-worker.mjs).
 
-## Evidence and implementation
+API: tick(now, price, submit, {waitForReceipts:false}) returns after broadcast; reconcile(getReceipt) collects receipts independently. dispatchLeadMs is per job; submitTimeoutMs is bounded. The runner owns signing, gas cache freshness and polling. Production unsigned user approvals require sufficient lead; the demo only uses disposable local keys.
 
-- [Summary](../../evidence/remaining/execution-summary.json)
-- Evidence under [execution evidence](../../evidence/remaining/execution): gas.json and gas-worker.json.
-- [Workflow implementation](../../src/remaining/execution.mjs), [local contracts](../../contracts/remaining/ExecutionLab.sol), [runner](../../scripts/remaining-execution-demo.mjs).
-- [Portable skill](../../skills/pharos-gas-fee-optimizer/SKILL.md).
-- [Archived exact requirements](../../docs/remaining-task-requirements.json).
-
-## Verification boundary
-
-PARTIAL against the literal never-misses-deadline criterion. A process cannot guarantee timing during downtime, RPC failures, suspension or signature delays. Timer scheduling is best effort; latest recorded worker run was 1 ms late. Submission time marks dispatch start, not node acceptance; mining deadline is not guaranteed. Quotes in controlled demos are fixtures; live-gas.json is independent read-only network evidence.
-
-Persistence uses atomic replacement and an exclusive per-state-file writer lock. A crash can require manual lock cleanup and receipt reconciliation; automatic crash recovery is intentionally conservative. Local evidence hashes cannot be opened on a Pharos explorer. Ganache may print a harmless native uWS compatibility warning and use its JavaScript fallback.
+Deadline means broadcast acceptance, not mining. The demonstrated timing scope is a healthy host and responsive signer/RPC within the lead margin. A suspended host or unavailable network can miss deadlines; lateness and ambiguous outcomes are exposed. No unconditional real-world timing guarantee or public-chain broadcast is claimed. Atomic state locks may require manual reconciliation after a crash. Local hashes are not Pharos explorer transactions.

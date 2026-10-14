@@ -1,0 +1,325 @@
+{
+  "capturedAt": "2026-10-14T02:27:19.303Z",
+  "snapshot": {
+    "kind": "live-chain-read",
+    "capturedAt": "2026-10-14T02:27:19.197Z",
+    "chainId": 1672,
+    "wallet": "0x0000000000000000000000000000000000000001",
+    "block": 20186816,
+    "vaults": [
+      {
+        "id": "JTRSY",
+        "address": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+        "status": "ok",
+        "source": {
+          "chainId": 1672,
+          "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+          "block": 20186816
+        },
+        "bytecodeHash": "0xfd9c298e0822e2ef2e0895c2092c30a8486766e01f468a312d6c5e414556c3e8",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "share": "0xC18e6f730896971a79D748E8deA61067A9Bc6040",
+        "decimals": 6,
+        "shareDecimals": 6,
+        "assetSymbol": "USDC",
+        "shares": "0.0",
+        "assets": "0.0",
+        "priceRaw": "1119104",
+        "maxDeposit": "0.0",
+        "maxWithdraw": "0.0",
+        "apy": 0.040611411849321044,
+        "yieldSource": {
+          "current": {
+            "chainId": 1672,
+            "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+            "block": 20186816
+          },
+          "previous": {
+            "chainId": 1672,
+            "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+            "block": 19322816
+          },
+          "currentPrice": "1119104",
+          "previousPrice": "1117897",
+          "seconds": 854875
+        }
+      },
+      {
+        "id": "HYB",
+        "address": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+        "status": "ok",
+        "source": {
+          "chainId": 1672,
+          "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+          "block": 20186816
+        },
+        "bytecodeHash": "0xc875e6da85f61a0080022b525ba11be3cdde7f5d52d23448c430fd9ee66f2feb",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "share": "0x4827C7ecce4f07ADfe44A97165f06A199e7d2505",
+        "decimals": 6,
+        "shareDecimals": 18,
+        "assetSymbol": "USDC",
+        "shares": "0.0",
+        "assets": "0.0",
+        "priceRaw": "987797",
+        "maxDeposit": "0.0",
+        "maxWithdraw": "0.0",
+        "apy": 0.198784651445445,
+        "yieldSource": {
+          "current": {
+            "chainId": 1672,
+            "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+            "block": 20186816
+          },
+          "previous": {
+            "chainId": 1672,
+            "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+            "block": 19322816
+          },
+          "currentPrice": "987797",
+          "previousPrice": "982954",
+          "seconds": 854875
+        }
+      },
+      {
+        "id": "deJTRSY",
+        "address": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+        "status": "ok",
+        "source": {
+          "chainId": 1672,
+          "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+          "block": 20186816
+        },
+        "bytecodeHash": "0x2c258e7a44430e818816006c1d7959eb78d1e9eb930801fb8d28758f3c9d7878",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "share": "0x8DE0F3295B9e42b29E7617BAdA7C603277420451",
+        "decimals": 6,
+        "shareDecimals": 18,
+        "assetSymbol": "USDC",
+        "shares": "0.0",
+        "assets": "0.0",
+        "priceRaw": "1039682",
+        "maxDeposit": "0.0",
+        "maxWithdraw": "0.0",
+        "apy": 0.040635804231692996,
+        "yieldSource": {
+          "current": {
+            "chainId": 1672,
+            "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+            "block": 20186816
+          },
+          "previous": {
+            "chainId": 1672,
+            "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+            "block": 19322816
+          },
+          "currentPrice": "1039682",
+          "previousPrice": "1038560",
+          "seconds": 854875
+        }
+      }
+    ],
+    "walletBalances": [
+      {
+        "symbol": "USDC",
+        "balance": "0.0",
+        "source": {
+          "chainId": 1672,
+          "contract": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "block": 20186816
+        }
+      }
+    ]
+  },
+  "gasQuote": {
+    "gasPriceWei": "10000000000",
+    "gasPriceGwei": "10",
+    "gasPriceHex": "0x2540be400",
+    "maxPriorityFeePerGasWei": "0",
+    "maxPriorityFeePerGasGwei": "0",
+    "maxPriorityFeePerGasHex": "0x0"
+  },
+  "policy": {
+    "kind": "user-supplied-budget",
+    "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+    "gasBudget": 5,
+    "gasBudgetUnit": "underlying USDC",
+    "fees": {
+      "JTRSY": {
+        "entryFee": 0.005,
+        "exitFee": 0.005,
+        "source": "Example configured 0.5% cost allowance; not independently measured investor fees"
+      },
+      "HYB": {
+        "entryFee": 0.005,
+        "exitFee": 0.005,
+        "source": "Example configured 0.5% cost allowance; not independently measured investor fees"
+      },
+      "deJTRSY": {
+        "entryFee": 0.005,
+        "exitFee": 0.005,
+        "source": "Example configured 0.5% cost allowance; not independently measured investor fees"
+      }
+    }
+  },
+  "gasQuoteUsage": "Actual native gas observation for context only. No PROS/USDC exchange rate assumed; the optimizer takes a disclosed total USDC budget.",
+  "recommendation": {
+    "decision": "recommend",
+    "venue": "HYB",
+    "expectedNetGain": 247.98223543488712,
+    "comparisons": [
+      {
+        "venue": "HYB",
+        "netGain": 247.98223543488712
+      },
+      {
+        "venue": "deJTRSY",
+        "netGain": -105.17277861407092
+      },
+      {
+        "venue": "JTRSY",
+        "netGain": -105.23027540763178
+      }
+    ],
+    "reason": "Historical annualized share-price return extrapolated; not guaranteed. Fees are explicit policy inputs. Move: principal after current exit and destination entry fees compounds, then destination exit fee applies. Stay: principal compounds, then current exit fee applies. Gas deducted from move.",
+    "conditional": true,
+    "executed": false,
+    "chainId": 1672,
+    "block": 20186816,
+    "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+    "costPolicy": {
+      "kind": "user-supplied-budget",
+      "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+      "gasBudget": 5,
+      "gasBudgetUnit": "underlying USDC",
+      "fees": {
+        "JTRSY": {
+          "entryFee": 0.005,
+          "exitFee": 0.005,
+          "source": "Example configured 0.5% cost allowance; not independently measured investor fees"
+        },
+        "HYB": {
+          "entryFee": 0.005,
+          "exitFee": 0.005,
+          "source": "Example configured 0.5% cost allowance; not independently measured investor fees"
+        },
+        "deJTRSY": {
+          "entryFee": 0.005,
+          "exitFee": 0.005,
+          "source": "Example configured 0.5% cost allowance; not independently measured investor fees"
+        }
+      }
+    },
+    "breakEvenGasCost": 252.98223543488712,
+    "conditions": [
+      "Historical returns repeat over the stated horizon; future returns can differ.",
+      "Configured entry/exit fees apply to this investor and route. Verify offering terms before use.",
+      "Total gas in underlying asset stays within the configured budget; budget is not an oracle quote.",
+      "Investor eligibility, settlement timing and available capacity are verified before any rebalance."
+    ],
+    "explanation": "Conditional recommendation only: HYB has positive projected net gain with the supplied fee and gas budgets."
+  },
+  "shortHold": {
+    "decision": "stay put",
+    "reason": "Minimum holding period not reached",
+    "conditional": true,
+    "executed": false,
+    "chainId": 1672,
+    "block": 20186816,
+    "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+    "costPolicy": {
+      "kind": "user-supplied-budget",
+      "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+      "gasBudget": 5,
+      "gasBudgetUnit": "underlying USDC",
+      "fees": {
+        "JTRSY": {
+          "entryFee": 0.005,
+          "exitFee": 0.005,
+          "source": "Example configured 0.5% cost allowance; not independently measured investor fees"
+        },
+        "HYB": {
+          "entryFee": 0.005,
+          "exitFee": 0.005,
+          "source": "Example configured 0.5% cost allowance; not independently measured investor fees"
+        },
+        "deJTRSY": {
+          "entryFee": 0.005,
+          "exitFee": 0.005,
+          "source": "Example configured 0.5% cost allowance; not independently measured investor fees"
+        }
+      }
+    },
+    "breakEvenGasCost": null,
+    "conditions": [
+      "Historical returns repeat over the stated horizon; future returns can differ.",
+      "Configured entry/exit fees apply to this investor and route. Verify offering terms before use.",
+      "Total gas in underlying asset stays within the configured budget; budget is not an oracle quote.",
+      "Investor eligibility, settlement timing and available capacity are verified before any rebalance."
+    ],
+    "explanation": "Minimum holding period not reached"
+  },
+  "highCost": {
+    "decision": "stay put",
+    "venue": "JTRSY",
+    "expectedNetGain": 0,
+    "comparisons": [
+      {
+        "venue": "HYB",
+        "netGain": -9747.017764565113
+      },
+      {
+        "venue": "deJTRSY",
+        "netGain": -10100.172778614071
+      },
+      {
+        "venue": "JTRSY",
+        "netGain": -10100.230275407632
+      }
+    ],
+    "reason": "Historical annualized share-price return extrapolated; not guaranteed. Fees are explicit policy inputs. Move: principal after current exit and destination entry fees compounds, then destination exit fee applies. Stay: principal compounds, then current exit fee applies. Gas deducted from move.",
+    "conditional": true,
+    "executed": false,
+    "chainId": 1672,
+    "block": 20186816,
+    "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+    "costPolicy": {
+      "kind": "user-supplied-budget",
+      "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+      "gasBudget": 10000,
+      "gasBudgetUnit": "underlying USDC",
+      "fees": {
+        "JTRSY": {
+          "entryFee": 0.005,
+          "exitFee": 0.005,
+          "source": "Example configured 0.5% cost allowance; not independently measured investor fees"
+        },
+        "HYB": {
+          "entryFee": 0.005,
+          "exitFee": 0.005,
+          "source": "Example configured 0.5% cost allowance; not independently measured investor fees"
+        },
+        "deJTRSY": {
+          "entryFee": 0.005,
+          "exitFee": 0.005,
+          "source": "Example configured 0.5% cost allowance; not independently measured investor fees"
+        }
+      }
+    },
+    "breakEvenGasCost": 252.98223543488712,
+    "conditions": [
+      "Historical returns repeat over the stated horizon; future returns can differ.",
+      "Configured entry/exit fees apply to this investor and route. Verify offering terms before use.",
+      "Total gas in underlying asset stays within the configured budget; budget is not an oracle quote.",
+      "Investor eligibility, settlement timing and available capacity are verified before any rebalance."
+    ],
+    "explanation": "Historical annualized share-price return extrapolated; not guaranteed. Fees are explicit policy inputs. Move: principal after current exit and destination entry fees compounds, then destination exit fee applies. Stay: principal compounds, then current exit fee applies. Gas deducted from move."
+  },
+  "unknownCosts": {
+    "decision": "unknown",
+    "reason": "Missing fee amounts or provenance.",
+    "conditional": true,
+    "executed": false
+  },
+  "scope": "Live Pharos yield reads with conditional cost inputs. This is a recommendation demonstration, not a verified executable investment quote."
+}
