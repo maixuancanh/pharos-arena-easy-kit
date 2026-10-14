@@ -1,0 +1,763 @@
+{
+  "snapshot": {
+    "kind": "live-chain-read",
+    "capturedAt": "2026-10-14T01:04:27.687Z",
+    "wallet": "0x0000000000000000000000000000000000000001",
+    "block": 20182069,
+    "vaults": [
+      {
+        "id": "JTRSY",
+        "address": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+        "status": "ok",
+        "source": {
+          "chainId": 1672,
+          "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+          "block": 20182069
+        },
+        "bytecodeHash": "0xfd9c298e0822e2ef2e0895c2092c30a8486766e01f468a312d6c5e414556c3e8",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "share": "0xC18e6f730896971a79D748E8deA61067A9Bc6040",
+        "decimals": 6,
+        "shareDecimals": 6,
+        "assetSymbol": "USDC",
+        "shares": "0.0",
+        "assets": "0.0",
+        "priceRaw": "1119104",
+        "maxDeposit": "0.0",
+        "maxWithdraw": "0.0",
+        "apy": 0.040647593353175804,
+        "yieldSource": {
+          "current": {
+            "chainId": 1672,
+            "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+            "block": 20182069
+          },
+          "previous": {
+            "chainId": 1672,
+            "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+            "block": 19318069
+          },
+          "currentPrice": "1119104",
+          "previousPrice": "1117897",
+          "seconds": 854129
+        }
+      },
+      {
+        "id": "HYB",
+        "address": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+        "status": "ok",
+        "source": {
+          "chainId": 1672,
+          "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+          "block": 20182069
+        },
+        "bytecodeHash": "0xc875e6da85f61a0080022b525ba11be3cdde7f5d52d23448c430fd9ee66f2feb",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "share": "0x4827C7ecce4f07ADfe44A97165f06A199e7d2505",
+        "decimals": 6,
+        "shareDecimals": 18,
+        "assetSymbol": "USDC",
+        "shares": "0.0",
+        "assets": "0.0",
+        "priceRaw": "987797",
+        "maxDeposit": "0.0",
+        "maxWithdraw": "0.0",
+        "apy": 0.19897450052424404,
+        "yieldSource": {
+          "current": {
+            "chainId": 1672,
+            "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+            "block": 20182069
+          },
+          "previous": {
+            "chainId": 1672,
+            "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+            "block": 19318069
+          },
+          "currentPrice": "987797",
+          "previousPrice": "982954",
+          "seconds": 854129
+        }
+      },
+      {
+        "id": "deJTRSY",
+        "address": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+        "status": "ok",
+        "source": {
+          "chainId": 1672,
+          "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+          "block": 20182069
+        },
+        "bytecodeHash": "0x2c258e7a44430e818816006c1d7959eb78d1e9eb930801fb8d28758f3c9d7878",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "share": "0x8DE0F3295B9e42b29E7617BAdA7C603277420451",
+        "decimals": 6,
+        "shareDecimals": 18,
+        "assetSymbol": "USDC",
+        "shares": "0.0",
+        "assets": "0.0",
+        "priceRaw": "1039682",
+        "maxDeposit": "0.0",
+        "maxWithdraw": "0.0",
+        "apy": 0.04067200788906167,
+        "yieldSource": {
+          "current": {
+            "chainId": 1672,
+            "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+            "block": 20182069
+          },
+          "previous": {
+            "chainId": 1672,
+            "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+            "block": 19318069
+          },
+          "currentPrice": "1039682",
+          "previousPrice": "1038560",
+          "seconds": 854129
+        }
+      }
+    ],
+    "walletBalances": [
+      {
+        "symbol": "USDC",
+        "balance": "0.0",
+        "source": {
+          "chainId": 1672,
+          "contract": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "block": 20182069
+        }
+      }
+    ]
+  },
+  "answers": [
+    {
+      "question": "what is my balance?",
+      "type": "balances",
+      "answer": [
+        {
+          "symbol": "USDC",
+          "balance": "0.0",
+          "source": {
+            "chainId": 1672,
+            "contract": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+            "block": 20182069
+          }
+        }
+      ],
+      "unavailable": [],
+      "block": 20182069,
+      "readOnly": true
+    },
+    {
+      "question": "where is my USDC?",
+      "type": "location",
+      "answer": {
+        "wallet": [
+          {
+            "symbol": "USDC",
+            "balance": "0.0",
+            "source": {
+              "chainId": 1672,
+              "contract": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+              "block": 20182069
+            }
+          }
+        ],
+        "vaults": [
+          {
+            "id": "JTRSY",
+            "address": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+            "status": "ok",
+            "source": {
+              "chainId": 1672,
+              "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+              "block": 20182069
+            },
+            "bytecodeHash": "0xfd9c298e0822e2ef2e0895c2092c30a8486766e01f468a312d6c5e414556c3e8",
+            "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+            "share": "0xC18e6f730896971a79D748E8deA61067A9Bc6040",
+            "decimals": 6,
+            "shareDecimals": 6,
+            "assetSymbol": "USDC",
+            "shares": "0.0",
+            "assets": "0.0",
+            "priceRaw": "1119104",
+            "maxDeposit": "0.0",
+            "maxWithdraw": "0.0",
+            "apy": 0.040647593353175804,
+            "yieldSource": {
+              "current": {
+                "chainId": 1672,
+                "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+                "block": 20182069
+              },
+              "previous": {
+                "chainId": 1672,
+                "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+                "block": 19318069
+              },
+              "currentPrice": "1119104",
+              "previousPrice": "1117897",
+              "seconds": 854129
+            }
+          },
+          {
+            "id": "HYB",
+            "address": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+            "status": "ok",
+            "source": {
+              "chainId": 1672,
+              "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+              "block": 20182069
+            },
+            "bytecodeHash": "0xc875e6da85f61a0080022b525ba11be3cdde7f5d52d23448c430fd9ee66f2feb",
+            "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+            "share": "0x4827C7ecce4f07ADfe44A97165f06A199e7d2505",
+            "decimals": 6,
+            "shareDecimals": 18,
+            "assetSymbol": "USDC",
+            "shares": "0.0",
+            "assets": "0.0",
+            "priceRaw": "987797",
+            "maxDeposit": "0.0",
+            "maxWithdraw": "0.0",
+            "apy": 0.19897450052424404,
+            "yieldSource": {
+              "current": {
+                "chainId": 1672,
+                "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+                "block": 20182069
+              },
+              "previous": {
+                "chainId": 1672,
+                "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+                "block": 19318069
+              },
+              "currentPrice": "987797",
+              "previousPrice": "982954",
+              "seconds": 854129
+            }
+          },
+          {
+            "id": "deJTRSY",
+            "address": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+            "status": "ok",
+            "source": {
+              "chainId": 1672,
+              "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+              "block": 20182069
+            },
+            "bytecodeHash": "0x2c258e7a44430e818816006c1d7959eb78d1e9eb930801fb8d28758f3c9d7878",
+            "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+            "share": "0x8DE0F3295B9e42b29E7617BAdA7C603277420451",
+            "decimals": 6,
+            "shareDecimals": 18,
+            "assetSymbol": "USDC",
+            "shares": "0.0",
+            "assets": "0.0",
+            "priceRaw": "1039682",
+            "maxDeposit": "0.0",
+            "maxWithdraw": "0.0",
+            "apy": 0.04067200788906167,
+            "yieldSource": {
+              "current": {
+                "chainId": 1672,
+                "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+                "block": 20182069
+              },
+              "previous": {
+                "chainId": 1672,
+                "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+                "block": 19318069
+              },
+              "currentPrice": "1039682",
+              "previousPrice": "1038560",
+              "seconds": 854129
+            }
+          }
+        ]
+      },
+      "unavailable": [],
+      "block": 20182069,
+      "readOnly": true
+    },
+    {
+      "question": "what is my biggest position?",
+      "type": "largest",
+      "answer": {
+        "id": "JTRSY",
+        "address": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+        "status": "ok",
+        "source": {
+          "chainId": 1672,
+          "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+          "block": 20182069
+        },
+        "bytecodeHash": "0xfd9c298e0822e2ef2e0895c2092c30a8486766e01f468a312d6c5e414556c3e8",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "share": "0xC18e6f730896971a79D748E8deA61067A9Bc6040",
+        "decimals": 6,
+        "shareDecimals": 6,
+        "assetSymbol": "USDC",
+        "shares": "0.0",
+        "assets": "0.0",
+        "priceRaw": "1119104",
+        "maxDeposit": "0.0",
+        "maxWithdraw": "0.0",
+        "apy": 0.040647593353175804,
+        "yieldSource": {
+          "current": {
+            "chainId": 1672,
+            "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+            "block": 20182069
+          },
+          "previous": {
+            "chainId": 1672,
+            "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+            "block": 19318069
+          },
+          "currentPrice": "1119104",
+          "previousPrice": "1117897",
+          "seconds": 854129
+        }
+      },
+      "unavailable": [],
+      "block": 20182069,
+      "readOnly": true
+    },
+    {
+      "question": "what am I earning?",
+      "type": "yields",
+      "answer": [
+        {
+          "id": "JTRSY",
+          "apy": 0.040647593353175804,
+          "reason": "Historical annualized share-price return",
+          "source": {
+            "chainId": 1672,
+            "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+            "block": 20182069
+          }
+        },
+        {
+          "id": "HYB",
+          "apy": 0.19897450052424404,
+          "reason": "Historical annualized share-price return",
+          "source": {
+            "chainId": 1672,
+            "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+            "block": 20182069
+          }
+        },
+        {
+          "id": "deJTRSY",
+          "apy": 0.04067200788906167,
+          "reason": "Historical annualized share-price return",
+          "source": {
+            "chainId": 1672,
+            "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+            "block": 20182069
+          }
+        }
+      ],
+      "unavailable": [],
+      "block": 20182069,
+      "readOnly": true
+    },
+    {
+      "question": "show my positions",
+      "type": "positions",
+      "answer": [
+        {
+          "id": "JTRSY",
+          "address": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+          "status": "ok",
+          "source": {
+            "chainId": 1672,
+            "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+            "block": 20182069
+          },
+          "bytecodeHash": "0xfd9c298e0822e2ef2e0895c2092c30a8486766e01f468a312d6c5e414556c3e8",
+          "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "share": "0xC18e6f730896971a79D748E8deA61067A9Bc6040",
+          "decimals": 6,
+          "shareDecimals": 6,
+          "assetSymbol": "USDC",
+          "shares": "0.0",
+          "assets": "0.0",
+          "priceRaw": "1119104",
+          "maxDeposit": "0.0",
+          "maxWithdraw": "0.0",
+          "apy": 0.040647593353175804,
+          "yieldSource": {
+            "current": {
+              "chainId": 1672,
+              "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+              "block": 20182069
+            },
+            "previous": {
+              "chainId": 1672,
+              "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+              "block": 19318069
+            },
+            "currentPrice": "1119104",
+            "previousPrice": "1117897",
+            "seconds": 854129
+          }
+        },
+        {
+          "id": "HYB",
+          "address": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+          "status": "ok",
+          "source": {
+            "chainId": 1672,
+            "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+            "block": 20182069
+          },
+          "bytecodeHash": "0xc875e6da85f61a0080022b525ba11be3cdde7f5d52d23448c430fd9ee66f2feb",
+          "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "share": "0x4827C7ecce4f07ADfe44A97165f06A199e7d2505",
+          "decimals": 6,
+          "shareDecimals": 18,
+          "assetSymbol": "USDC",
+          "shares": "0.0",
+          "assets": "0.0",
+          "priceRaw": "987797",
+          "maxDeposit": "0.0",
+          "maxWithdraw": "0.0",
+          "apy": 0.19897450052424404,
+          "yieldSource": {
+            "current": {
+              "chainId": 1672,
+              "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+              "block": 20182069
+            },
+            "previous": {
+              "chainId": 1672,
+              "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+              "block": 19318069
+            },
+            "currentPrice": "987797",
+            "previousPrice": "982954",
+            "seconds": 854129
+          }
+        },
+        {
+          "id": "deJTRSY",
+          "address": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+          "status": "ok",
+          "source": {
+            "chainId": 1672,
+            "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+            "block": 20182069
+          },
+          "bytecodeHash": "0x2c258e7a44430e818816006c1d7959eb78d1e9eb930801fb8d28758f3c9d7878",
+          "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "share": "0x8DE0F3295B9e42b29E7617BAdA7C603277420451",
+          "decimals": 6,
+          "shareDecimals": 18,
+          "assetSymbol": "USDC",
+          "shares": "0.0",
+          "assets": "0.0",
+          "priceRaw": "1039682",
+          "maxDeposit": "0.0",
+          "maxWithdraw": "0.0",
+          "apy": 0.04067200788906167,
+          "yieldSource": {
+            "current": {
+              "chainId": 1672,
+              "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+              "block": 20182069
+            },
+            "previous": {
+              "chainId": 1672,
+              "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+              "block": 19318069
+            },
+            "currentPrice": "1039682",
+            "previousPrice": "1038560",
+            "seconds": 854129
+          }
+        }
+      ],
+      "unavailable": [],
+      "block": 20182069,
+      "readOnly": true
+    }
+  ],
+  "optimizer": {
+    "decision": "unknown",
+    "reason": "Need three observed yields, known entry/exit fees and current venue",
+    "sources": [
+      {
+        "id": "JTRSY",
+        "address": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+        "status": "ok",
+        "source": {
+          "chainId": 1672,
+          "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+          "block": 20182069
+        },
+        "bytecodeHash": "0xfd9c298e0822e2ef2e0895c2092c30a8486766e01f468a312d6c5e414556c3e8",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "share": "0xC18e6f730896971a79D748E8deA61067A9Bc6040",
+        "decimals": 6,
+        "shareDecimals": 6,
+        "assetSymbol": "USDC",
+        "shares": "0.0",
+        "assets": "0.0",
+        "priceRaw": "1119104",
+        "maxDeposit": "0.0",
+        "maxWithdraw": "0.0",
+        "apy": 0.040647593353175804,
+        "yieldSource": {
+          "current": {
+            "chainId": 1672,
+            "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+            "block": 20182069
+          },
+          "previous": {
+            "chainId": 1672,
+            "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+            "block": 19318069
+          },
+          "currentPrice": "1119104",
+          "previousPrice": "1117897",
+          "seconds": 854129
+        }
+      },
+      {
+        "id": "HYB",
+        "address": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+        "status": "ok",
+        "source": {
+          "chainId": 1672,
+          "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+          "block": 20182069
+        },
+        "bytecodeHash": "0xc875e6da85f61a0080022b525ba11be3cdde7f5d52d23448c430fd9ee66f2feb",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "share": "0x4827C7ecce4f07ADfe44A97165f06A199e7d2505",
+        "decimals": 6,
+        "shareDecimals": 18,
+        "assetSymbol": "USDC",
+        "shares": "0.0",
+        "assets": "0.0",
+        "priceRaw": "987797",
+        "maxDeposit": "0.0",
+        "maxWithdraw": "0.0",
+        "apy": 0.19897450052424404,
+        "yieldSource": {
+          "current": {
+            "chainId": 1672,
+            "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+            "block": 20182069
+          },
+          "previous": {
+            "chainId": 1672,
+            "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+            "block": 19318069
+          },
+          "currentPrice": "987797",
+          "previousPrice": "982954",
+          "seconds": 854129
+        }
+      },
+      {
+        "id": "deJTRSY",
+        "address": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+        "status": "ok",
+        "source": {
+          "chainId": 1672,
+          "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+          "block": 20182069
+        },
+        "bytecodeHash": "0x2c258e7a44430e818816006c1d7959eb78d1e9eb930801fb8d28758f3c9d7878",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "share": "0x8DE0F3295B9e42b29E7617BAdA7C603277420451",
+        "decimals": 6,
+        "shareDecimals": 18,
+        "assetSymbol": "USDC",
+        "shares": "0.0",
+        "assets": "0.0",
+        "priceRaw": "1039682",
+        "maxDeposit": "0.0",
+        "maxWithdraw": "0.0",
+        "apy": 0.04067200788906167,
+        "yieldSource": {
+          "current": {
+            "chainId": 1672,
+            "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+            "block": 20182069
+          },
+          "previous": {
+            "chainId": 1672,
+            "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+            "block": 19318069
+          },
+          "currentPrice": "1039682",
+          "previousPrice": "1038560",
+          "seconds": 854129
+        }
+      }
+    ]
+  },
+  "aggregator": {
+    "decision": "blocked",
+    "reason": "No available venue has enough claimable capacity. Async subscriptions/redemptions require request and settlement first."
+  },
+  "partialOutage": {
+    "type": "positions",
+    "answer": [
+      {
+        "id": "JTRSY",
+        "address": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+        "status": "ok",
+        "source": {
+          "chainId": 1672,
+          "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+          "block": 20182069
+        },
+        "bytecodeHash": "0xfd9c298e0822e2ef2e0895c2092c30a8486766e01f468a312d6c5e414556c3e8",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "share": "0xC18e6f730896971a79D748E8deA61067A9Bc6040",
+        "decimals": 6,
+        "shareDecimals": 6,
+        "assetSymbol": "USDC",
+        "shares": "0.0",
+        "assets": "0.0",
+        "priceRaw": "1119104",
+        "maxDeposit": "0.0",
+        "maxWithdraw": "0.0",
+        "apy": 0.040647593353175804,
+        "yieldSource": {
+          "current": {
+            "chainId": 1672,
+            "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+            "block": 20182069
+          },
+          "previous": {
+            "chainId": 1672,
+            "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+            "block": 19318069
+          },
+          "currentPrice": "1119104",
+          "previousPrice": "1117897",
+          "seconds": 854129
+        }
+      },
+      {
+        "id": "deJTRSY",
+        "address": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+        "status": "ok",
+        "source": {
+          "chainId": 1672,
+          "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+          "block": 20182069
+        },
+        "bytecodeHash": "0x2c258e7a44430e818816006c1d7959eb78d1e9eb930801fb8d28758f3c9d7878",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "share": "0x8DE0F3295B9e42b29E7617BAdA7C603277420451",
+        "decimals": 6,
+        "shareDecimals": 18,
+        "assetSymbol": "USDC",
+        "shares": "0.0",
+        "assets": "0.0",
+        "priceRaw": "1039682",
+        "maxDeposit": "0.0",
+        "maxWithdraw": "0.0",
+        "apy": 0.04067200788906167,
+        "yieldSource": {
+          "current": {
+            "chainId": 1672,
+            "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+            "block": 20182069
+          },
+          "previous": {
+            "chainId": 1672,
+            "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+            "block": 19318069
+          },
+          "currentPrice": "1039682",
+          "previousPrice": "1038560",
+          "seconds": 854129
+        }
+      }
+    ],
+    "unavailable": [
+      {
+        "id": "HYB",
+        "address": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+        "status": "unavailable",
+        "source": {
+          "chainId": 1672,
+          "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+          "block": 20182069
+        },
+        "bytecodeHash": "0xc875e6da85f61a0080022b525ba11be3cdde7f5d52d23448c430fd9ee66f2feb",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "share": "0x4827C7ecce4f07ADfe44A97165f06A199e7d2505",
+        "decimals": 6,
+        "shareDecimals": 18,
+        "assetSymbol": "USDC",
+        "shares": "0.0",
+        "assets": "0.0",
+        "priceRaw": "987797",
+        "maxDeposit": "0.0",
+        "maxWithdraw": "0.0",
+        "apy": 0.19897450052424404,
+        "yieldSource": {
+          "current": {
+            "chainId": 1672,
+            "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+            "block": 20182069
+          },
+          "previous": {
+            "chainId": 1672,
+            "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+            "block": 19318069
+          },
+          "currentPrice": "987797",
+          "previousPrice": "982954",
+          "seconds": 854129
+        },
+        "error": "Deliberately injected outage for demonstration"
+      }
+    ],
+    "block": 20182069,
+    "readOnly": true
+  },
+  "syntheticAlerts": [
+    {
+      "timestamp": "2026-10-14T01:04:27.688Z",
+      "level": "healthy",
+      "healthFactor": 1.4,
+      "debtFree": false,
+      "repay": 6.666666666666671,
+      "addCollateral": 12.5,
+      "units": "same quote-value units as input; not token quantities",
+      "message": "No alert"
+    },
+    {
+      "timestamp": "2026-10-14T01:04:27.688Z",
+      "level": "warning",
+      "healthFactor": 1.2,
+      "debtFree": false,
+      "repay": 20,
+      "addCollateral": 37.5,
+      "units": "same quote-value units as input; not token quantities",
+      "message": "Repay 20 debt value or add 37.5 collateral value to target 1.5."
+    },
+    {
+      "timestamp": "2026-10-14T01:04:27.689Z",
+      "level": "critical",
+      "healthFactor": 1,
+      "debtFree": false,
+      "repay": 33.33333333333333,
+      "addCollateral": 62.5,
+      "units": "same quote-value units as input; not token quantities",
+      "message": "Repay 33.33333333333333 debt value or add 62.5 collateral value to target 1.5."
+    }
+  ],
+  "liquidationStatus": "Live lending-position discovery pending; alerts above use synthetic values, not a live position."
+}

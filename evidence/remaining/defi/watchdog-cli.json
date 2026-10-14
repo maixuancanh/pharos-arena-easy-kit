@@ -1,0 +1,18 @@
+{
+  "status": "unknown",
+  "reason": "Market has no collateral oracle; cannot infer a lending health factor",
+  "source": {
+    "chainId": 1672,
+    "contract": "0x18573fA18fd17dDfD790B4a5B5b2977aad3b4Efb",
+    "marketId": "0xfe1d7da2fbde85b1fee120c88df3e6b55164a2442dab97486d3d4f719a5ff1fb",
+    "block": 20182461
+  },
+  "raw": {
+    "collateral": "0",
+    "borrowShares": "0",
+    "totalBorrowAssets": "0",
+    "totalBorrowShares": "0",
+    "lastUpdate": "1773760991",
+    "lltv": "980000000000000000"
+  }
+}

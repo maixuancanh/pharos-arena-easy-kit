@@ -1,0 +1,1 @@
+const q={query:'{ markets(first: 5, where: {chainId_in: [1672]}) { items { marketId collateralAsset { address symbol decimals } loanAsset { address symbol decimals } } } }'};const r=await fetch('https://api.morpho.org/graphql',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(q)});console.log(await r.text());

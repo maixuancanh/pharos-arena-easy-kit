@@ -1,0 +1,135 @@
+{
+  "network": {
+    "chainId": 31337,
+    "network": "ephemeral Ganache local EVM; NOT Pharos mainnet/testnet",
+    "keys": "ephemeral internally generated accounts; never exported"
+  },
+  "contract": "0x13c37Ddeb333A7EeB0995C8A9d2407cC157AF0aB",
+  "injection": "one transient failure before broadcasting approve; forced failure is a real mined reverted deposit",
+  "state": {
+    "status": "completed",
+    "steps": [
+      {
+        "id": "approve",
+        "status": "confirmed",
+        "attempts": 2,
+        "error": "Injected pre-broadcast transient transport failure",
+        "hash": "0x754b22280940f97350d4b941bb5a4eb7407ee0f6764d44faecae0f57c09b9fa1",
+        "receipt": {
+          "hash": "0x754b22280940f97350d4b941bb5a4eb7407ee0f6764d44faecae0f57c09b9fa1",
+          "blockNumber": 9,
+          "status": 1,
+          "gasUsed": "43610",
+          "gasPrice": "384374764",
+          "actualPaidWei": "16762583458040"
+        }
+      },
+      {
+        "id": "swap",
+        "status": "confirmed",
+        "attempts": 1,
+        "hash": "0x28391818ac2af8d181dc503f848c9fb342e662767514add2b8164c4dea78ca05",
+        "receipt": {
+          "hash": "0x28391818ac2af8d181dc503f848c9fb342e662767514add2b8164c4dea78ca05",
+          "blockNumber": 10,
+          "status": 1,
+          "gasUsed": "49375",
+          "gasPrice": "336467607",
+          "actualPaidWei": "16613088095625"
+        }
+      },
+      {
+        "id": "deposit",
+        "status": "confirmed",
+        "attempts": 1,
+        "hash": "0x3431e102af09ab0e29a43d30af82019130fb6a798fe793a859b9145b86a7791e",
+        "receipt": {
+          "hash": "0x3431e102af09ab0e29a43d30af82019130fb6a798fe793a859b9145b86a7791e",
+          "blockNumber": 11,
+          "status": 1,
+          "gasUsed": "44308",
+          "gasPrice": "294547600",
+          "actualPaidWei": "13050815060800"
+        }
+      }
+    ],
+    "log": [
+      {
+        "at": "2026-10-14T01:11:03.851Z",
+        "event": "sending",
+        "step": "approve",
+        "attempt": 1
+      },
+      {
+        "at": "2026-10-14T01:11:03.852Z",
+        "event": "retry",
+        "step": "approve"
+      },
+      {
+        "at": "2026-10-14T01:11:03.866Z",
+        "event": "sending",
+        "step": "approve",
+        "attempt": 2
+      },
+      {
+        "at": "2026-10-14T01:11:03.930Z",
+        "event": "broadcast",
+        "step": "approve",
+        "hash": "0x754b22280940f97350d4b941bb5a4eb7407ee0f6764d44faecae0f57c09b9fa1"
+      },
+      {
+        "at": "2026-10-14T01:11:03.947Z",
+        "event": "receipt-verified",
+        "step": "approve",
+        "hash": "0x754b22280940f97350d4b941bb5a4eb7407ee0f6764d44faecae0f57c09b9fa1"
+      },
+      {
+        "at": "2026-10-14T01:11:03.948Z",
+        "event": "sending",
+        "step": "swap",
+        "attempt": 1
+      },
+      {
+        "at": "2026-10-14T01:11:03.993Z",
+        "event": "broadcast",
+        "step": "swap",
+        "hash": "0x28391818ac2af8d181dc503f848c9fb342e662767514add2b8164c4dea78ca05"
+      },
+      {
+        "at": "2026-10-14T01:11:04.008Z",
+        "event": "receipt-verified",
+        "step": "swap",
+        "hash": "0x28391818ac2af8d181dc503f848c9fb342e662767514add2b8164c4dea78ca05"
+      },
+      {
+        "at": "2026-10-14T01:11:04.009Z",
+        "event": "sending",
+        "step": "deposit",
+        "attempt": 1
+      },
+      {
+        "at": "2026-10-14T01:11:04.040Z",
+        "event": "broadcast",
+        "step": "deposit",
+        "hash": "0x3431e102af09ab0e29a43d30af82019130fb6a798fe793a859b9145b86a7791e"
+      },
+      {
+        "at": "2026-10-14T01:11:04.055Z",
+        "event": "receipt-verified",
+        "step": "deposit",
+        "hash": "0x3431e102af09ab0e29a43d30af82019130fb6a798fe793a859b9145b86a7791e"
+      },
+      {
+        "at": "2026-10-14T01:11:04.056Z",
+        "event": "completed"
+      }
+    ]
+  },
+  "balances": {
+    "cash": "900",
+    "allowance": "0",
+    "assets": "0",
+    "deposited": "100"
+  },
+  "restartReplay": "terminal saga reopening caused zero broadcasts"
+}

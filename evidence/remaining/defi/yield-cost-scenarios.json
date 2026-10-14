@@ -1,0 +1,241 @@
+{
+  "snapshotBlock": 20182069,
+  "liveSources": [
+    {
+      "id": "JTRSY",
+      "apy": 0.040647593353175804,
+      "yieldSource": {
+        "current": {
+          "chainId": 1672,
+          "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+          "block": 20182069
+        },
+        "previous": {
+          "chainId": 1672,
+          "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+          "block": 19318069
+        },
+        "currentPrice": "1119104",
+        "previousPrice": "1117897",
+        "seconds": 854129
+      }
+    },
+    {
+      "id": "HYB",
+      "apy": 0.19897450052424404,
+      "yieldSource": {
+        "current": {
+          "chainId": 1672,
+          "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+          "block": 20182069
+        },
+        "previous": {
+          "chainId": 1672,
+          "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+          "block": 19318069
+        },
+        "currentPrice": "987797",
+        "previousPrice": "982954",
+        "seconds": 854129
+      }
+    },
+    {
+      "id": "deJTRSY",
+      "apy": 0.04067200788906167,
+      "yieldSource": {
+        "current": {
+          "chainId": 1672,
+          "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+          "block": 20182069
+        },
+        "previous": {
+          "chainId": 1672,
+          "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+          "block": 19318069
+        },
+        "currentPrice": "1039682",
+        "previousPrice": "1038560",
+        "seconds": 854129
+      }
+    }
+  ],
+  "policy": {
+    "kind": "explicit user-configurable cost assumptions, not measured protocol fees",
+    "entryFee": 0.005,
+    "exitFee": 0.005,
+    "totalGasUnits": 600000,
+    "nativePriceInUSDC": 1,
+    "minimumHoldingDays": 30
+  },
+  "gasQuote": {
+    "gasPriceWei": "10000000000",
+    "gasPriceGwei": "10",
+    "gasPriceHex": "0x2540be400",
+    "maxPriorityFeePerGasWei": "0",
+    "maxPriorityFeePerGasGwei": "0",
+    "maxPriorityFeePerGasHex": "0x0"
+  },
+  "gasCostUSDC": 0.006,
+  "gasCostExplanation": "Actual network gas price multiplied by assumed 600000 total gas units and assumed 1 USDC/PROS; not an executable route estimate or oracle quote.",
+  "configuredRecommendation": {
+    "decision": "recommend",
+    "venue": "HYB",
+    "expectedNetGain": 253.29232220914977,
+    "comparisons": [
+      {
+        "venue": "HYB",
+        "netGain": 253.29232220914977
+      },
+      {
+        "venue": "deJTRSY",
+        "netGain": -100.17958719488948
+      },
+      {
+        "venue": "JTRSY",
+        "netGain": -100.23713469991222
+      }
+    ],
+    "reason": "Historical annualized share-price return extrapolated; not guaranteed. Fees are explicit policy inputs. Move: principal after current exit and destination entry fees compounds, then destination exit fee applies. Stay: principal compounds, then current exit fee applies. Gas deducted from move."
+  },
+  "minimumHold": {
+    "decision": "stay put",
+    "reason": "Minimum holding period not reached"
+  },
+  "expensiveRoute": {
+    "decision": "stay put",
+    "venue": "JTRSY",
+    "expectedNetGain": 0,
+    "comparisons": [
+      {
+        "venue": "HYB",
+        "netGain": -9746.70167779085
+      },
+      {
+        "venue": "deJTRSY",
+        "netGain": -10100.17358719489
+      },
+      {
+        "venue": "JTRSY",
+        "netGain": -10100.231134699912
+      }
+    ],
+    "reason": "Historical annualized share-price return extrapolated; not guaranteed. Fees are explicit policy inputs. Move: principal after current exit and destination entry fees compounds, then destination exit fee applies. Stay: principal compounds, then current exit fee applies. Gas deducted from move."
+  },
+  "unknownFees": {
+    "decision": "unknown",
+    "reason": "Need three observed yields, known entry/exit fees and current venue",
+    "sources": [
+      {
+        "id": "JTRSY",
+        "address": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+        "status": "ok",
+        "source": {
+          "chainId": 1672,
+          "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+          "block": 20182069
+        },
+        "bytecodeHash": "0xfd9c298e0822e2ef2e0895c2092c30a8486766e01f468a312d6c5e414556c3e8",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "share": "0xC18e6f730896971a79D748E8deA61067A9Bc6040",
+        "decimals": 6,
+        "shareDecimals": 6,
+        "assetSymbol": "USDC",
+        "shares": "0.0",
+        "assets": "0.0",
+        "priceRaw": "1119104",
+        "maxDeposit": "0.0",
+        "maxWithdraw": "0.0",
+        "apy": 0.040647593353175804,
+        "yieldSource": {
+          "current": {
+            "chainId": 1672,
+            "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+            "block": 20182069
+          },
+          "previous": {
+            "chainId": 1672,
+            "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+            "block": 19318069
+          },
+          "currentPrice": "1119104",
+          "previousPrice": "1117897",
+          "seconds": 854129
+        }
+      },
+      {
+        "id": "HYB",
+        "address": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+        "status": "ok",
+        "source": {
+          "chainId": 1672,
+          "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+          "block": 20182069
+        },
+        "bytecodeHash": "0xc875e6da85f61a0080022b525ba11be3cdde7f5d52d23448c430fd9ee66f2feb",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "share": "0x4827C7ecce4f07ADfe44A97165f06A199e7d2505",
+        "decimals": 6,
+        "shareDecimals": 18,
+        "assetSymbol": "USDC",
+        "shares": "0.0",
+        "assets": "0.0",
+        "priceRaw": "987797",
+        "maxDeposit": "0.0",
+        "maxWithdraw": "0.0",
+        "apy": 0.19897450052424404,
+        "yieldSource": {
+          "current": {
+            "chainId": 1672,
+            "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+            "block": 20182069
+          },
+          "previous": {
+            "chainId": 1672,
+            "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+            "block": 19318069
+          },
+          "currentPrice": "987797",
+          "previousPrice": "982954",
+          "seconds": 854129
+        }
+      },
+      {
+        "id": "deJTRSY",
+        "address": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+        "status": "ok",
+        "source": {
+          "chainId": 1672,
+          "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+          "block": 20182069
+        },
+        "bytecodeHash": "0x2c258e7a44430e818816006c1d7959eb78d1e9eb930801fb8d28758f3c9d7878",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "share": "0x8DE0F3295B9e42b29E7617BAdA7C603277420451",
+        "decimals": 6,
+        "shareDecimals": 18,
+        "assetSymbol": "USDC",
+        "shares": "0.0",
+        "assets": "0.0",
+        "priceRaw": "1039682",
+        "maxDeposit": "0.0",
+        "maxWithdraw": "0.0",
+        "apy": 0.04067200788906167,
+        "yieldSource": {
+          "current": {
+            "chainId": 1672,
+            "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+            "block": 20182069
+          },
+          "previous": {
+            "chainId": 1672,
+            "contract": "0xc427d079bda79a703749da3a7b22b121b6bea603",
+            "block": 19318069
+          },
+          "currentPrice": "1039682",
+          "previousPrice": "1038560",
+          "seconds": 854129
+        }
+      }
+    ]
+  }
+}

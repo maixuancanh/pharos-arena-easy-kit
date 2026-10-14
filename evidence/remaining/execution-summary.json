@@ -1,0 +1,42 @@
+{
+  "capturedAt": "2026-10-14T01:11:02.659Z",
+  "localChain": {
+    "chainId": 31337,
+    "network": "ephemeral Ganache local EVM; NOT Pharos mainnet/testnet",
+    "keys": "ephemeral internally generated accounts; never exported"
+  },
+  "tasks": {
+    "batch-executor": {
+      "status": "local-EVM-demonstrated",
+      "evidence": "execution/batch.json",
+      "individualGas": "109763",
+      "batchGas": "83990",
+      "gasSaved": "25773",
+      "stepReduction": "3 signed transactions -> 1 (2 fewer / 66.67%)",
+      "excludes": "contract deployment; identical actions on fresh mappings; one action intentionally reverts"
+    },
+    "saga-executor": {
+      "status": "local-EVM-demonstrated",
+      "evidence": [
+        "execution/saga-success.json",
+        "execution/saga-forced-failure.json"
+      ],
+      "limitations": "Lab accounting is reversible 1:1. Real swaps cannot roll back atomically and unwind can lose value. Unknown broadcast/receipt states require reconciliation; never blindly rebroadcast."
+    },
+    "trend-watcher": {
+      "status": "persistent-fixture-demonstrated",
+      "evidence": "execution/trend.json"
+    },
+    "gas-fee-optimizer": {
+      "status": "partial-local-EVM-demonstrated",
+      "evidence": "execution/gas.json",
+      "gap": "Organizer never misses deadline is only demonstrated for healthy controlled scheduler ticks; no unconditional timing guarantee."
+    },
+    "arbitrage-scanner": {
+      "status": "simulated-demonstrated",
+      "evidence": "execution/arbitrage.json",
+      "limitations": "Reads two local EVM reference-rate contracts with controlled prices; simulated execution explicitly allowed. Profit is a quoted estimate, not an executable market guarantee."
+    }
+  },
+  "liveReadEvidence": "execution/live-gas.json"
+}

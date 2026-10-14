@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Three independently runnable Pharos Agent Arena Easy tasks",
+  "description": "Pharos Agent Arena builds with read-only mainnet evidence and labelled local EVM demonstrations",
   "scripts": {
     "test": "node --test",
     "read": "node cli.mjs read",
     "monitor": "node cli.mjs monitor",
     "docs": "node cli.mjs docs",
-    "discover": "node cli.mjs discover"
+    "discover": "node cli.mjs discover",
+    "proof:remaining": "node scripts/build-remaining-report.mjs"
   },
   "engines": {
     "node": ">=22"
@@ -17,5 +18,9 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.32.1",
     "ethers": "6.17.0"
+  },
+  "devDependencies": {
+    "ganache": "^7.9.2",
+    "solc": "^0.8.37"
   }
 }

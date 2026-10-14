@@ -116,3 +116,7 @@ The ten new implementations are runnable through `node ten.mjs`. They have separ
 Four local Skill packages follow the documented SkillEngine knowledge-package format. Their helpers evaluate policies, chain conditions or preflight simulations, and retain the Skill file hash. No hosted SkillEngine runtime or Anvita publication is claimed. Nothing signs or broadcasts a transaction.
 
 The weekly digest GitHub workflow generates current/previous seven-day reports and deploys the static proof site every Monday at 07:00 Vietnam time, with manual dispatch available. A local worker can also run at the default seven-day interval, but local output reaches the public page through deployment.
+
+## Remaining twelve builds
+
+All twelve remaining board tasks have runnable implementations, instructions and evidence. [Review table](REMAINING-TASKS.md) and [public proof](remaining.html) distinguish eight tasks ready for review from four partial cases. [Machine-readable review](evidence/remaining/review.json) describes the limits. These twelve have not been submitted to Arena; the earlier sixteen remain separate.

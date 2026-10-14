@@ -1,0 +1,134 @@
+{
+  "source": "controlled fixture; each call reloads disk state",
+  "readings": [
+    100,
+    30,
+    100,
+    90,
+    80,
+    70
+  ],
+  "outputs": [
+    {
+      "triggered": false,
+      "duplicate": false,
+      "confirmed": false,
+      "event": null,
+      "historyLength": 1
+    },
+    {
+      "triggered": false,
+      "duplicate": false,
+      "confirmed": false,
+      "event": null,
+      "historyLength": 2
+    },
+    {
+      "triggered": false,
+      "duplicate": false,
+      "confirmed": false,
+      "event": null,
+      "historyLength": 3
+    },
+    {
+      "triggered": false,
+      "duplicate": false,
+      "confirmed": false,
+      "event": null,
+      "historyLength": 4
+    },
+    {
+      "duplicate": true,
+      "triggered": false
+    },
+    {
+      "triggered": true,
+      "duplicate": false,
+      "confirmed": true,
+      "event": {
+        "at": 5,
+        "observationId": "5",
+        "rule": {
+          "count": 3,
+          "direction": "down"
+        },
+        "window": [
+          "3",
+          "4",
+          "5"
+        ],
+        "action": "console-alert"
+      },
+      "historyLength": 5
+    },
+    {
+      "triggered": false,
+      "duplicate": false,
+      "confirmed": true,
+      "event": null,
+      "historyLength": 6
+    }
+  ],
+  "stored": {
+    "history": [
+      {
+        "id": "1",
+        "at": 1,
+        "value": 100,
+        "source": "controlled fixture; not oracle"
+      },
+      {
+        "id": "2",
+        "at": 2,
+        "value": 30,
+        "source": "controlled fixture; not oracle"
+      },
+      {
+        "id": "3",
+        "at": 3,
+        "value": 100,
+        "source": "controlled fixture; not oracle"
+      },
+      {
+        "id": "4",
+        "at": 4,
+        "value": 90,
+        "source": "controlled fixture; not oracle"
+      },
+      {
+        "id": "5",
+        "at": 5,
+        "value": 80,
+        "source": "controlled fixture; not oracle"
+      },
+      {
+        "id": "6",
+        "at": 6,
+        "value": 70,
+        "source": "controlled fixture; not oracle"
+      }
+    ],
+    "events": [
+      {
+        "at": 5,
+        "observationId": "5",
+        "rule": {
+          "count": 3,
+          "direction": "down"
+        },
+        "window": [
+          "3",
+          "4",
+          "5"
+        ],
+        "action": "console-alert"
+      }
+    ],
+    "active": true,
+    "rule": {
+      "count": 3,
+      "direction": "down"
+    }
+  },
+  "expected": "isolated 100->30->100 spike does not trigger; observation 5 (100->90->80) triggers once; duplicate 4 rejected"
+}

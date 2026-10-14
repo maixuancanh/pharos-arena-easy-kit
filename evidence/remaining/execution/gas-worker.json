@@ -1,0 +1,90 @@
+{
+  "network": "local Ganache chain 31337; not Pharos",
+  "clock": "real wall clock, healthy local process",
+  "observed": [
+    1791940189874,
+    1791940189936,
+    1791940189997,
+    1791940190060,
+    1791940190122,
+    1791940190184,
+    1791940190245,
+    1791940190308,
+    1791940190371,
+    1791940190373
+  ],
+  "state": {
+    "history": [
+      {
+        "at": 1791940189874,
+        "priceWei": "2000000000"
+      },
+      {
+        "at": 1791940189936,
+        "priceWei": "2000000000"
+      },
+      {
+        "at": 1791940189997,
+        "priceWei": "2000000000"
+      },
+      {
+        "at": 1791940190060,
+        "priceWei": "2000000000"
+      },
+      {
+        "at": 1791940190122,
+        "priceWei": "2000000000"
+      },
+      {
+        "at": 1791940190184,
+        "priceWei": "2000000000"
+      },
+      {
+        "at": 1791940190245,
+        "priceWei": "2000000000"
+      },
+      {
+        "at": 1791940190308,
+        "priceWei": "2000000000"
+      },
+      {
+        "at": 1791940190371,
+        "priceWei": "2000000000"
+      },
+      {
+        "at": 1791940190373,
+        "priceWei": "2000000000"
+      }
+    ],
+    "jobs": [
+      {
+        "id": "wall-clock-deadline",
+        "requestedAt": 1791940189872,
+        "deadline": 1791940190372,
+        "requestPriceWei": "2000000000",
+        "targetPriceWei": "1",
+        "transaction": {
+          "to": "0x0D6d193c52e1703FaB53D90C040F326e1f9A04F7",
+          "value": "1"
+        },
+        "status": "confirmed",
+        "reason": "deadline",
+        "latenessMs": 1,
+        "submittedAt": 1791940190373,
+        "hash": "0x6e3f2aa8a3d6d2d754b15179381a314ff9f0a17fdbaa7979cfc95f88ef3f8f94",
+        "receipt": {
+          "hash": "0x6e3f2aa8a3d6d2d754b15179381a314ff9f0a17fdbaa7979cfc95f88ef3f8f94",
+          "blockNumber": 1,
+          "status": 1,
+          "gasUsed": "21000",
+          "gasPrice": "2000000000",
+          "actualPaidWei": "42000000000000"
+        },
+        "actualPaidWei": "42000000000000",
+        "requestTimeBenchmarkWei": "42000000000000",
+        "savedWei": "0"
+      }
+    ]
+  },
+  "guarantee": "Best effort first timer tick at or after deadline. latenessMs is measured, never hidden. No absolute timing or inclusion guarantee."
+}

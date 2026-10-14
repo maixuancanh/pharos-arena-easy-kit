@@ -1,0 +1,53 @@
+{
+  "source": "actual current Pharos MCP gas quotes persisted through observeTrend; no synthetic values",
+  "history": [
+    {
+      "id": "1791940265800-0",
+      "at": 1791940265800,
+      "value": 10000000000,
+      "source": "https://mcp.pharos.xyz/mcp",
+      "gas": {
+        "gasPriceWei": "10000000000",
+        "gasPriceGwei": "10",
+        "gasPriceHex": "0x2540be400",
+        "maxPriorityFeePerGasWei": "0",
+        "maxPriorityFeePerGasGwei": "0",
+        "maxPriorityFeePerGasHex": "0x0"
+      }
+    },
+    {
+      "id": "1791940265896-1",
+      "at": 1791940265896,
+      "value": 10000000000,
+      "source": "https://mcp.pharos.xyz/mcp",
+      "gas": {
+        "gasPriceWei": "10000000000",
+        "gasPriceGwei": "10",
+        "gasPriceHex": "0x2540be400",
+        "maxPriorityFeePerGasWei": "0",
+        "maxPriorityFeePerGasGwei": "0",
+        "maxPriorityFeePerGasHex": "0x0"
+      }
+    },
+    {
+      "id": "1791940265984-2",
+      "at": 1791940265984,
+      "value": 10000000000,
+      "source": "https://mcp.pharos.xyz/mcp",
+      "gas": {
+        "gasPriceWei": "10000000000",
+        "gasPriceGwei": "10",
+        "gasPriceHex": "0x2540be400",
+        "maxPriorityFeePerGasWei": "0",
+        "maxPriorityFeePerGasGwei": "0",
+        "maxPriorityFeePerGasHex": "0x0"
+      }
+    }
+  ],
+  "events": [],
+  "active": false,
+  "rule": {
+    "count": 3,
+    "direction": "down"
+  }
+}

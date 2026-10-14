@@ -1,0 +1,86 @@
+{
+  "network": {
+    "chainId": 31337,
+    "network": "ephemeral Ganache local EVM; NOT Pharos mainnet/testnet",
+    "keys": "ephemeral internally generated accounts; never exported"
+  },
+  "clock": "controlled virtual scheduler ticks; EVM receipts and actual fee payments are real locally",
+  "state": {
+    "history": [
+      {
+        "at": 10,
+        "priceWei": "3000000000"
+      },
+      {
+        "at": 20,
+        "priceWei": "1500000000"
+      },
+      {
+        "at": 99,
+        "priceWei": "4000000000"
+      },
+      {
+        "at": 100,
+        "priceWei": "4000000000"
+      }
+    ],
+    "jobs": [
+      {
+        "id": "cheaper",
+        "requestedAt": 0,
+        "deadline": 100,
+        "requestPriceWei": "3000000000",
+        "targetPriceWei": "2000000000",
+        "transaction": {
+          "to": "0x61178B29377B761227502c2C6464CAf8786FB0e5",
+          "value": "1"
+        },
+        "status": "confirmed",
+        "reason": "favorable-gas",
+        "latenessMs": 0,
+        "submittedAt": 20,
+        "hash": "0x03510af082162ff5a7814db324822b9cc7a1600dbb126e453cb92f8e980994ab",
+        "receipt": {
+          "hash": "0x03510af082162ff5a7814db324822b9cc7a1600dbb126e453cb92f8e980994ab",
+          "blockNumber": 18,
+          "status": 1,
+          "gasUsed": "21000",
+          "gasPrice": "1500000000",
+          "actualPaidWei": "31500000000000"
+        },
+        "actualPaidWei": "31500000000000",
+        "requestTimeBenchmarkWei": "63000000000000",
+        "savedWei": "31500000000000"
+      },
+      {
+        "id": "deadline",
+        "requestedAt": 20,
+        "deadline": 100,
+        "requestPriceWei": "3000000000",
+        "targetPriceWei": "1000000000",
+        "transaction": {
+          "to": "0x61178B29377B761227502c2C6464CAf8786FB0e5",
+          "value": "1"
+        },
+        "status": "confirmed",
+        "reason": "deadline",
+        "latenessMs": 0,
+        "submittedAt": 100,
+        "hash": "0x877d76ae38545da4e95d8b0a2f0d3a5ce4d38cc27ca113691d235fac0ea0b39e",
+        "receipt": {
+          "hash": "0x877d76ae38545da4e95d8b0a2f0d3a5ce4d38cc27ca113691d235fac0ea0b39e",
+          "blockNumber": 19,
+          "status": 1,
+          "gasUsed": "21000",
+          "gasPrice": "4000000000",
+          "actualPaidWei": "84000000000000"
+        },
+        "actualPaidWei": "84000000000000",
+        "requestTimeBenchmarkWei": "63000000000000",
+        "savedWei": "-21000000000000"
+      }
+    ]
+  },
+  "benchmark": "actual gas used multiplied by request-time price; counterfactual fee, not a second historical transaction",
+  "limitation": "At first tick >= deadline submits even if expensive. No absolute deadline guarantee during scheduler downtime, RPC outage, congestion, OS suspension or signature delay. Receipt inclusion is not guaranteed by submission deadline."
+}

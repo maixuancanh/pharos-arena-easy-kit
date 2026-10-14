@@ -1,0 +1,88 @@
+{
+  "executionMode": "ephemeral Ganache local EVM; NOT Pharos mainnet/testnet",
+  "actions": [
+    {
+      "id": 0,
+      "value": 7,
+      "fail": false
+    },
+    {
+      "id": 1,
+      "value": 8,
+      "fail": true
+    },
+    {
+      "id": 2,
+      "value": 9,
+      "fail": false
+    }
+  ],
+  "contract": "0x02ebf40c5A94f1f75A1ae6e7b483B65886D50311",
+  "target": "0x5263Ec6EF082a6BE7C2bB218513f96B3f01125DA",
+  "receipt": {
+    "hash": "0x0165d5f1a80b1c4dc1399757ce43660b1e098a0d80bd6849019fa67c133eb650",
+    "blockNumber": 4,
+    "status": 1,
+    "gasUsed": "83990",
+    "gasPrice": "745452833",
+    "actualPaidWei": "62610583443670"
+  },
+  "results": [
+    {
+      "index": 0,
+      "success": true,
+      "returnData": "0x"
+    },
+    {
+      "index": 1,
+      "success": false,
+      "returnData": "0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001a666f7263656420696e646570656e64656e74206661696c757265000000000000"
+    },
+    {
+      "index": 2,
+      "success": true,
+      "returnData": "0x"
+    }
+  ],
+  "individualReceipts": [
+    {
+      "hash": "0xd4066090b62e8c591d194950d0ca5a71425e86589e147bc5f7e94884cb7a0820",
+      "status": 1,
+      "gasUsed": "43936",
+      "gasPrice": "652792984"
+    },
+    {
+      "hash": "0x60b0861b90a339c872454fe96bf156ecdbd039b7074f0216d17cf64bea6766e0",
+      "status": 0,
+      "gasUsed": "21879",
+      "gasPrice": "571432871"
+    },
+    {
+      "hash": "0xf35d6917b8c2e1ee37507bf48a623b7df14d87ab99ba2cd125fd15d1899ad5c2",
+      "status": 1,
+      "gasUsed": "43948",
+      "gasPrice": "500107948"
+    }
+  ],
+  "gasComparison": {
+    "individualGas": "109763",
+    "batchGas": "83990",
+    "gasSaved": "25773",
+    "stepReduction": "3 signed transactions -> 1 (2 fewer / 66.67%)",
+    "excludes": "contract deployment; identical actions on fresh mappings; one action intentionally reverts"
+  },
+  "state": [
+    {
+      "id": 0,
+      "value": "7"
+    },
+    {
+      "id": 1,
+      "value": "0"
+    },
+    {
+      "id": 2,
+      "value": "9"
+    }
+  ]
+}

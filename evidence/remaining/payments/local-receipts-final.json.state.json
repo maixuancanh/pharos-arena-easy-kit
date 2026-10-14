@@ -1,0 +1,86 @@
+{
+  "schedule": {
+    "id": "local-weekly",
+    "frequency": "weekly",
+    "start": "2026-10-14T00:00:00Z",
+    "payment": {
+      "from": "0x0b81016cc5240545414e42fca2bd83eafab74b0e",
+      "recipient": "0x65d61a8912e8a42ddfc56aace361cfdb7f4e1adb",
+      "amount": "1",
+      "token": "LOCAL"
+    }
+  },
+  "history": [
+    {
+      "id": "local-weekly:2026-10-14T00:00:00.000Z",
+      "due": "2026-10-14T00:00:00.000Z",
+      "status": "paid",
+      "phase": "reconciled",
+      "envelope": {
+        "status": "prepared",
+        "mode": "unsigned-only",
+        "summary": "Send 1 LOCAL from 0x0b81016CC5240545414e42fCA2Bd83EAfaB74B0e to 0x65d61A8912e8A42DdFC56aAce361cFdB7f4e1aDb; maximum estimated gas budget 130732000000000 wei. Review before signing. Nothing has been sent.",
+        "reference": null,
+        "payment": {
+          "from": "0x0b81016CC5240545414e42fCA2Bd83EAfaB74B0e",
+          "recipient": "0x65d61A8912e8A42DdFC56aAce361cFdB7f4e1aDb",
+          "amount": "1",
+          "token": "LOCAL"
+        },
+        "tokenContract": "0x4228fB86272e7f0e8F1A2B893b62fE2fCa7945D1",
+        "amountRaw": "1000000",
+        "block": "0x01",
+        "checkedAt": "2026-10-14T01:10:28.782Z",
+        "transaction": {
+          "from": "0x0b81016CC5240545414e42fCA2Bd83EAfaB74B0e",
+          "to": "0x4228fB86272e7f0e8F1A2B893b62fE2fCa7945D1",
+          "value": "0x00",
+          "data": "0xa9059cbb00000000000000000000000065d61a8912e8a42ddfc56aace361cfdb7f4e1adb00000000000000000000000000000000000000000000000000000000000f4240",
+          "chainId": "0x7a69",
+          "nonce": "0x01",
+          "gasLimit": "0xff56",
+          "gasPrice": "0x77359400"
+        },
+        "limits": "Quote and nonce can become stale. Revalidate before signing. Invoice reference is envelope metadata, not ERC20 calldata."
+      },
+      "hash": "0xe24d5a5b17d2c98762d5f31148b6b13aea520209c231f4e3d0334130acce4718",
+      "confirmations": "2"
+    },
+    {
+      "id": "local-weekly:2026-10-21T00:00:00.000Z",
+      "due": "2026-10-21T00:00:00.000Z",
+      "status": "failed",
+      "phase": "reconciled",
+      "envelope": {
+        "status": "prepared",
+        "mode": "unsigned-only",
+        "summary": "Send 1 LOCAL from 0x0b81016CC5240545414e42fCA2Bd83EAfaB74B0e to 0x65d61A8912e8A42DdFC56aAce361cFdB7f4e1aDb; maximum estimated gas budget 89692000000000 wei. Review before signing. Nothing has been sent.",
+        "reference": null,
+        "payment": {
+          "from": "0x0b81016CC5240545414e42fCA2Bd83EAfaB74B0e",
+          "recipient": "0x65d61A8912e8A42DdFC56aAce361cFdB7f4e1aDb",
+          "amount": "1",
+          "token": "LOCAL"
+        },
+        "tokenContract": "0x4228fB86272e7f0e8F1A2B893b62fE2fCa7945D1",
+        "amountRaw": "1000000",
+        "block": "0x03",
+        "checkedAt": "2026-10-14T01:10:28.816Z",
+        "transaction": {
+          "from": "0x0b81016CC5240545414e42fCA2Bd83EAfaB74B0e",
+          "to": "0x4228fB86272e7f0e8F1A2B893b62fE2fCa7945D1",
+          "value": "0x00",
+          "data": "0xa9059cbb00000000000000000000000065d61a8912e8a42ddfc56aace361cfdb7f4e1adb00000000000000000000000000000000000000000000000000000000000f4240",
+          "chainId": "0x7a69",
+          "nonce": "0x02",
+          "gasLimit": "0xaf2e",
+          "gasPrice": "0x77359400"
+        },
+        "limits": "Quote and nonce can become stale. Revalidate before signing. Invoice reference is envelope metadata, not ERC20 calldata."
+      },
+      "hash": "0xdc773666c4fe37ea6685b1579455f28a131d7b02fdf504524851de0b97fcacda",
+      "reason": "Mined transaction reverted"
+    }
+  ],
+  "nextDue": "2026-10-28T00:00:00.000Z"
+}

@@ -1,0 +1,5 @@
+import { connect,CHAIN_MCP } from '../src/mcp.mjs';
+import {Interface} from 'ethers';
+import{writeFileSync}from'node:fs';
+const c=await connect(CHAIN_MCP,'evidence/remaining/defi/discovery-mcp.jsonl');
+try{const list=await c.list();writeFileSync('evidence/remaining/defi/tools.json',JSON.stringify(list,null,2));const info=await c.call('get_chain_info');console.log(info);const block='0x'+Number(info.latestBlock).toString(16);const abi=new Interface(['function asset() view returns(address)','function share() view returns(address)','function convertToAssets(uint256) view returns(uint256)']);for(const a of ['0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434','0x74189e017d3aefee48f3cc5bf592694b2a016da8','0xc427d079bda79a703749da3a7b22b121b6bea603']){let code=await c.call('get_code',{address:a,block});console.log(a,'code length',JSON.stringify(code).length);for(const f of ['asset','share','convertToAssets'])try{const raw=await c.call('eth_call',{transaction:{to:a,data:abi.encodeFunctionData(f,f==='convertToAssets'?[10n**18n]:[])},block});console.log(f,abi.decodeFunctionResult(f,raw).toString());}catch(e){console.log(f,e.message)}}}finally{await c.close()}

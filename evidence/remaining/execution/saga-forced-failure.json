@@ -1,0 +1,184 @@
+{
+  "network": {
+    "chainId": 31337,
+    "network": "ephemeral Ganache local EVM; NOT Pharos mainnet/testnet",
+    "keys": "ephemeral internally generated accounts; never exported"
+  },
+  "contract": "0x831FE251274E5cdc57dB2131BcA46b5f4Cf9454F",
+  "injection": "one transient failure before broadcasting approve; forced failure is a real mined reverted deposit",
+  "state": {
+    "status": "compensated",
+    "steps": [
+      {
+        "id": "approve",
+        "status": "compensated",
+        "attempts": 2,
+        "error": "Injected pre-broadcast transient transport failure",
+        "hash": "0x7cb137bef8ddc60b080b17b8da4b08062d8bccd89fd49bb7ca18eb4ef82ff965",
+        "receipt": {
+          "hash": "0x7cb137bef8ddc60b080b17b8da4b08062d8bccd89fd49bb7ca18eb4ef82ff965",
+          "blockNumber": 13,
+          "status": 1,
+          "gasUsed": "43610",
+          "gasPrice": "226385229",
+          "actualPaidWei": "9872659836690"
+        },
+        "compensationHash": "0xbc1a626b234cb748ee646b89724877bf23bdbbe87705610a32c6d7e10624aef9",
+        "compensationReceipt": {
+          "hash": "0xbc1a626b234cb748ee646b89724877bf23bdbbe87705610a32c6d7e10624aef9",
+          "blockNumber": 17,
+          "status": 1,
+          "gasUsed": "23698",
+          "gasPrice": "132882167",
+          "actualPaidWei": "3149041593566"
+        }
+      },
+      {
+        "id": "swap",
+        "status": "compensated",
+        "attempts": 1,
+        "hash": "0x5157110643fb0c349df1d246e01a2eff0ed607444db9347f9f93bed46cbce76f",
+        "receipt": {
+          "hash": "0x5157110643fb0c349df1d246e01a2eff0ed607444db9347f9f93bed46cbce76f",
+          "blockNumber": 14,
+          "status": 1,
+          "gasUsed": "49375",
+          "gasPrice": "198169348",
+          "actualPaidWei": "9784611557500"
+        },
+        "compensationHash": "0xa4a36f60df75a6f9a16ac0f822e2311a4856b5d3a1e9858b361e25add67c6e20",
+        "compensationReceipt": {
+          "hash": "0xa4a36f60df75a6f9a16ac0f822e2311a4856b5d3a1e9858b361e25add67c6e20",
+          "blockNumber": 16,
+          "status": 1,
+          "gasUsed": "27015",
+          "gasPrice": "151826270",
+          "actualPaidWei": "4101586684050"
+        }
+      },
+      {
+        "id": "deposit",
+        "status": "failed",
+        "attempts": 1,
+        "hash": "0x1bbc392d26f16b97edd0e8345236764962e77434cf91bfcc46fe997c7280154e",
+        "error": "Receipt reverted",
+        "failedReceipt": {
+          "hash": "0x1bbc392d26f16b97edd0e8345236764962e77434cf91bfcc46fe997c7280154e",
+          "status": 0,
+          "blockNumber": 15,
+          "gasUsed": "21800",
+          "gasPrice": "173479719"
+        }
+      }
+    ],
+    "log": [
+      {
+        "at": "2026-10-14T01:11:04.197Z",
+        "event": "sending",
+        "step": "approve",
+        "attempt": 1
+      },
+      {
+        "at": "2026-10-14T01:11:04.199Z",
+        "event": "retry",
+        "step": "approve"
+      },
+      {
+        "at": "2026-10-14T01:11:04.211Z",
+        "event": "sending",
+        "step": "approve",
+        "attempt": 2
+      },
+      {
+        "at": "2026-10-14T01:11:04.259Z",
+        "event": "broadcast",
+        "step": "approve",
+        "hash": "0x7cb137bef8ddc60b080b17b8da4b08062d8bccd89fd49bb7ca18eb4ef82ff965"
+      },
+      {
+        "at": "2026-10-14T01:11:04.275Z",
+        "event": "receipt-verified",
+        "step": "approve",
+        "hash": "0x7cb137bef8ddc60b080b17b8da4b08062d8bccd89fd49bb7ca18eb4ef82ff965"
+      },
+      {
+        "at": "2026-10-14T01:11:04.276Z",
+        "event": "sending",
+        "step": "swap",
+        "attempt": 1
+      },
+      {
+        "at": "2026-10-14T01:11:04.320Z",
+        "event": "broadcast",
+        "step": "swap",
+        "hash": "0x5157110643fb0c349df1d246e01a2eff0ed607444db9347f9f93bed46cbce76f"
+      },
+      {
+        "at": "2026-10-14T01:11:04.335Z",
+        "event": "receipt-verified",
+        "step": "swap",
+        "hash": "0x5157110643fb0c349df1d246e01a2eff0ed607444db9347f9f93bed46cbce76f"
+      },
+      {
+        "at": "2026-10-14T01:11:04.336Z",
+        "event": "sending",
+        "step": "deposit",
+        "attempt": 1
+      },
+      {
+        "at": "2026-10-14T01:11:04.366Z",
+        "event": "broadcast",
+        "step": "deposit",
+        "hash": "0x1bbc392d26f16b97edd0e8345236764962e77434cf91bfcc46fe997c7280154e"
+      },
+      {
+        "at": "2026-10-14T01:11:04.382Z",
+        "event": "permanent-failure",
+        "step": "deposit"
+      },
+      {
+        "at": "2026-10-14T01:11:04.383Z",
+        "event": "compensation-sending",
+        "step": "swap"
+      },
+      {
+        "at": "2026-10-14T01:11:04.444Z",
+        "event": "compensation-broadcast",
+        "step": "swap",
+        "hash": "0xa4a36f60df75a6f9a16ac0f822e2311a4856b5d3a1e9858b361e25add67c6e20"
+      },
+      {
+        "at": "2026-10-14T01:11:04.460Z",
+        "event": "compensation-verified",
+        "step": "swap"
+      },
+      {
+        "at": "2026-10-14T01:11:04.461Z",
+        "event": "compensation-sending",
+        "step": "approve"
+      },
+      {
+        "at": "2026-10-14T01:11:04.506Z",
+        "event": "compensation-broadcast",
+        "step": "approve",
+        "hash": "0xbc1a626b234cb748ee646b89724877bf23bdbbe87705610a32c6d7e10624aef9"
+      },
+      {
+        "at": "2026-10-14T01:11:04.521Z",
+        "event": "compensation-verified",
+        "step": "approve"
+      },
+      {
+        "at": "2026-10-14T01:11:04.522Z",
+        "event": "compensated"
+      }
+    ]
+  },
+  "balances": {
+    "cash": "1000",
+    "allowance": "0",
+    "assets": "0",
+    "deposited": "0"
+  },
+  "restartReplay": "terminal saga reopening caused zero broadcasts"
+}

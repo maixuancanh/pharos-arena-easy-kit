@@ -1,0 +1,10 @@
+{
+  "chainId": 1672,
+  "from": "0x77083f83cbebdfecd0b8b2008d6a6bbd8392ccd8",
+  "addressNote": "Public funded address used solely for read-only simulation. This project does not claim ownership or possess its keys.",
+  "confirmations": 2,
+  "tokens": {
+    "PROS": {},
+    "USDC": {"address":"0xc879c018db60520f4355c26ed1a6d572cdac1815", "decimals":6}
+  }
+}

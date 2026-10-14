@@ -11,6 +11,11 @@ on:
       - 'ten.mjs'
       - 'src/ten/**'
       - 'ten.html'
+      - 'remaining.html'
+      - 'src/remaining/**'
+      - 'scripts/remaining-*.mjs'
+      - 'tests/remaining-*.mjs'
+      - 'package-lock.json'
       - 'scripts/stage-pages.mjs'
 permissions:
   contents: read

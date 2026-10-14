@@ -1,0 +1,8 @@
+{
+  "decision": "blocked",
+  "venue": "JTRSY",
+  "reason": "MCP tool failed: {\n  \"error\": {\n    \"message\": \"execution reverted: \",\n    \"code\": 3,\n    \"data\": \"0x8cd22d19\"\n  }\n}",
+  "requestKind": "requestDeposit",
+  "unsigned": true,
+  "executed": false
+}

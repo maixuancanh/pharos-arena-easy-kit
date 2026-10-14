@@ -1,0 +1,50 @@
+{
+  "schedule": {
+    "id": "demo-monthly",
+    "start": "2026-10-14T00:00:00Z",
+    "frequency": "monthly",
+    "payment": {
+      "recipient": "0x200a5eb1477503cfc6e64fd8116c1bb967ba22c1",
+      "amount": "0.000001",
+      "token": "USDC",
+      "reference": "MONTHLY-DEMO"
+    }
+  },
+  "history": [
+    {
+      "id": "demo-monthly:2026-10-14T00:00:00.000Z",
+      "due": "2026-10-14T00:00:00.000Z",
+      "status": "pending",
+      "phase": "awaiting-signature",
+      "envelope": {
+        "status": "prepared",
+        "mode": "unsigned-only",
+        "summary": "Send 0.000001 USDC from 0x77083F83CBEbDfEcD0B8b2008D6A6bbD8392cCd8 to 0x200a5eB1477503CfC6e64fd8116C1bb967ba22C1 for invoice MONTHLY-DEMO; maximum estimated gas budget 957090000000000 wei. Review before signing. Nothing has been sent.",
+        "reference": "MONTHLY-DEMO",
+        "payment": {
+          "from": "0x77083F83CBEbDfEcD0B8b2008D6A6bbD8392cCd8",
+          "recipient": "0x200a5eB1477503CfC6e64fd8116C1bb967ba22C1",
+          "amount": "0.000001",
+          "token": "USDC",
+          "reference": "MONTHLY-DEMO"
+        },
+        "tokenContract": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "amountRaw": "1",
+        "block": "0x133f57f",
+        "checkedAt": "2026-10-14T01:09:22.732Z",
+        "transaction": {
+          "from": "0x77083F83CBEbDfEcD0B8b2008D6A6bbD8392cCd8",
+          "to": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "value": "0x00",
+          "data": "0xa9059cbb000000000000000000000000200a5eb1477503cfc6e64fd8116c1bb967ba22c10000000000000000000000000000000000000000000000000000000000000001",
+          "chainId": "0x0688",
+          "nonce": "0x09",
+          "gasLimit": "0x0175dd",
+          "gasPrice": "0x02540be400"
+        },
+        "limits": "Quote and nonce can become stale. Revalidate before signing. Invoice reference is envelope metadata, not ERC20 calldata."
+      }
+    }
+  ],
+  "nextDue": "2026-11-14T00:00:00.000Z"
+}

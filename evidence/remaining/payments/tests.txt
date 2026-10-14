@@ -1,0 +1,23 @@
+✔ invoice reference is included in unsigned calldata and must pass preflight (169.4421ms)
+✔ invoice rejects duplicate decoded JSON keys regardless of spelling (0.4744ms)
+✔ payment worker skips a busy state lock and resumes next tick (0.6947ms)
+✔ parsing asks followup for ambiguous or malformed amounts (0.47ms)
+✔ two invoice formats preserve reference and reject conflict (0.4333ms)
+✔ monthly calendar clamps without drifting, weekly crosses year (0.335ms)
+✔ durable occurrences survive restart; insufficient balance fails once (4.4641ms)
+✔ receipt matching rejects wrong payment and requires confirmations (0.4649ms)
+✔ catches up sequentially without allocating same pending nonce twice (2.7911ms)
+✔ rejects payment to zero address (0.8126ms)
+✔ rejects impossible calendar start instead of normalizing it (0.3081ms)
+✔ wrong receipt cannot poison an occurrence with a permanent hash binding (4.7269ms)
+✔ rejects invoice extra totals rather than ignoring a mismatch (0.196ms)
+✔ legacy EIP155 transaction chain derives from v (0.1666ms)
+✔ worker polls configured runs and persists each result (0.1799ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 278.022

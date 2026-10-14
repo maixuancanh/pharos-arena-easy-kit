@@ -1,0 +1,72 @@
+{
+  "source": "two distinct real local EVM reference-rate contracts read at the same pinned block; prices are deliberately controlled, NOT market prices or live Pharos oracles",
+  "units": "prices, fees, gas and profit use same quote currency; quantity is base token units",
+  "scans": [
+    {
+      "at": 1791940264869,
+      "executionMode": "simulated-only",
+      "sources": [
+        {
+          "source": "0x7e6EfBC15622062D9F993e1761Dac9eFEC394896",
+          "price": 100,
+          "at": 1791940264850,
+          "blockNumber": 22,
+          "network": "local chain 31337 controlled reference-rate contract"
+        },
+        {
+          "source": "0x9b2738e6B9A36D5D88B2733Ed802d64CCd8291Bb",
+          "price": 110,
+          "at": 1791940264850,
+          "blockNumber": 22,
+          "network": "local chain 31337 controlled reference-rate contract"
+        }
+      ],
+      "decision": "prepare-simulated",
+      "gross": 100,
+      "costs": 12.5,
+      "net": 87.5,
+      "swapFees": 6.3,
+      "slippage": 4.2,
+      "gasCost": 2,
+      "threshold": 5,
+      "reason": "net profit exceeds threshold",
+      "prepared": {
+        "buy": "0x7e6EfBC15622062D9F993e1761Dac9eFEC394896",
+        "sell": "0x9b2738e6B9A36D5D88B2733Ed802d64CCd8291Bb",
+        "quantity": 10,
+        "maxBuyPrice": 100.2,
+        "minSellPrice": 109.78,
+        "broadcast": false
+      }
+    },
+    {
+      "at": 1791940264946,
+      "executionMode": "simulated-only",
+      "sources": [
+        {
+          "source": "0x7e6EfBC15622062D9F993e1761Dac9eFEC394896",
+          "price": 100,
+          "at": 1791940264928,
+          "blockNumber": 23,
+          "network": "local chain 31337 controlled reference-rate contract"
+        },
+        {
+          "source": "0x9b2738e6B9A36D5D88B2733Ed802d64CCd8291Bb",
+          "price": 100.1,
+          "at": 1791940264928,
+          "blockNumber": 23,
+          "network": "local chain 31337 controlled reference-rate contract"
+        }
+      ],
+      "decision": "skip",
+      "gross": 1,
+      "costs": 12.004999999999999,
+      "net": -11.004999999999999,
+      "swapFees": 6.003,
+      "slippage": 4.002,
+      "gasCost": 2,
+      "threshold": 5,
+      "reason": "net profit does not exceed threshold"
+    }
+  ]
+}
