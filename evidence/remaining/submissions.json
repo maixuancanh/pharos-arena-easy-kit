@@ -1,6 +1,6 @@
 {
-  "verifiedAt": "2026-10-14T01:27:09.233Z",
-  "count": 8,
+  "verifiedAt": "2026-10-14T02:34:10.004Z",
+  "count": 12,
   "tasks": [
     {
       "slug": "natural-language-payment-agent",
@@ -41,6 +41,30 @@
       "slug": "portfolio-assistant",
       "status": "in-review",
       "verifiedAt": "2026-10-14T01:27:09.233Z"
+    },
+    {
+      "slug": "gas-fee-optimizer",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T02:33:08.639Z",
+      "proofUrl": "https://maixuancanh.github.io/pharos-arena-easy-kit/remaining.html#gas-fee-optimizer"
+    },
+    {
+      "slug": "yield-optimizer",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T02:33:22.727Z",
+      "proofUrl": "https://maixuancanh.github.io/pharos-arena-easy-kit/remaining.html#yield-optimizer"
+    },
+    {
+      "slug": "liquidation-watchdog",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T02:33:37.489Z",
+      "proofUrl": "https://maixuancanh.github.io/pharos-arena-easy-kit/remaining.html#liquidation-watchdog"
+    },
+    {
+      "slug": "multi-protocol-aggregator",
+      "status": "in-review",
+      "verifiedAt": "2026-10-14T02:33:56.517Z",
+      "proofUrl": "https://maixuancanh.github.io/pharos-arena-easy-kit/remaining.html#multi-protocol-aggregator"
     }
   ]
 }

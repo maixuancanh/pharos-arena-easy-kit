@@ -1,10 +1,10 @@
 {
-  "verifiedAt": "2026-10-14T02:29:46.695Z",
+  "verifiedAt": "2026-10-14T02:34:10.004Z",
   "count": 12,
   "implemented": 12,
   "ready": 12,
   "partial": 0,
-  "submissionStatus": "8-in-review-4-ready-not-submitted",
+  "submissionStatus": "12-in-review",
   "tasks": [
     {
       "slug": "natural-language-payment-agent",
@@ -86,7 +86,8 @@
         "evidence/remaining/execution/gas-worker.json",
         "evidence/remaining/execution/gas.json"
       ],
-      "submissionStatus": "not-submitted"
+      "submissionStatus": "in-review",
+      "submittedVerifiedAt": "2026-10-14T02:33:08.639Z"
     },
     {
       "slug": "arbitrage-scanner",
@@ -119,7 +120,8 @@
         "evidence/remaining/defi/yield-policy.json",
         "evidence/remaining/defi/yield-policy-mcp.jsonl"
       ],
-      "submissionStatus": "not-submitted"
+      "submissionStatus": "in-review",
+      "submittedVerifiedAt": "2026-10-14T02:33:22.727Z"
     },
     {
       "slug": "liquidation-watchdog",
@@ -130,7 +132,8 @@
         "evidence/remaining/defi/integration-evm.json",
         "evidence/remaining/defi/watchdog-cli.json"
       ],
-      "submissionStatus": "not-submitted"
+      "submissionStatus": "in-review",
+      "submittedVerifiedAt": "2026-10-14T02:33:37.489Z"
     },
     {
       "slug": "multi-protocol-aggregator",
@@ -141,8 +144,9 @@
         "evidence/remaining/defi/integration-evm.json",
         "evidence/remaining/defi/live-result.json"
       ],
-      "submissionStatus": "not-submitted"
+      "submissionStatus": "in-review",
+      "submittedVerifiedAt": "2026-10-14T02:33:56.517Z"
     }
   ],
-  "submitted": 8
+  "submitted": 12
 }
